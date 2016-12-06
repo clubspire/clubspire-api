@@ -3,78 +3,65 @@ HOST: http://polls.apiblueprint.org/
 
 # CLUBSPIRE
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Get accesss token
 
-## Questions Collection [/questions]
+## Authentication & Authorization [/token]
 
-### List All Questions [GET]
+### Get accesss token [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "access_token": "c1d7200d-26e8-429c-b294-b725ecb4a6ef",
+            "token_type": "bearer",
+            "refresh_token": "4fac4c0a-c043-41d2-9aa3-3f651656bf97",
+            "expires_in": 43199,
+            "scope": "write"
         }
 
-+ Response 201 (application/json)
++ Response 400 (application/json)
 
-    + Headers
+        {
+            "error": "invalid_grant",
+            "error_description": "Cannot log in user."
+        }
+        
+## Logged user [/users/logged-user]
 
-            Location: /questions/2
+### Get logged user [GET]
 
-    + Body
++ Response 200 (application/json)
 
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+        {
+            "message": {
+                "httpStatus": 200,
+                "type": "INFO",
+                "code": null,
+                "clientMessage": null,
+                "verboseMessage": null,
+                "docUri": null
+        },
+            "data": [
+                {
+                    "name": "ClubspireApi",
+                    "surname": "ClubspireApi",
+                    "phoneCode": "+420",
+                    "phone": "123456789",
+                    "email": "clubspireapi@api.com ",
+                    "streetName": "",
+                    "houseNumber": null,
+                    "city": "Brno",
+                    "zipCode": "12345",
+                    "country": "CZ",
+                    "woman": true,
+                    "note": null,
+                    "birthDate": "2016-11-11",
+                    "termsAccepted": false,
+                    "login": "clubspireapi",
+                    "password": null,
+                    "passwordAgain": null,
+                    "userKey": "870df6b6c0a8020201bcad4e50374009",
+                    "lastModifiedDate": "2016-11-30T19:51:21.940+0100"
+                }
+            ]
+        }
