@@ -3,8 +3,6 @@ HOST: http://polls.apiblueprint.org/
 
 # CLUBSPIRE
 
-Get accesss token
-
 ## Authentication & Authorization [/token]
 
 ### Get accesss token [GET]
@@ -64,4 +62,297 @@ Get accesss token
                     "lastModifiedDate": "2016-11-30T19:51:21.940+0100"
                 }
             ]
+        }
+        
+## Reservations [/users/reservations/my/actual/unrealized]
+
+### Get my actual unrealized reservations [GET]
+
++ Response 200 (application/json)
+
+        {
+            "message": {
+                "httpStatus": 200,
+                "type": "INFO",
+                "code": null,
+                "clientMessage": null,
+                "verboseMessage": null,
+                "docUri": null
+        },
+        "data": [
+            {
+                "metaInfo": {
+                    "href": "https://192.168.0.242:58443/api/1.0/reservations/d2e1abf5c0a8020200481f6bac885304",
+                    "mediaType": "application/json"
+                },
+                "id": "d2e1abf5c0a8020200481f6bac885304",
+                "personCount": 1,
+                "startTime": "2016-12-06T09:00:00.000+0100",
+                "endTime": "2016-12-06T10:00:00.000+0100",
+                "paidDate": null,
+                "canceledDate": null,
+                "price": {
+                    "currencyCode": "CZK",
+                    "price": 120
+                },
+                "cancelFee": null,
+                "sport": {
+                    "id": "86e1b73ec0a80067012834230aa071d6",
+                    "name": "Fyzička i po porodu",
+                    "instructors": null,
+                    "activity": {
+                        "metaInfo": {
+                            "href": "https://192.168.0.242:58443/api/1.0/activities/4848f94ec0a8463200cf37c86dcd5d2d",
+                            "mediaType": "application/json"
+                    },
+                        "id": "4848f94ec0a8463200cf37c86dcd5d2d",
+                        "name": "Posilovací cvičení",
+                        "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Body Styling\n    </div>\n    <div>\n      Funk&#269;n&#237; tr&#233;nink\n    </div>\n    <div>\n      Kruhov&#253; tr&#233;n&#237;nk\n    </div>\n    <div>\n      Pilates Cardio slim\n    </div>\n    <div>\n      Piloxing\n    </div>",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                                "mediaType": "application/json"
+                        },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                    },
+                        "instructors": null,
+                        "timeLineType": "TIME_LINE_WEEK",
+                        "tabIndex": 0
+                    }
+                },
+                "object": {
+                    "metaInfo": null,
+                    "id": "86f03614c0a8006701724be6a78c372e",
+                    "arealId": "3ea54355c0a8006700d171b20df98fd0",
+                    "arealName": "Zrcadlový sál",
+                    "name": "Aerobní sál - kapacita 15"
+                },
+                "note": "",
+                "instructor": {
+                    "metaInfo": {
+                        "href": "https://192.168.0.242:58443/api/1.0/instructors/0b5a186bc0a800670061c498d856d0c0",
+                        "mediaType": "application/json"
+                    },
+                    "id": "0b5a186bc0a800670061c498d856d0c0",
+                    "firstName": "Hanka",
+                    "lastName": "Čermáková",
+                    "email": "",
+                    "phoneNumber": "",
+                    "info": "",
+                    "colorRgbHex": "00cccc",
+                    "photoHref": null,
+                    "activities": null
+                },
+                "editAllowed": true,
+                "payAllowed": true,
+                "substitute": false,
+                "createdFromSubstitute": false,
+                "shared": false,
+                "state": "UNPAID"
+            },
+            {
+                "metaInfo": {
+                    "href": "https://192.168.0.242:58443/api/1.0/reservations/d2e17648c0a8020201f28e01485c9c79",
+                    "mediaType": "application/json"
+                },
+                "id": "d2e17648c0a8020201f28e01485c9c79",
+                "personCount": 1,
+                "startTime": "2016-12-06T10:15:00.000+0100",
+                "endTime": "2016-12-06T11:00:00.000+0100",
+                "paidDate": null,
+                "canceledDate": null,
+                "price": {
+                    "currencyCode": "CZK",
+                    "price": 120
+                },
+                "cancelFee": null,
+                "sport": {
+                    "id": "86d77afcc0a800670120749e800b88bd",
+                    "name": "Cvičení s dětmi (1,5-2,5 let)",
+                    "instructors": null,
+                    "activity": {
+                        "metaInfo": {
+                            "href": "https://192.168.0.242:58443/api/1.0/activities/484a69d5c0a846320158f640deeb3bf4",
+                            "mediaType": "application/json"
+                        },
+                        "id": "484a69d5c0a846320158f640deeb3bf4",
+                        "name": "Cvičení pro rodiče",
+                        "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Fyzi&#269;ka i po porodu\n    </div>\n    <div>\n      T&#283;hotensk&#233; cvi&#269;en&#237;\n    </div>\n    <div>\n      Pilates po porodu\n    </div>\n    <div>\n      Cvi&#269;en&#237; d&#283;t&#237; s rodi&#269;i\n    </div>",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "https://192.168.0.242:58443/media/images/pictograms/a_37_b.png",
+                                "mediaType": "application/json"
+                        },
+                            "id": "a_37",
+                            "nameBlack": "a_37_b.png",
+                            "nameGrey": "a_37_w.png",
+                            "nameWhite": "a_37_g.png"
+                        },
+                    "instructors": null,
+                    "timeLineType": "TIME_LINE_WEEK",
+                    "tabIndex": 0
+                }
+            },
+                "object": {
+                    "metaInfo": null,
+                    "id": "3ea6c482c0a8006700abd854d2a6d91e",
+                    "arealId": "3ea54355c0a8006700d171b20df98fd0",
+                    "arealName": "Zrcadlový sál",
+                    "name": "Cvičení - Kapacita 12"
+                },
+                "note": "",
+                "instructor": {
+                    "metaInfo": {
+                        "href": "https://192.168.0.242:58443/api/1.0/instructors/0b5de117c0a80067001873a38ef98ff0",
+                        "mediaType": "application/json"
+                    },
+                    "id": "0b5de117c0a80067001873a38ef98ff0",
+                    "firstName": "Magda",
+                    "lastName": "Stavinohová",
+                    "email": "",
+                    "phoneNumber": "",
+                    "info": "",
+                    "colorRgbHex": "66ffff",
+                    "photoHref": null,
+                    "activities": null
+                },
+                "editAllowed": true,
+                "payAllowed": true,
+                "substitute": false,
+                "createdFromSubstitute": false,
+                "shared": false,
+                "state": "UNPAID"
+                },
+                {
+                "metaInfo": {
+                    "href": "https://192.168.0.242:58443/api/1.0/reservations/b0481482c0a802020015a7e539be5129",
+                    "mediaType": "application/json"
+                },
+                "id": "b0481482c0a802020015a7e539be5129",
+                "personCount": 1,
+                "startTime": "2016-12-07T08:30:00.000+0100",
+                "endTime": "2016-12-07T09:30:00.000+0100",
+                "paidDate": null,
+                "canceledDate": null,
+                "price": {
+                    "currencyCode": "CZK",
+                    "price": 100
+                },
+                "cancelFee": null,
+                "sport": {
+                    "id": "14a49140c0a83332018cd1cd71609926",
+                    "name": "Power jóga easy 60 min",
+                    "instructors": null,
+                    "activity": {
+                        "metaInfo": {
+                            "href": "https://192.168.0.242:58443/api/1.0/activities/0b610421c0a8006700191397ed7d3ac4",
+                            "mediaType": "application/json"
+                        },
+                        "id": "0b610421c0a8006700191397ed7d3ac4",
+                        "name": "Jóga",
+                        "description": "",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "https://192.168.0.242:58443/media/images/pictograms/a_04_b.png",
+                                "mediaType": "application/json"
+                            },
+                            "id": "a_04",
+                            "nameBlack": "a_04_b.png",
+                            "nameGrey": "a_04_w.png",
+                            "nameWhite": "a_04_g.png"
+                        },
+                        "instructors": null,
+                        "timeLineType": "TIME_LINE_WEEK",
+                        "tabIndex": 0
+                        }
+                    },
+                "object": {
+                    "metaInfo": null,
+                    "id": "51a5e734c0a846320070e4ce95d6c52d",
+                    "arealId": "3ea54355c0a8006700d171b20df98fd0",
+                    "arealName": "Zrcadlový sál",
+                    "name": "Aerobní sál - kapacita 10"
+                },
+                "note": "",
+                "instructor": null,
+                "editAllowed": true,
+                "payAllowed": true,
+                "substitute": false,
+                "createdFromSubstitute": false,
+                "shared": false,
+                "state": "UNPAID"
+                }
+            ]
+        }
+        
++ Response 404 (application/json)
+
+        {
+            "message": {
+                "httpStatus": 200,
+                "type": "INFO",
+                "code": null,
+                "clientMessage": null,
+                "verboseMessage": null,
+                "docUri": null
+            },
+            "data": []
+        }
+        
+## Club news [/news/latest]
+
+### Get latest news [GET]
+
++ Response 200 (application/json)
+
+        {
+            "message": {
+                "httpStatus": 200,
+                "type": "INFO",
+                "code": null,
+                "clientMessage": null,
+                "verboseMessage": null,
+                "docUri": null
+            },
+            "data": [
+                {
+                    "metaInfo": {
+                        "href": "https://192.168.0.242:58443/api/1.0/news/000013",
+                        "mediaType": "application/json"
+                    },
+                    "id": "000013",
+                    "publishedDate": "2016-11-28T16:53:47.375+0100",
+                    "title": "II. Silová příprava s Mgr. Honzou Cahou ",
+                    "lead": "P&#345;ij&#271; si napumpovat svaly s jedn&#237;m z p&#345;edn&#237;ch natur&#225;ln&#237;ch kulturist&#367; &#11;a \n    v&#253;&#382;ivov&#253;ch poradc&#367; v &#268;R. Lekce je p&#345;ipravena speci&#225;ln&#283; pro klienty New \n    Parku, z&#250;&#269;astnit se v&#353;ak m&#367;&#382;e i &#353;irok&#225; ve&#345;ejnost. Honza T&#283; nau&#269;&#237;, jak \n    rozv&#237;jet s&#237;lu, zv&#253;&#353;it silovou vytrvalost, ale tak&#233; odolnost v&#367;&#269;i &#250;nav&#283;. \n    Uk&#225;&#382;e...",
+                    "body": null
+                },
+                {
+                    "metaInfo": {
+                        "href": "https://192.168.0.242:58443/api/1.0/news/000012",
+                        "mediaType": "application/json"
+                    },
+                    "id": "000012",
+                    "publishedDate": "2016-11-28T16:53:36.047+0100",
+                    "title": "Výživa v silových sportech II",
+                    "lead": "Term&#237;n druh&#233; navazuj&#237;c&#237; p&#345;edn&#225;&#353;ky o v&#253;&#382;iv&#283; v silov&#253;ch sportech je na \n    sv&#283;t&#283;. Budou se roz&#353;i&#345;ovat informace na&#269;erpan&#233; na V&#253;&#382;iv&#283; I. V&#237;ce info v \n    ud&#225;lostech. Rezervace na recepci NP.",
+                    "body": null
+                }
+            ]
+        }
+        
++ Response 404 (application/json)
+
+        {
+            "message": {
+                "httpStatus": 200,
+                "type": "INFO",
+                "code": null,
+                "clientMessage": null,
+                "verboseMessage": null,
+                "docUri": null
+            },
+            "data": []
         }
