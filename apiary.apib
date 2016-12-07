@@ -5,7 +5,11 @@ HOST: http://polls.apiblueprint.org/
 
 ## Authentication & Authorization [/oauth/token]
 
-### Get access token [GET]
+### Get access token [POST]
+
++ Request (application/x-www-form-urlencoded)
+
+        grant_type=password&client_id=my_app&client_secret=some_secret&username=clubspireapi&password=clubspireapi
 
 + Response 200 (application/json)
 
@@ -24,7 +28,7 @@ HOST: http://polls.apiblueprint.org/
             "error_description": "Cannot log in user."
         }
         
-## Logged user [/users/logged-user]
+## Logged user [/api/1.0/users/logged-user]
 
 ### Get logged user [GET]
 
@@ -64,7 +68,7 @@ HOST: http://polls.apiblueprint.org/
             ]
         }
         
-## Reservations [/users/reservations/my/actual/unrealized]
+## Reservations [/api/1.0/reservations/my/actual/unrealized]
 
 ### Get my actual unrealized reservations [GET]
 
@@ -288,7 +292,7 @@ HOST: http://polls.apiblueprint.org/
             ]
         }
         
-+ Response 404 (application/json)
++ Response 201 (application/json)
 
         {
             "message": {
@@ -302,7 +306,7 @@ HOST: http://polls.apiblueprint.org/
             "data": []
         }
         
-## Club news [/news/latest]
+## Club news [/api/1.0/news/latest]
 
 ### Get latest news [GET]
 
@@ -343,7 +347,7 @@ HOST: http://polls.apiblueprint.org/
             ]
         }
         
-+ Response 404 (application/json)
++ Response 201 (application/json)
 
         {
             "message": {
@@ -355,4 +359,2270 @@ HOST: http://polls.apiblueprint.org/
                 "docUri": null
             },
             "data": []
+        }
+        
+## Activities [/api/1.0/activities/week]
+
+### Get week activities [GET]
+
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": [
+            {
+              "metaInfo": {
+                "href": "https://192.168.0.242:58443/api/1.0/activities/4846690fc0a84632012691108afbe9f5",
+                "mediaType": "application/json"
+              },
+              "id": "4846690fc0a84632012691108afbe9f5",
+              "name": "Aerobic a tanec",
+              "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Kangoo robik\n    </div>\n    <div>\n      Hula Hop\n    </div>\n    <div>\n      Aquaerobic\n    </div>\n    <div>\n      Port de Bras\n    </div>\n    <div>\n      P-class\n    </div>\n    <div>\n      Body Ball\n    </div>\n    <div>\n      Zumba\n    </div>\n    <div>\n      Street Dance\n    </div>",
+              "icon": {
+                "metaInfo": {
+                  "href": "https://192.168.0.242:58443/media/images/pictograms/a_03_b.png",
+                  "mediaType": "application/json"
+                },
+                "id": "a_03",
+                "nameBlack": "a_03_b.png",
+                "nameGrey": "a_03_w.png",
+                "nameWhite": "a_03_g.png"
+              },
+              "instructors": null,
+              "timeLineType": "TIME_LINE_WEEK",
+              "tabIndex": 0
+            },
+            {
+              "metaInfo": {
+                "href": "https://192.168.0.242:58443/api/1.0/activities/4848f94ec0a8463200cf37c86dcd5d2d",
+                "mediaType": "application/json"
+              },
+              "id": "4848f94ec0a8463200cf37c86dcd5d2d",
+              "name": "Posilovací cvičení",
+              "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Body Styling\n    </div>\n    <div>\n      Funk&#269;n&#237; tr&#233;nink\n    </div>\n    <div>\n      Kruhov&#253; tr&#233;n&#237;nk\n    </div>\n    <div>\n      Pilates Cardio slim\n    </div>\n    <div>\n      Piloxing\n    </div>",
+              "icon": {
+                "metaInfo": {
+                  "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                  "mediaType": "application/json"
+                },
+                "id": "a_05",
+                "nameBlack": "a_05_b.png",
+                "nameGrey": "a_05_w.png",
+                "nameWhite": "a_05_g.png"
+              },
+              "instructors": null,
+              "timeLineType": "TIME_LINE_WEEK",
+              "tabIndex": 0
+            },
+            {
+              "metaInfo": {
+                "href": "https://192.168.0.242:58443/api/1.0/activities/0b610421c0a8006700191397ed7d3ac4",
+                "mediaType": "application/json"
+              },
+              "id": "0b610421c0a8006700191397ed7d3ac4",
+              "name": "Jóga",
+              "description": "",
+              "icon": {
+                "metaInfo": {
+                  "href": "https://192.168.0.242:58443/media/images/pictograms/a_04_b.png",
+                  "mediaType": "application/json"
+                },
+                "id": "a_04",
+                "nameBlack": "a_04_b.png",
+                "nameGrey": "a_04_w.png",
+                "nameWhite": "a_04_g.png"
+              },
+              "instructors": null,
+              "timeLineType": "TIME_LINE_WEEK",
+              "tabIndex": 0
+            },
+            {
+              "metaInfo": {
+                "href": "https://192.168.0.242:58443/api/1.0/activities/86d5c751c0a8006701c9045133fe1b81",
+                "mediaType": "application/json"
+              },
+              "id": "86d5c751c0a8006701c9045133fe1b81",
+              "name": "Cvičení",
+              "description": "",
+              "icon": {
+                "metaInfo": {
+                  "href": "https://192.168.0.242:58443/media/images/pictograms/a_08_b.png",
+                  "mediaType": "application/json"
+                },
+                "id": "a_08",
+                "nameBlack": "a_08_b.png",
+                "nameGrey": "a_08_w.png",
+                "nameWhite": "a_08_g.png"
+              },
+              "instructors": null,
+              "timeLineType": "TIME_LINE_WEEK",
+              "tabIndex": 0
+            },
+            {
+              "metaInfo": {
+                "href": "https://192.168.0.242:58443/api/1.0/activities/484a69d5c0a846320158f640deeb3bf4",
+                "mediaType": "application/json"
+              },
+              "id": "484a69d5c0a846320158f640deeb3bf4",
+              "name": "Cvičení pro rodiče",
+              "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Fyzi&#269;ka i po porodu\n    </div>\n    <div>\n      T&#283;hotensk&#233; cvi&#269;en&#237;\n    </div>\n    <div>\n      Pilates po porodu\n    </div>\n    <div>\n      Cvi&#269;en&#237; d&#283;t&#237; s rodi&#269;i\n    </div>",
+              "icon": {
+                "metaInfo": {
+                  "href": "https://192.168.0.242:58443/media/images/pictograms/a_37_b.png",
+                  "mediaType": "application/json"
+                },
+                "id": "a_37",
+                "nameBlack": "a_37_b.png",
+                "nameGrey": "a_37_w.png",
+                "nameWhite": "a_37_g.png"
+              },
+              "instructors": null,
+              "timeLineType": "TIME_LINE_WEEK",
+              "tabIndex": 0
+            },
+            {
+              "metaInfo": {
+                "href": "https://192.168.0.242:58443/api/1.0/activities/71c8ad7bc0a846320073186673e8469d",
+                "mediaType": "application/json"
+              },
+              "id": "71c8ad7bc0a846320073186673e8469d",
+              "name": "Cvičení dětí bez rodičů (2,5 - 4 roky)",
+              "description": "",
+              "icon": {
+                "metaInfo": {
+                  "href": "https://192.168.0.242:58443/media/images/pictograms/a_02_b.png",
+                  "mediaType": "application/json"
+                },
+                "id": "a_02",
+                "nameBlack": "a_02_b.png",
+                "nameGrey": "a_02_w.png",
+                "nameWhite": "a_02_g.png"
+              },
+              "instructors": null,
+              "timeLineType": "TIME_LINE_WEEK",
+              "tabIndex": 0
+            },
+            {
+              "metaInfo": {
+                "href": "https://192.168.0.242:58443/api/1.0/activities/77965f817f000001018195812b9f3333",
+                "mediaType": "application/json"
+              },
+              "id": "77965f817f000001018195812b9f3333",
+              "name": "Bazén",
+              "description": "",
+              "icon": {
+                "metaInfo": {
+                  "href": "https://192.168.0.242:58443/media/images/pictograms/b_10_b.png",
+                  "mediaType": "application/json"
+                },
+                "id": "b_10",
+                "nameBlack": "b_10_b.png",
+                "nameGrey": "b_10_w.png",
+                "nameWhite": "b_10_g.png"
+              },
+              "instructors": null,
+              "timeLineType": "TIME_LINE_WEEK",
+              "tabIndex": 4
+            }
+          ]
+        }
+        
+## Week schedule previous week 28.11-4.12 schedule [/api/1.0/timeline/week?date=2016-11-30{?query1}]
+
+### Get activity week 28.11-4.12 schedule [GET]
+
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": null
+        }
+        
++ Response 201 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": null
+        }
+        
+## Actual week schedule 5.12-9.12 [/api/1.0/timeline/week?date=2016-12-07{?query1}]
+
+### Get activity actual 5.12-9.12 week schedule [GET]
+
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": [
+            {
+              "metaInfo": null,
+              "from": 420,
+              "to": 1320,
+              "step": 30,
+              "days": [
+                {
+                  "id": "wed",
+                  "name": "wednesday",
+                  "date": "2016-12-07T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 2,
+                      "name": "Učebna 5 - Žlutý sál",
+                      "icon": null,
+                      "shortName": "uč. 5",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "f27e8234c0a83332534017e05b879988",
+                          "sportName": "Tvarování postavy",
+                          "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+                          "objectName": "uč. 5 - kapacita10",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/-1",
+                              "mediaType": "application/json"
+                            },
+                            "id": "-1",
+                            "firstName": null,
+                            "lastName": null,
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "3366CC",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-07T18:00:00.000+0100",
+                          "endTime": "2016-12-07T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 9,
+                          "capacity": 10,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=54b8cab3c0a8463201cbe89d20857a81&sportId=f27e8234c0a83332534017e05b879988&tabIndex=2&startTime=2016-12-07T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "fri",
+                  "name": "friday",
+                  "date": "2016-12-09T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8abd5c0a800670151aa6bad8dd825",
+                          "sportName": "Kruhový trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f96e9c0a8463201068cccad685cab",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f96e9c0a8463201068cccad685cab",
+                            "firstName": "Adéla",
+                            "lastName": "Zubíková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "990099",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-09T08:00:00.000+0100",
+                          "endTime": "2016-12-09T09:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8abd5c0a800670151aa6bad8dd825&tabIndex=0&startTime=2016-12-09T08:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e4b176c0a8006701476fedb6eadb25",
+                          "sportName": "Pilates i po porodu",
+                          "objectId": "51a5e734c0a846320070e4ce95d6c52d",
+                          "objectName": "Aerobní sál - kapacita 10",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/2b18fa9cc0a8463201a823a52adb1b04",
+                              "mediaType": "application/json"
+                            },
+                            "id": "2b18fa9cc0a8463201a823a52adb1b04",
+                            "firstName": "Iva",
+                            "lastName": "Kličková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "9999ff",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-09T09:00:00.000+0100",
+                          "endTime": "2016-12-09T10:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 102,
+                            "unitPrice": 102,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 10,
+                          "capacity": 10,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=51a5e734c0a846320070e4ce95d6c52d&sportId=86e4b176c0a8006701476fedb6eadb25&tabIndex=0&startTime=2016-12-09T09:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8146cc0a80067010ceb7c89d162ba",
+                          "sportName": "Funkční trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f427ac0a8463200f0dee93f2b16fd",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f427ac0a8463200f0dee93f2b16fd",
+                            "firstName": "Matěj",
+                            "lastName": "Bukáček",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "ffff00",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-09T18:00:00.000+0100",
+                          "endTime": "2016-12-09T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8146cc0a80067010ceb7c89d162ba&tabIndex=0&startTime=2016-12-09T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "sun",
+                  "name": "sunday",
+                  "date": "2016-12-11T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "98de2580c0a8463200e1958162127b3d",
+                          "sportName": "Body styling",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f141bc0a846320120584171701643",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f141bc0a846320120584171701643",
+                            "firstName": "Pavla",
+                            "lastName": "Plíhalová",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "330033",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-11T18:00:00.000+0100",
+                          "endTime": "2016-12-11T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=98de2580c0a8463200e1958162127b3d&tabIndex=0&startTime=2016-12-11T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        
++ Response 201 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": null
+        }
+
+## Next week schedule 12.12-18.12 [/api/1.0/timeline/week?date=2016-12-14{?query1}]
+
+### Get activity next 12.12-18.12 week schedule [GET]
+
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": [
+            {
+              "metaInfo": null,
+              "from": 420,
+              "to": 1320,
+              "step": 30,
+              "days": [
+                {
+                  "id": "mon",
+                  "name": "monday",
+                  "date": "2016-12-12T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8146cc0a80067010ceb7c89d162ba",
+                          "sportName": "Funkční trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f427ac0a8463200f0dee93f2b16fd",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f427ac0a8463200f0dee93f2b16fd",
+                            "firstName": "Matěj",
+                            "lastName": "Bukáček",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "ffff00",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-12T19:00:00.000+0100",
+                          "endTime": "2016-12-12T20:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8146cc0a80067010ceb7c89d162ba&tabIndex=0&startTime=2016-12-12T19:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "tue",
+                  "name": "tuesday",
+                  "date": "2016-12-13T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8abd5c0a800670151aa6bad8dd825",
+                          "sportName": "Kruhový trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f96e9c0a8463201068cccad685cab",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f96e9c0a8463201068cccad685cab",
+                            "firstName": "Adéla",
+                            "lastName": "Zubíková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "990099",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-13T08:00:00.000+0100",
+                          "endTime": "2016-12-13T09:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8abd5c0a800670151aa6bad8dd825&tabIndex=0&startTime=2016-12-13T08:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e1b73ec0a80067012834230aa071d6",
+                          "sportName": "Fyzička i po porodu",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/0b5a186bc0a800670061c498d856d0c0",
+                              "mediaType": "application/json"
+                            },
+                            "id": "0b5a186bc0a800670061c498d856d0c0",
+                            "firstName": "Hanka",
+                            "lastName": "Čermáková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "00cccc",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-13T09:00:00.000+0100",
+                          "endTime": "2016-12-13T10:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 102,
+                            "unitPrice": 102,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e1b73ec0a80067012834230aa071d6&tabIndex=0&startTime=2016-12-13T09:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "wed",
+                  "name": "wednesday",
+                  "date": "2016-12-14T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 2,
+                      "name": "Učebna 5 - Žlutý sál",
+                      "icon": null,
+                      "shortName": "uč. 5",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "f27e8234c0a83332534017e05b879988",
+                          "sportName": "Tvarování postavy",
+                          "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+                          "objectName": "uč. 5 - kapacita10",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/-1",
+                              "mediaType": "application/json"
+                            },
+                            "id": "-1",
+                            "firstName": null,
+                            "lastName": null,
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "3366CC",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-14T18:00:00.000+0100",
+                          "endTime": "2016-12-14T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 10,
+                          "capacity": 10,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=54b8cab3c0a8463201cbe89d20857a81&sportId=f27e8234c0a83332534017e05b879988&tabIndex=2&startTime=2016-12-14T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "fri",
+                  "name": "friday",
+                  "date": "2016-12-16T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8abd5c0a800670151aa6bad8dd825",
+                          "sportName": "Kruhový trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f96e9c0a8463201068cccad685cab",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f96e9c0a8463201068cccad685cab",
+                            "firstName": "Adéla",
+                            "lastName": "Zubíková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "990099",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-16T08:00:00.000+0100",
+                          "endTime": "2016-12-16T09:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8abd5c0a800670151aa6bad8dd825&tabIndex=0&startTime=2016-12-16T08:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e4b176c0a8006701476fedb6eadb25",
+                          "sportName": "Pilates i po porodu",
+                          "objectId": "51a5e734c0a846320070e4ce95d6c52d",
+                          "objectName": "Aerobní sál - kapacita 10",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/2b18fa9cc0a8463201a823a52adb1b04",
+                              "mediaType": "application/json"
+                            },
+                            "id": "2b18fa9cc0a8463201a823a52adb1b04",
+                            "firstName": "Iva",
+                            "lastName": "Kličková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "9999ff",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-16T09:00:00.000+0100",
+                          "endTime": "2016-12-16T10:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 102,
+                            "unitPrice": 102,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 10,
+                          "capacity": 10,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=51a5e734c0a846320070e4ce95d6c52d&sportId=86e4b176c0a8006701476fedb6eadb25&tabIndex=0&startTime=2016-12-16T09:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8146cc0a80067010ceb7c89d162ba",
+                          "sportName": "Funkční trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f427ac0a8463200f0dee93f2b16fd",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f427ac0a8463200f0dee93f2b16fd",
+                            "firstName": "Matěj",
+                            "lastName": "Bukáček",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "ffff00",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-16T18:00:00.000+0100",
+                          "endTime": "2016-12-16T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8146cc0a80067010ceb7c89d162ba&tabIndex=0&startTime=2016-12-16T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "sun",
+                  "name": "sunday",
+                  "date": "2016-12-18T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "98de2580c0a8463200e1958162127b3d",
+                          "sportName": "Body styling",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f141bc0a846320120584171701643",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f141bc0a846320120584171701643",
+                            "firstName": "Pavla",
+                            "lastName": "Plíhalová",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "330033",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-18T18:00:00.000+0100",
+                          "endTime": "2016-12-18T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=98de2580c0a8463200e1958162127b3d&tabIndex=0&startTime=2016-12-18T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        
++ Response 201 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": [
+            {
+              "metaInfo": null,
+              "from": 420,
+              "to": 1320,
+              "step": 30,
+              "days": [
+                {
+                  "id": "mon",
+                  "name": "monday",
+                  "date": "2016-12-12T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8146cc0a80067010ceb7c89d162ba",
+                          "sportName": "Funkční trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f427ac0a8463200f0dee93f2b16fd",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f427ac0a8463200f0dee93f2b16fd",
+                            "firstName": "Matěj",
+                            "lastName": "Bukáček",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "ffff00",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-12T19:00:00.000+0100",
+                          "endTime": "2016-12-12T20:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8146cc0a80067010ceb7c89d162ba&tabIndex=0&startTime=2016-12-12T19:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "tue",
+                  "name": "tuesday",
+                  "date": "2016-12-13T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8abd5c0a800670151aa6bad8dd825",
+                          "sportName": "Kruhový trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f96e9c0a8463201068cccad685cab",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f96e9c0a8463201068cccad685cab",
+                            "firstName": "Adéla",
+                            "lastName": "Zubíková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "990099",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-13T08:00:00.000+0100",
+                          "endTime": "2016-12-13T09:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8abd5c0a800670151aa6bad8dd825&tabIndex=0&startTime=2016-12-13T08:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e1b73ec0a80067012834230aa071d6",
+                          "sportName": "Fyzička i po porodu",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/0b5a186bc0a800670061c498d856d0c0",
+                              "mediaType": "application/json"
+                            },
+                            "id": "0b5a186bc0a800670061c498d856d0c0",
+                            "firstName": "Hanka",
+                            "lastName": "Čermáková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "00cccc",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-13T09:00:00.000+0100",
+                          "endTime": "2016-12-13T10:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 102,
+                            "unitPrice": 102,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e1b73ec0a80067012834230aa071d6&tabIndex=0&startTime=2016-12-13T09:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "wed",
+                  "name": "wednesday",
+                  "date": "2016-12-14T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 2,
+                      "name": "Učebna 5 - Žlutý sál",
+                      "icon": null,
+                      "shortName": "uč. 5",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "f27e8234c0a83332534017e05b879988",
+                          "sportName": "Tvarování postavy",
+                          "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+                          "objectName": "uč. 5 - kapacita10",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/-1",
+                              "mediaType": "application/json"
+                            },
+                            "id": "-1",
+                            "firstName": null,
+                            "lastName": null,
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "3366CC",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-14T18:00:00.000+0100",
+                          "endTime": "2016-12-14T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 10,
+                          "capacity": 10,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=54b8cab3c0a8463201cbe89d20857a81&sportId=f27e8234c0a83332534017e05b879988&tabIndex=2&startTime=2016-12-14T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "fri",
+                  "name": "friday",
+                  "date": "2016-12-16T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8abd5c0a800670151aa6bad8dd825",
+                          "sportName": "Kruhový trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f96e9c0a8463201068cccad685cab",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f96e9c0a8463201068cccad685cab",
+                            "firstName": "Adéla",
+                            "lastName": "Zubíková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "990099",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-16T08:00:00.000+0100",
+                          "endTime": "2016-12-16T09:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8abd5c0a800670151aa6bad8dd825&tabIndex=0&startTime=2016-12-16T08:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e4b176c0a8006701476fedb6eadb25",
+                          "sportName": "Pilates i po porodu",
+                          "objectId": "51a5e734c0a846320070e4ce95d6c52d",
+                          "objectName": "Aerobní sál - kapacita 10",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/2b18fa9cc0a8463201a823a52adb1b04",
+                              "mediaType": "application/json"
+                            },
+                            "id": "2b18fa9cc0a8463201a823a52adb1b04",
+                            "firstName": "Iva",
+                            "lastName": "Kličková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "9999ff",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-16T09:00:00.000+0100",
+                          "endTime": "2016-12-16T10:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 102,
+                            "unitPrice": 102,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 10,
+                          "capacity": 10,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=51a5e734c0a846320070e4ce95d6c52d&sportId=86e4b176c0a8006701476fedb6eadb25&tabIndex=0&startTime=2016-12-16T09:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8146cc0a80067010ceb7c89d162ba",
+                          "sportName": "Funkční trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f427ac0a8463200f0dee93f2b16fd",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f427ac0a8463200f0dee93f2b16fd",
+                            "firstName": "Matěj",
+                            "lastName": "Bukáček",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "ffff00",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-16T18:00:00.000+0100",
+                          "endTime": "2016-12-16T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8146cc0a80067010ceb7c89d162ba&tabIndex=0&startTime=2016-12-16T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "sun",
+                  "name": "sunday",
+                  "date": "2016-12-18T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "98de2580c0a8463200e1958162127b3d",
+                          "sportName": "Body styling",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f141bc0a846320120584171701643",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f141bc0a846320120584171701643",
+                            "firstName": "Pavla",
+                            "lastName": "Plíhalová",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "330033",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-18T18:00:00.000+0100",
+                          "endTime": "2016-12-18T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=98de2580c0a8463200e1958162127b3d&tabIndex=0&startTime=2016-12-18T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        
+## Future week schedule 19.12-25.12 [/api/1.0/timeline/week?date=2016-12-21{?query1}]
+
+### Get activity future week 19.12-25.12 schedule [GET]
+
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": [
+            {
+              "metaInfo": null,
+              "from": 420,
+              "to": 1320,
+              "step": 30,
+              "days": [
+                {
+                  "id": "mon",
+                  "name": "monday",
+                  "date": "2016-12-19T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8146cc0a80067010ceb7c89d162ba",
+                          "sportName": "Funkční trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f427ac0a8463200f0dee93f2b16fd",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f427ac0a8463200f0dee93f2b16fd",
+                            "firstName": "Matěj",
+                            "lastName": "Bukáček",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "ffff00",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-19T19:00:00.000+0100",
+                          "endTime": "2016-12-19T20:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8146cc0a80067010ceb7c89d162ba&tabIndex=0&startTime=2016-12-19T19:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "tue",
+                  "name": "tuesday",
+                  "date": "2016-12-20T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 0,
+                      "name": "Zrcadlový sál",
+                      "icon": null,
+                      "shortName": "ZS",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e8abd5c0a800670151aa6bad8dd825",
+                          "sportName": "Kruhový trénink",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/483f96e9c0a8463201068cccad685cab",
+                              "mediaType": "application/json"
+                            },
+                            "id": "483f96e9c0a8463201068cccad685cab",
+                            "firstName": "Adéla",
+                            "lastName": "Zubíková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "990099",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-20T08:00:00.000+0100",
+                          "endTime": "2016-12-20T09:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e8abd5c0a800670151aa6bad8dd825&tabIndex=0&startTime=2016-12-20T08:00:00.000%2B0100"
+                        },
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "86e1b73ec0a80067012834230aa071d6",
+                          "sportName": "Fyzička i po porodu",
+                          "objectId": "86f03614c0a8006701724be6a78c372e",
+                          "objectName": "Aerobní sál - kapacita 15",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/0b5a186bc0a800670061c498d856d0c0",
+                              "mediaType": "application/json"
+                            },
+                            "id": "0b5a186bc0a800670061c498d856d0c0",
+                            "firstName": "Hanka",
+                            "lastName": "Čermáková",
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "00cccc",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-20T09:00:00.000+0100",
+                          "endTime": "2016-12-20T10:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 102,
+                            "unitPrice": 102,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 15,
+                          "capacity": 15,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=86f03614c0a8006701724be6a78c372e&sportId=86e1b73ec0a80067012834230aa071d6&tabIndex=0&startTime=2016-12-20T09:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "wed",
+                  "name": "wednesday",
+                  "date": "2016-12-21T00:00:00.000+0100",
+                  "history": false,
+                  "dayTabs": [
+                    {
+                      "index": 2,
+                      "name": "Učebna 5 - Žlutý sál",
+                      "icon": null,
+                      "shortName": "uč. 5",
+                      "startHour": 7,
+                      "endHour": 22,
+                      "sports": [
+                        {
+                          "emptySpace": false,
+                          "sliceCount": 2,
+                          "matchesFilter": true,
+                          "reservationEnabled": true,
+                          "activityIcon": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                              "mediaType": "application/json"
+                            },
+                            "id": "a_05",
+                            "nameBlack": "a_05_b.png",
+                            "nameGrey": "a_05_w.png",
+                            "nameWhite": "a_05_g.png"
+                          },
+                          "activityId": "4848f94ec0a8463200cf37c86dcd5d2d",
+                          "sportId": "f27e8234c0a83332534017e05b879988",
+                          "sportName": "Tvarování postavy",
+                          "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+                          "objectName": "uč. 5 - kapacita10",
+                          "instructor": {
+                            "metaInfo": {
+                              "href": "https://192.168.0.242:58443/api/1.0/instructors/-1",
+                              "mediaType": "application/json"
+                            },
+                            "id": "-1",
+                            "firstName": null,
+                            "lastName": null,
+                            "email": null,
+                            "phoneNumber": null,
+                            "info": null,
+                            "colorRgbHex": "3366CC",
+                            "photoHref": null,
+                            "activities": null
+                          },
+                          "startTime": "2016-12-21T18:00:00.000+0100",
+                          "endTime": "2016-12-21T19:00:00.000+0100",
+                          "price": {
+                            "currencyCode": "CZK",
+                            "price": 85,
+                            "unitPrice": 85,
+                            "chargedForPersonCount": true,
+                            "chargedForLengthMinutes": null
+                          },
+                          "freePlaces": 10,
+                          "capacity": 10,
+                          "substitute": false,
+                          "newReservationUrl": "https://192.168.0.242:58443/api/1.0/reservations/new?objectId=54b8cab3c0a8463201cbe89d20857a81&sportId=f27e8234c0a83332534017e05b879988&tabIndex=2&startTime=2016-12-21T18:00:00.000%2B0100"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        
+## Future week schedule 26.12-1.1 [/api/1.0/timeline/week?date=2016-12-28{?query1}]
+
+### Get activity future week 26.12-1.1 schedule [GET]
+
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": null
+        }
+        
+## Get new reservation form [/api/1.1/reservations/new{?query1,query2,query3,query4}]
+
+### Get new reservation form [GET]
+
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": [
+            {
+              "metaInfo": null,
+              "reservationForm": {
+                "metaInfo": null,
+                "sports": [
+                  {
+                    "id": "f27e8234c0a83332534017e05b879988",
+                    "name": "Tvarování postavy",
+                    "instructors": [
+                      {
+                        "metaInfo": {
+                          "href": "https://192.168.0.242:58443/api/1.1/instructors/-1",
+                          "mediaType": "application/json"
+                        },
+                        "id": "-1",
+                        "firstName": null,
+                        "lastName": null,
+                        "email": null,
+                        "phoneNumber": null,
+                        "info": null,
+                        "colorRgbHex": "3366CC",
+                        "photoHref": null,
+                        "activities": null
+                      }
+                    ],
+                    "activity": null
+                  }
+                ],
+                "selectedSport": {
+                  "id": "f27e8234c0a83332534017e05b879988",
+                  "name": "Tvarování postavy",
+                  "instructors": [
+                    {
+                      "metaInfo": {
+                        "href": "https://192.168.0.242:58443/api/1.1/instructors/-1",
+                        "mediaType": "application/json"
+                      },
+                      "id": "-1",
+                      "firstName": null,
+                      "lastName": null,
+                      "email": null,
+                      "phoneNumber": null,
+                      "info": null,
+                      "colorRgbHex": "3366CC",
+                      "photoHref": null,
+                      "activities": null
+                    }
+                  ],
+                  "activity": {
+                    "metaInfo": {
+                      "href": "https://192.168.0.242:58443/api/1.1/activities/4848f94ec0a8463200cf37c86dcd5d2d",
+                      "mediaType": "application/json"
+                    },
+                    "id": "4848f94ec0a8463200cf37c86dcd5d2d",
+                    "name": "Posilovací cvičení",
+                    "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Body Styling\n    </div>\n    <div>\n      Funk&#269;n&#237; tr&#233;nink\n    </div>\n    <div>\n      Kruhov&#253; tr&#233;n&#237;nk\n    </div>\n    <div>\n      Pilates Cardio slim\n    </div>\n    <div>\n      Piloxing\n    </div>",
+                    "icon": {
+                      "metaInfo": {
+                        "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                        "mediaType": "application/json"
+                      },
+                      "id": "a_05",
+                      "nameBlack": "a_05_b.png",
+                      "nameGrey": "a_05_w.png",
+                      "nameWhite": "a_05_g.png"
+                    },
+                    "instructors": null,
+                    "timeLineType": "TIME_LINE_WEEK",
+                    "tabIndex": 0
+                  }
+                },
+                "freeCapacity": 10,
+                "lengthEditable": false,
+                "sportEditable": false,
+                "instructorEditable": false,
+                "personCountEditable": true,
+                "reservationEditable": true,
+                "reservationCancelable": false,
+                "waitingCancelEnabled": true,
+                "paymentEnabled": false,
+                "orderEnabled": true,
+                "editFee": null,
+                "cancelFee": null,
+                "lengthIncrementMinutes": null,
+                "minLengthMinutes": 60,
+                "maxLengthMinutes": 60,
+                "placeName": "Učebna 5 - Žlutý sál",
+                "reservationShared": false,
+                "emailNotificationEnabled": true,
+                "smsNotificationEnabled": false,
+                "createReservationFromSubstituteEnabled": false,
+                "justNotifySubstituteEnabled": false,
+                "substituteEmailNotificationEnabled": false,
+                "substituteSmsNotifcationEnabled": false
+              },
+              "reservation": {
+                "metaInfo": null,
+                "id": null,
+                "code": null,
+                "sportId": "f27e8234c0a83332534017e05b879988",
+                "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+                "tabIndex": 2,
+                "instructorId": "-1",
+                "occupancyId": null,
+                "note": null,
+                "personCount": 1,
+                "price": {
+                  "currencyCode": "CZK",
+                  "price": 85,
+                  "unitPrice": 85,
+                  "chargedForPersonCount": true,
+                  "chargedForLengthMinutes": null
+                },
+                "canceledDate": null,
+                "paidDate": null,
+                "createdDate": null,
+                "startTime": "2016-12-07T18:00:00.000+0100",
+                "endTime": "2016-12-07T19:00:00.000+0100",
+                "cancelFee": null,
+                "waitingCancelFee": null,
+                "canceledWithoutFee": false,
+                "emailNotificationBeforeMinutes": null,
+                "smsNotificationBeforeMinutes": null,
+                "state": "NEW",
+                "paymentType": null,
+                "substitute": false,
+                "substituteForAnyObjectOfAreal": false,
+                "createReservationFromSubstitute": false,
+                "substituteAcceptanceMinutesBefore": 0,
+                "substituteEmailNotification": false,
+                "substituteSmsNotification": false,
+                "temporary": false,
+                "temporaryValidTo": null
+              }
+            }
+          ]
+        }
+        
+## Refresh reservation form [/api/1.1/reservations/refresh]
+
+### Get new reservation form [POST]
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "id":null,
+                "occupancyId":null,
+                "sportId": "f27e8234c0a83332534017e05b879988",    
+                "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+                "startTime": "2016-12-07T18:00:00.000+0200",
+                "endTime": "2016-12-07T19:30:00.000+0200",
+                "tabIndex": 2,
+                "instructorId": "-1",
+                "personCount": 8,
+                "note": null,
+                "emailNotificationBeforeMinutes": null,
+                "smsNotificationBeforeMinutes": null
+            }
+            
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": null,
+            "clientMessage": null,
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": [
+            {
+              "metaInfo": null,
+              "reservationForm": {
+                "metaInfo": null,
+                "sports": [
+                  {
+                    "id": "f27e8234c0a83332534017e05b879988",
+                    "name": "Tvarování postavy",
+                    "instructors": [
+                      {
+                        "metaInfo": {
+                          "href": "https://192.168.0.242:58443/api/1.1/instructors/-1",
+                          "mediaType": "application/json"
+                        },
+                        "id": "-1",
+                        "firstName": null,
+                        "lastName": null,
+                        "email": null,
+                        "phoneNumber": null,
+                        "info": null,
+                        "colorRgbHex": "3366CC",
+                        "photoHref": null,
+                        "activities": null
+                      }
+                    ],
+                    "activity": null
+                  }
+                ],
+                "selectedSport": {
+                  "id": "f27e8234c0a83332534017e05b879988",
+                  "name": "Tvarování postavy",
+                  "instructors": [
+                    {
+                      "metaInfo": {
+                        "href": "https://192.168.0.242:58443/api/1.1/instructors/-1",
+                        "mediaType": "application/json"
+                      },
+                      "id": "-1",
+                      "firstName": null,
+                      "lastName": null,
+                      "email": null,
+                      "phoneNumber": null,
+                      "info": null,
+                      "colorRgbHex": "3366CC",
+                      "photoHref": null,
+                      "activities": null
+                    }
+                  ],
+                  "activity": {
+                    "metaInfo": {
+                      "href": "https://192.168.0.242:58443/api/1.1/activities/4848f94ec0a8463200cf37c86dcd5d2d",
+                      "mediaType": "application/json"
+                    },
+                    "id": "4848f94ec0a8463200cf37c86dcd5d2d",
+                    "name": "Posilovací cvičení",
+                    "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Body Styling\n    </div>\n    <div>\n      Funk&#269;n&#237; tr&#233;nink\n    </div>\n    <div>\n      Kruhov&#253; tr&#233;n&#237;nk\n    </div>\n    <div>\n      Pilates Cardio slim\n    </div>\n    <div>\n      Piloxing\n    </div>",
+                    "icon": {
+                      "metaInfo": {
+                        "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
+                        "mediaType": "application/json"
+                      },
+                      "id": "a_05",
+                      "nameBlack": "a_05_b.png",
+                      "nameGrey": "a_05_w.png",
+                      "nameWhite": "a_05_g.png"
+                    },
+                    "instructors": null,
+                    "timeLineType": "TIME_LINE_WEEK",
+                    "tabIndex": 0
+                  }
+                },
+                "freeCapacity": 10,
+                "lengthEditable": false,
+                "sportEditable": false,
+                "instructorEditable": false,
+                "personCountEditable": true,
+                "reservationEditable": true,
+                "reservationCancelable": false,
+                "waitingCancelEnabled": true,
+                "paymentEnabled": true,
+                "orderEnabled": true,
+                "editFee": null,
+                "cancelFee": null,
+                "lengthIncrementMinutes": null,
+                "minLengthMinutes": 60,
+                "maxLengthMinutes": 60,
+                "placeName": "Učebna 5 - Žlutý sál",
+                "reservationShared": false,
+                "emailNotificationEnabled": true,
+                "smsNotificationEnabled": false,
+                "createReservationFromSubstituteEnabled": false,
+                "justNotifySubstituteEnabled": false,
+                "substituteEmailNotificationEnabled": false,
+                "substituteSmsNotifcationEnabled": false
+              },
+              "reservation": {
+                "metaInfo": null,
+                "id": null,
+                "code": null,
+                "sportId": "f27e8234c0a83332534017e05b879988",
+                "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+                "tabIndex": 2,
+                "instructorId": "-1",
+                "occupancyId": null,
+                "note": null,
+                "personCount": 8,
+                "price": {
+                  "currencyCode": "CZK",
+                  "price": 680,
+                  "unitPrice": 85,
+                  "chargedForPersonCount": true,
+                  "chargedForLengthMinutes": null
+                },
+                "canceledDate": null,
+                "paidDate": null,
+                "createdDate": null,
+                "startTime": "2016-12-07T18:00:00.000+0100",
+                "endTime": "2016-12-07T19:00:00.000+0100",
+                "cancelFee": null,
+                "waitingCancelFee": null,
+                "canceledWithoutFee": false,
+                "emailNotificationBeforeMinutes": null,
+                "smsNotificationBeforeMinutes": null,
+                "state": "NEW",
+                "paymentType": null,
+                "substitute": false,
+                "substituteForAnyObjectOfAreal": false,
+                "createReservationFromSubstitute": false,
+                "substituteAcceptanceMinutesBefore": 0,
+                "substituteEmailNotification": false,
+                "substituteSmsNotification": false,
+                "temporary": false,
+                "temporaryValidTo": null
+              }
+            }
+          ]
+        }
+
+## Create reservation [/api/1.0/reservations]
+
+### Create reservation [POST]
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "instructorId": "-1",
+                "sportId": "f27e8234c0a83332534017e05b879988",
+                "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+                "personCount": 8,   
+                "startTime": "2016-12-07T18:00:00.000+0200",
+                "endTime": "2016-12-07T19:30:00.000+0200",
+                "note": "note",
+                "emailNotificationBeforeMinutes": null,
+                "smsNotificationBeforeMinutes": null,           
+                "paymentType":null,
+                "substitute":false,
+                "substituteForAnyObjectOfAreal":false,
+                "createReservationFromSubstitute":false,
+                "substituteAcceptanceMinutesBefore":0,
+                "substituteEmailNotification":false,
+                "substituteSMSNotification":false
+            }
+            
+
++ Response 200 (application/json)
+
+        {
+          "message": {
+            "httpStatus": 200,
+            "type": "INFO",
+            "code": "success.reservation.created",
+            "clientMessage": "Reservation has been created successfully.",
+            "verboseMessage": null,
+            "docUri": null
+          },
+          "data": [
+            {
+              "metaInfo": {
+                "href": "https://192.168.0.242:58443/api/1.1/reservations/d9ca3191c0a8020201850398bd71e778",
+                "mediaType": "application/json"
+              },
+              "id": "d9ca3191c0a8020201850398bd71e778",
+              "code": null,
+              "sportId": "f27e8234c0a83332534017e05b879988",
+              "objectId": "54b8cab3c0a8463201cbe89d20857a81",
+              "tabIndex": 2,
+              "instructorId": "-1",
+              "occupancyId": "d9ca3151c0a8020201bc4eae7272e24d",
+              "note": "note",
+              "personCount": 8,
+              "price": {
+                "currencyCode": "CZK",
+                "price": 680,
+                "unitPrice": 85,
+                "chargedForPersonCount": true,
+                "chargedForLengthMinutes": null
+              },
+              "canceledDate": null,
+              "paidDate": null,
+              "createdDate": "2016-12-07T15:57:36.657+0100",
+              "startTime": "2016-12-07T18:00:00.000+0100",
+              "endTime": "2016-12-07T19:00:00.000+0100",
+              "cancelFee": null,
+              "waitingCancelFee": null,
+              "canceledWithoutFee": false,
+              "emailNotificationBeforeMinutes": null,
+              "smsNotificationBeforeMinutes": null,
+              "state": "UNPAID",
+              "paymentType": null,
+              "substitute": false,
+              "substituteForAnyObjectOfAreal": false,
+              "createReservationFromSubstitute": false,
+              "substituteAcceptanceMinutesBefore": 0,
+              "substituteEmailNotification": false,
+              "substituteSmsNotification": false,
+              "temporary": false,
+              "temporaryValidTo": null
+            }
+          ]
         }
