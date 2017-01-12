@@ -658,6 +658,20 @@ News are ordered by **publishedDate** descending.
                     }
                 ]
             }
+            
++ Response 201 (application/json)
+
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": []
+            }
         
 ## Terms and Conditions [/api/1.0/terms]
 <a name="terms_and_conditions"></a>
@@ -1914,8 +1928,8 @@ For more information on services follow the subsections:
 
 + Parameters 
     + date (optional, string, `2016-12-07`)...Date of the day in week to return schedule for. If parameter is omitted schedule for the current week is returned. See [JSON date serialization](#serialization) for detailed information about date formats.
-    + activityId (optional, string, `1a29b542c0a80202017bd99a8944e75f`)...Sets the filter to activity of given id. By default, schedule for all activities is returned. If the filter is set to activity only schedule for given activity is returned. In addition, the filter can be set to `full=true`. In this case schedule for all activities is returned and all sports whose activity differs from the provided one have attribute `matchesFilter` set to `false`.
-    + instructorId (optional, string, `67cccfa8ac1303f001c69fd9f3e79821`)...Sets the filter to instructor of given id. By default, schedule for all activities, regardless of their instructors, is returned. If the filter is set to instructor only schedule for activities that are taught by given instructor is returned. In addition, the filter can be set to `full=true`. In this case schedule for all activities is returned and all sports that are tought by instructor who differs from the provided one have attribute `matchesFilter` set to `false`.
+    + activityId (optional, string, `4848f94ec0a8463200cf37c86dcd5d2d`)...Sets the filter to activity of given id. By default, schedule for all activities is returned. If the filter is set to activity only schedule for given activity is returned. In addition, the filter can be set to `full=true`. In this case schedule for all activities is returned and all sports whose activity differs from the provided one have attribute `matchesFilter` set to `false`.
+    + instructorId (optional, string, `null`)...Sets the filter to instructor of given id. By default, schedule for all activities, regardless of their instructors, is returned. If the filter is set to instructor only schedule for activities that are taught by given instructor is returned. In addition, the filter can be set to `full=true`. In this case schedule for all activities is returned and all sports that are tought by instructor who differs from the provided one have attribute `matchesFilter` set to `false`.
     + full(optional, boolean, `false`)...By default, the service returns only schedule for rest of the week (without past days) with results filtered according to given `activityId` and `instructorId`. Value true can be used to retrieve schedule for the whole week including past days and filtered data. Sports that do not match the filter are included in the result and their attribute `matchesFilter` is set to `false`.
 
 ### Get week time line [GET]
@@ -7094,7 +7108,7 @@ Returns personal information of authenticated user which included security infor
 
 This section is for testing of Clubspire mobile application, especially of use case of getting week time line.
 
-## Week timeline of previous week 28.11-4.12 [/api/1.0/timeline/week?date=2016-11-30{?query1}]
+## Week timeline of previous week 28.11-4.12 [/api/1.0/timeline/week?date=2016-11-30&activityId=4848f94ec0a8463200cf37c86dcd5d2d&instructorId=null&full=false]
 
 ### Get week timeline of week 28.11-4.12 [GET]
 
@@ -7109,7 +7123,7 @@ This section is for testing of Clubspire mobile application, especially of use c
             "verboseMessage": null,
             "docUri": null
           },
-          "data": null
+          "data": []
         }
         
 + Response 201 (application/json)
@@ -7123,7 +7137,7 @@ This section is for testing of Clubspire mobile application, especially of use c
             "verboseMessage": null,
             "docUri": null
           },
-          "data": null
+          "data": []
         }
         
 ## Week timeline of future week 12.12-18.12 [/api/1.0/timeline/week?date=2016-12-14{?query1}]
