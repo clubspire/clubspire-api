@@ -1,8 +1,8 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: https://192.168.0.242:58443
 
 # CLUBSPIRE REST API
-CLUBSPIRE REST API provides programmatic access to read Club data, activities, instructors and schedules, 
+<b>CLUBSPIRE REST API </b> provides programmatic access to read Club data, activities, instructors and schedules, 
 manage reservations, synchronize users and more. The REST API identifies CLUBSPIRE applications and users 
 using <a href="https://oauth.net/2/">OAuth 2.0</a> protocol. Requests and responses use JSON data format. 
 
@@ -120,6 +120,10 @@ The client makes a request to the token endpoint by adding required parameters u
 
     + Attributes (User credentials authorization)
     
+    + Body 
+
+            grant_type=password&client_id=grandrelax&client_secret=grandrelax&username=clubspireapi1&password=clubspireapi
+    
 + Response 200 (application/json)
 
     + Attributes (object)
@@ -148,6 +152,11 @@ The client makes a request to the token endpoint by adding required parameters u
 + Request (application/x-www-form-urlencoded)
     + Attributes (User key grant authorization)
     
+    + Body 
+
+            grant_type=user_key&client_id=my_app&client_secret=some_secret&scope=write&user_key=re3f10a7c0a59874018f1d7ea59d6ax6
+    
+    
 + Response 200 (application/json)
 
     + Attributes (object)
@@ -168,6 +177,11 @@ The client makes a request to the token endpoint by adding required parameters u
 
 + Request (application/x-www-form-urlencoded)
     + Attributes (Client credentials authorization)
+    
+    + Body 
+
+            grant_type=client_credentials&client_id=my_app&client_secret=some_secret&scope=write
+
 
 + Response 200 (application/json)
     + Attributes (object)
@@ -7108,7 +7122,7 @@ Returns personal information of authenticated user which included security infor
 
 This section is for testing of Clubspire mobile application, especially of use case of getting week time line.
 
-## Week timeline of previous week 28.11-4.12 [/api/1.0/timeline/week?date=2016-11-30&activityId=4848f94ec0a8463200cf37c86dcd5d2d&instructorId=null&full=false]
+## Week timeline of previous week 28.11-4.12 [/api/1.0/timeline/week?date=2016-11-30&activityId=4848f94ec0a8463200cf37c86dcd5d2d]
 
 ### Get week timeline of week 28.11-4.12 [GET]
 
