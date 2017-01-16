@@ -116,7 +116,7 @@ The client makes a request to the token endpoint by adding required parameters u
 
 #### Authentication & Authorization [POST]
 
-+ Request (application/x-www-form-urlencoded)
++ Request User credentials (application/x-www-form-urlencoded)
 
     + Attributes (User credentials authorization)
     
@@ -149,7 +149,7 @@ The client makes a request to the token endpoint by adding required parameters u
             "error_description": "Cannot log in user."
         }
 
-+ Request (application/x-www-form-urlencoded)
++ Request User key grant (application/x-www-form-urlencoded)
     + Attributes (User key grant authorization)
     
     + Body 
@@ -175,7 +175,7 @@ The client makes a request to the token endpoint by adding required parameters u
                 "scope": "write"
             }
 
-+ Request (application/x-www-form-urlencoded)
++ Request Client credentials (application/x-www-form-urlencoded)
     + Attributes (Client credentials authorization)
     
     + Body 
@@ -1962,10 +1962,12 @@ from result by default. It is also possible to retrieve full schedule where spor
 in the result and their attribute `matchesFilter` is set to `false`. 
 
 + Request (application/json)
+
     + Headers
     
             Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
             
+ 
 + Response 200 (application/json)
 
     + Attribute
