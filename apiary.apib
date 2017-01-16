@@ -4177,13 +4177,13 @@ If invalid data is provided error message is returned to the caller. For complet
 
 <a name="response_messages3"></a>
 #### Response messages
-| Code                                  | Type             | Description                                                                                                                  |
-|:--------------------------------------|:-----------------|:-----------------------------------------------------------------------------------------------------------------------------|
-|`error.reservation.invalidData`        |ERROR_RECOVERABLE |General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.|
-|`error.reservation.startTime.fixed`    |ERROR_RECOVERABLE |Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
-|`error.reservation.object.notFound`    |ERROR_RECOVERABLE |Returned if provided object does not exist.
-|`error.reservation.sport.notFound`     |ERROR_RECOVERABLE |Returned if selected sport does not exist.
-|`error.reservation.instructor.notFound`|ERROR_FATAL       |Returned if provided instructor does not exist.
+| Code                                   | Type             | Description                                                                                                                  |
+|:-------------------------------------- |:-----------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|`error.reservation. invalidData`        |ERROR_RECOVERABLE |General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.|
+|`error.reservation. startTime.fixed`    |ERROR_RECOVERABLE |Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
+|`error.reservation. object.notFound`    |ERROR_RECOVERABLE |Returned if provided object does not exist.
+|`error.reservation. sport.notFound`     |ERROR_RECOVERABLE |Returned if selected sport does not exist.
+|`error.reservation. instructor.notFound`|ERROR_FATAL       |Returned if provided instructor does not exist.
 
 + Request (application/json)
     + Headers
@@ -4366,13 +4366,13 @@ If invalid data is provided error message is returned to the caller. For complet
 
 <a name="response_messages4"></a>
 #### Response messages
-| Code                                  | Type             | Description                                                                                                                  |
-|:--------------------------------------|:-----------------|:-----------------------------------------------------------------------------------------------------------------------------|
-|`error.reservation.invalidData`        |ERROR_RECOVERABLE |General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.                                              |
-|`error.reservation.startTime.fixed`    |ERROR_RECOVERABLE |Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
-|`error.reservation.object.notFound`    |ERROR_RECOVERABLE |Returned if provided object does not exist.
-|`error.reservation.sport.notFound`     |ERROR_RECOVERABLE |Returned if selected sport does not exist.
-|`error.reservation.instructor.notFound`|ERROR_FATAL       |Returned if provided instructor does not exist.
+| Code                                   | Type             | Description                                                                                                                  |
+|:-------------------------------------- |:-----------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|`error.reservation. invalidData`        |ERROR_RECOVERABLE |General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.                                              |
+|`error.reservation. startTime.fixed`    |ERROR_RECOVERABLE |Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
+|`error.reservation. object.notFound`    |ERROR_RECOVERABLE |Returned if provided object does not exist.
+|`error.reservation. sport.notFound`     |ERROR_RECOVERABLE |Returned if selected sport does not exist.
+|`error.reservation. instructor.notFound`|ERROR_FATAL       |Returned if provided instructor does not exist.
 
 + Request (application/json)
     + Headers
@@ -4551,24 +4551,24 @@ Restrictions, limits and settings are so complex that even small change, for exa
 If invalid data is provided error message is returned to the caller. For complete list of error codes and their meanings see [Response messages](#response_messages5).
 <a name="response_messages5"></a>
 #### Response messages
-| Code                                     | Type            | Description                                                                                                                  |
-|:---------------------------------------  |:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
-|`error.reservation.invalidData`           |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.                                              |
-|`error.reservation.find.failed`           |ERROR_FATAL      |Returned if provided reservation does not exist.|
-|`error.reservation.startTime.fixed`       |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
-|`error.reservation.endTime.fixed`         |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `endTime` differs from the scheduled end|
-|`error.reservation.object.notFound`       |ERROR_RECOVERABLE|Returned if provided object does not exist.
-|`error.reservation.sport.notFound`        |ERROR_RECOVERABLE|Returned if selected sport does not exist.
-|`error.reservation.sport.activityNotSet`  |ERROR_FATAL      |Returned if selected sport does not have activity correctly set. This is misconfiguration of the sport that needs to be corrected by administrator.|
-|`error.reservation.personCount.required`  |ERROR_RECOVERABLE|Returned if person count was not provided.|
-|`error.reservation.personCount.minValue`  |ERROR_RECOVERABLE|Returned if provided person count is less than allowed.|
-|`error.reservation.personCount.maxValue`  |ERROR_RECOVERABLE|Returned if provided person count exceeded maximum allowed value.|
-|`error.reservation.noFreeTimeInterval`    |ERROR_RECOVERABLE|Returned if there is no free place for the customer in selected time.|
-|`error.reservation.cannotEnsureMinLength` |ERROR_RECOVERABLE|Returned if the reservation has some minimal length requirement but it cannot be satisfied due to full capacity.|
-|`error.reservation.length.minValue`       |ERROR_RECOVERABLE|Returned if reservation length is less than minimum allowed length.|
-|`error.reservation.length.maxValue`       |ERROR_RECOVERABLE|Returned if reservation length is greater than maximum allowed length.|
-|`error.reservation.substitute.find.failed`|ERROR_FATAL      |Returned if provided substitute reservation does not exist.|
-|`error.reservation.instructor.notFound`   |ERROR_FATAL      |Returned if provided instructor does not exist.
+| Code                                      | Type            | Description                                                                                                                  |
+|:---------------------------------------   |:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|`error.reservation. invalidData`           |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.                                              |
+|`error.reservation. find.failed`           |ERROR_FATAL      |Returned if provided reservation does not exist.|
+|`error.reservation. startTime.fixed`       |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
+|`error.reservation. endTime.fixed`         |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `endTime` differs from the scheduled end|
+|`error.reservation. object.notFound`       |ERROR_RECOVERABLE|Returned if provided object does not exist.
+|`error.reservation. sport.notFound`        |ERROR_RECOVERABLE|Returned if selected sport does not exist.
+|`error.reservation. sport.activityNotSet`  |ERROR_FATAL      |Returned if selected sport does not have activity correctly set. This is misconfiguration of the sport that needs to be corrected by administrator.|
+|`error.reservation. personCount.required`  |ERROR_RECOVERABLE|Returned if person count was not provided.|
+|`error.reservation. personCount.minValue`  |ERROR_RECOVERABLE|Returned if provided person count is less than allowed.|
+|`error.reservation. personCount.maxValue`  |ERROR_RECOVERABLE|Returned if provided person count exceeded maximum allowed value.|
+|`error.reservation. noFreeTimeInterval`    |ERROR_RECOVERABLE|Returned if there is no free place for the customer in selected time.|
+|`error.reservation. cannotEnsureMinLength` |ERROR_RECOVERABLE|Returned if the reservation has some minimal length requirement but it cannot be satisfied due to full capacity.|
+|`error.reservation. length.minValue`       |ERROR_RECOVERABLE|Returned if reservation length is less than minimum allowed length.|
+|`error.reservation. length.maxValue`       |ERROR_RECOVERABLE|Returned if reservation length is greater than maximum allowed length.|
+|`error.reservation. substitute.find.failed`|ERROR_FATAL      |Returned if provided substitute reservation does not exist.|
+|`error.reservation. instructor.notFound`   |ERROR_FATAL      |Returned if provided instructor does not exist.
 
 + Request (application/json)
 
@@ -4763,24 +4763,24 @@ Restrictions, limits and settings are so complex that even small change, for exa
 If invalid data is provided error message is returned to the caller. For complete list of error codes and their meanings see [Response messages](#response_messages6).
 <a name="response_messages6"></a>
 #### Response messages
-| Code                                     | Type            | Description                                                                                                                  |
-|:---------------------------------------  |:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
-|`error.reservation.invalidData`           |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.                                              |
-|`error.reservation.find.failed`           |ERROR_FATAL      |Returned if provided reservation does not exist.|
-|`error.reservation.startTime.fixed`       |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
-|`error.reservation.endTime.fixed`         |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `endTime` differs from the scheduled end|
-|`error.reservation.object.notFound`       |ERROR_RECOVERABLE|Returned if provided object does not exist.
-|`error.reservation.sport.notFound`        |ERROR_RECOVERABLE|Returned if selected sport does not exist.
-|`error.reservation.sport.activityNotSet`  |ERROR_FATAL      |Returned if selected sport does not have activity correctly set. This is misconfiguration of the sport that needs to be corrected by administrator.|
-|`error.reservation.personCount.required`  |ERROR_RECOVERABLE|Returned if person count was not provided.|
-|`error.reservation.personCount.minValue`  |ERROR_RECOVERABLE|Returned if provided person count is less than allowed.|
-|`error.reservation.personCount.maxValue`  |ERROR_RECOVERABLE|Returned if provided person count exceeded maximum allowed value.|
-|`error.reservation.noFreeTimeInterval`    |ERROR_RECOVERABLE|Returned if there is no free place for the customer in selected time.|
-|`error.reservation.cannotEnsureMinLength` |ERROR_RECOVERABLE|Returned if the reservation has some minimal length requirement but it cannot be satisfied due to full capacity.|
-|`error.reservation.length.minValue`       |ERROR_RECOVERABLE|Returned if reservation length is less than minimum allowed length.|
-|`error.reservation.length.maxValue`       |ERROR_RECOVERABLE|Returned if reservation length is greater than maximum allowed length.|
-|`error.reservation.substitute.find.failed`|ERROR_FATAL      |Returned if provided substitute reservation does not exist.|
-|`error.reservation.instructor.notFound`   |ERROR_FATAL      |Returned if provided instructor does not exist.
+| Code                                      | Type            | Description                                                                                                                  |
+|:---------------------------------------   |:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|`error.reservation. invalidData`           |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.                                              |
+|`error.reservation. find.failed`           |ERROR_FATAL      |Returned if provided reservation does not exist.|
+|`error.reservation. startTime.fixed`       |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
+|`error.reservation. endTime.fixed`         |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `endTime` differs from the scheduled end|
+|`error.reservation. object.notFound`       |ERROR_RECOVERABLE|Returned if provided object does not exist.
+|`error.reservation. sport.notFound`        |ERROR_RECOVERABLE|Returned if selected sport does not exist.
+|`error.reservation. sport.activityNotSet`  |ERROR_FATAL      |Returned if selected sport does not have activity correctly set. This is misconfiguration of the sport that needs to be corrected by administrator.|
+|`error.reservation. personCount.required`  |ERROR_RECOVERABLE|Returned if person count was not provided.|
+|`error.reservation. personCount.minValue`  |ERROR_RECOVERABLE|Returned if provided person count is less than allowed.|
+|`error.reservation. personCount.maxValue`  |ERROR_RECOVERABLE|Returned if provided person count exceeded maximum allowed value.|
+|`error.reservation. noFreeTimeInterval`    |ERROR_RECOVERABLE|Returned if there is no free place for the customer in selected time.|
+|`error.reservation. cannotEnsureMinLength` |ERROR_RECOVERABLE|Returned if the reservation has some minimal length requirement but it cannot be satisfied due to full capacity.|
+|`error.reservation. length.minValue`       |ERROR_RECOVERABLE|Returned if reservation length is less than minimum allowed length.|
+|`error.reservation. length.maxValue`       |ERROR_RECOVERABLE|Returned if reservation length is greater than maximum allowed length.|
+|`error.reservation. substitute.find.failed`|ERROR_FATAL      |Returned if provided substitute reservation does not exist.|
+|`error.reservation. instructor.notFound`   |ERROR_FATAL      |Returned if provided instructor does not exist.
 
 + Request (application/json)
 
@@ -4984,46 +4984,46 @@ Recommended way to create new reservation is to follow these steps:
 
 <a name="response_messages7"></a>
 #### Response messages
-| Code                                                                      | Type            | Description                                                                                                                  |
-|---------------------------------------------------------------------------|:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
-|`success.reservation.created`                                              |INFO             |Returned if reservation has been created successfully.                                      |
-|`success.reservation.createdAndPaidByDeposit`                              |INFO             |Returned if reservation has been created and paid by deposit successfully. This is for the case when creation and payment are done in one step.|
-|`error.reservation.create.failed`                                          |ERROR_FATAL      |General message returned if reservation creation failed due to unexpected error.|
-|`error.reservation.invalidData`                                            |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.|
-|`error.reservation.startTime.fixed`                                        |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
-|`eerror.reservation.endTime.fixed`                                         |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `endTime` differs from the scheduled end.|
-|`error.reservation.object.notFound`                                        |ERROR_RECOVERABLE|Returned if provided object does not exist.|
-|`error.reservation.instructor.notFound`                                    |ERROR_FATAL      |Returned if provided instructor does not exist.|
-|`error.reservation.personCount.required`                                   |ERROR_RECOVERABLE|Returned if person count was not provided.|
-|`error.reservation.personCount.minValue`                                   |ERROR_RECOVERABLE|Returned if provided person count is less than allowed.|
-|`error.reservation.personCount.maxValue`                                   |ERROR_RECOVERABLE|Returned if provided person count exceeded maximum allowed value.|
-|`error.reservation.pendingReservations.limit.exceeded`                     |ERROR_RECOVERABLE|Returned if sum of all customer's unpaid reservations exceeded maximum allowed count. All places booked by the customer are counted in. For example, if the customer made 2 reservations and each reservation is for 3 persons total count of unpaid reservations is 6.|
-|`error.reservation.parallelReservations.limit.exceeded`                    |ERROR_RECOVERABLE|Returned if sum of all customer's parallel reservations exceeded maximum allowed count. Only reservations that overlap in time are counted in. All places booked by the customer are counted in.|
-|`error.reservation.parallelReservations.limit.exceeded.existingCount`      |ERROR_RECOVERABLE|Same as for `error.reservation.parallelReservations.limit.exceeded`. Moreover, information about actual parallel reservations count is added.|
-|`error.reservation.parallelReservations.limit.cannotCheck`                 |ERROR_FATAL      |Returned if parallel reservations limit cannot be checked due to unexpected reason.|
-|`error.reservation.parallelReservations.sport.limit.exceeded`              |ERROR_RECOVERABLE|Returned if sum of all customer's parallel reservations for given sport exceeded maximum allowed count. Only reservations that overlap in time and are for the same sport are counted in. All places booked by the customer are count in.|
-|`error.reservation.parallelReservations.sport.limit.exceeded.existingCount`|ERROR_RECOVERABLE|Same as for `error.reservation.parallelReservations.sport.limit.exceeded`. Moreover, information about actual parallel reservations count is added.|
-|`error.reservation.parallelReservations.sport.limit.cannotCheck`           |ERROR_FATAL      |Returned if parallel reservations limit for sport cannot be checked due to unexpected reason.|
-|`error.reservation.deposit.insufficient.amount`                            |ERROR_FATAL      |Returned if the customer does not have enough deposit balance to pay for the reservation. The reason can be:|
-|                                                                           |                 |deposit balance is lower than the price of the reservation|
-|                                                                           |                 |part of deposit is blocked as cash advance and the rest amount is lower than the price of the reservation|
-|`error.reservation.deposit.insufficient.amount.cashAdvance`                |ERROR_FATAL      |Same as for `error.reservation.deposit.insufficient.amount`. Moreover, information about cach advance for the reservation is added.|
-|`error.reservation.deposit.wrongType.thisReservation.cashAdvance`          |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay the cash advance for the reservation.|
-|`error.reservation.deposit.wrongType.thisReservation`                      |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay the reservation.|
-|`error.reservation.deposit.wrongType.existingReservation`                  |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay some existing reservation.|
-|`error.reservation.deposit.wrongType.existingReservation.cashAdvance`      |ERROR_FATAL      |Same as for `error.reservation.deposit.wrongType.existingReservation`. Moreover, information about cach advance for existing reservation is added.|
-|`error.reservation.seasonTicket.invalid`                                   |ERROR_FATAL      |Returned if the customer does not have valid season ticket with enough impulses to pay the reservation.|
-|`error.reservation.customerGroup.limited`                                  |ERROR_FATAL      |Returned if customer group of the customer does not allowed him to make the reservation.|
-|`error.reservation.noFreeTimeInterval`                                     |ERROR_RECOVERABLE|Returned if there is no free place for the customer in selected time.|
-|`error.reservation.cannotEnsureMinLength`                                  |ERROR_RECOVERABLE|Returned if the reservation has some minimal length requirement but it cannot be satisfied due to full capacity.|
-|`error.reservation.sport.notFound`                                         |ERROR_RECOVERABLE|Returned if selected sport does not exist.|
-|`error.reservation.sport.activityNotSet`                                   |ERROR_FATAL      |Returned if selected sport does not have activity correctly set. This is misconfiguration of the sport that needs to be corrected by administrator.|
-|`error.reservation.create.disabled`                                        |ERROR_FATAL      |Returned if creation of reservations is disabled for the club.|
-|`error.reservation.length.minValue`                                        |ERROR_RECOVERABLE|Returned if reservation length is less than minimum allowed length.|
-|`error.reservation.length.maxValue`                                        |ERROR_RECOVERABLE|Returned if reservation length is greater than maximum allowed length.|
-|`error.reservation.intoPast.disabled`                                      |ERROR_RECOVERABLE|Returned if customer tries to create reservation with start time that is before current time and reservations into past are disabled by the club.|
-|`error.reservation.intoFuture.exceeded`                                    |ERROR_RECOVERABLE|Returned if customer tries to create reservation with start time too far in future, exceeding maximum allowed future start time defined by the club.|
-|`error.payment.unsupportedType`                                            |ERROR_RECOVERABLE|Returned if provided payment type is not supported. In case of creation and payment in one step.|
+| Code                                                                         | Type            | Description                                                                                                                  |
+|---------------------------------------------------------------------------   |:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|`success.reservation. created`                                                |INFO             |Returned if reservation has been created successfully.                                      |
+|`success.reservation. createdAndPaidByDeposit`                                |INFO             |Returned if reservation has been created and paid by deposit successfully. This is for the case when creation and payment are done in one step.|
+|`error.reservation. create.failed`                                            |ERROR_FATAL      |General message returned if reservation creation failed due to unexpected error.|
+|`error.reservation. invalidData`                                              |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.|
+|`error.reservation. startTime.fixed`                                          |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
+|`eerror.reservation. endTime.fixed`                                           |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `endTime` differs from the scheduled end.|
+|`error.reservation. object.notFound`                                          |ERROR_RECOVERABLE|Returned if provided object does not exist.|
+|`error.reservation. instructor.notFound`                                      |ERROR_FATAL      |Returned if provided instructor does not exist.|
+|`error.reservation. personCount.required`                                     |ERROR_RECOVERABLE|Returned if person count was not provided.|
+|`error.reservation. personCount.minValue`                                     |ERROR_RECOVERABLE|Returned if provided person count is less than allowed.|
+|`error.reservation. personCount.maxValue`                                     |ERROR_RECOVERABLE|Returned if provided person count exceeded maximum allowed value.|
+|`error.reservation. pendingReservations. limit.exceeded`                      |ERROR_RECOVERABLE|Returned if sum of all customer's unpaid reservations exceeded maximum allowed count. All places booked by the customer are counted in. For example, if the customer made 2 reservations and each reservation is for 3 persons total count of unpaid reservations is 6.|
+|`error.reservation. parallelReservations. limit.exceeded`                     |ERROR_RECOVERABLE|Returned if sum of all customer's parallel reservations exceeded maximum allowed count. Only reservations that overlap in time are counted in. All places booked by the customer are counted in.|
+|`error.reservation. parallelReservations. limit.exceeded. existingCount`      |ERROR_RECOVERABLE|Same as for `error.reservation. parallelReservations.limit.exceeded.` Moreover, information about actual parallel reservations count is added.|
+|`error.reservation. parallelReservations. limit.cannotCheck`                  |ERROR_FATAL      |Returned if parallel reservations limit cannot be checked due to unexpected reason.|
+|`error.reservation. parallelReservations. sport.limit.exceeded`               |ERROR_RECOVERABLE|Returned if sum of all customer's parallel reservations for given sport exceeded maximum allowed count. Only reservations that overlap in time and are for the same sport are counted in. All places booked by the customer are count in.|
+|`error.reservation. parallelReservations. sport.limit. exceeded.existingCount`|ERROR_RECOVERABLE|Same as for `error.reservation. parallelReservations.sport.limit.exceeded.` Moreover, information about actual parallel reservations count is added.|
+|`error.reservation. parallelReservations. sport.limit.cannotCheck`            |ERROR_FATAL      |Returned if parallel reservations limit for sport cannot be checked due to unexpected reason.|
+|`error.reservation. deposit.insufficient. amount`                             |ERROR_FATAL      |Returned if the customer does not have enough deposit balance to pay for the reservation. The reason can be:|
+|                                                                              |                 |deposit balance is lower than the price of the reservation|
+|                                                                              |                 |part of deposit is blocked as cash advance and the rest amount is lower than the price of the reservation|
+|`error.reservation. deposit.insufficient. amount.cashAdvance`                 |ERROR_FATAL      |Same as for `error.reservation. deposit.insufficient.amount.` Moreover, information about cach advance for the reservation is added.|
+|`error.reservation. deposit.wrongType. thisReservation. cashAdvance`          |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay the cash advance for the reservation.|
+|`error.reservation. deposit.wrongType. thisReservation`                       |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay the reservation.|
+|`error.reservation. deposit.wrongType. existingReservation`                   |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay some existing reservation.|
+|`error.reservation. deposit.wrongType. existingReservation. cashAdvance`      |ERROR_FATAL      |Same as for `error.reservation. deposit.wrongType.existingReservation.` Moreover, information about cach advance for existing reservation is added.|
+|`error.reservation. seasonTicket.invalid`                                     |ERROR_FATAL      |Returned if the customer does not have valid season ticket with enough impulses to pay the reservation.|
+|`error.reservation. customerGroup.limited`                                    |ERROR_FATAL      |Returned if customer group of the customer does not allowed him to make the reservation.|
+|`error.reservation. noFreeTimeInterval`                                       |ERROR_RECOVERABLE|Returned if there is no free place for the customer in selected time.|
+|`error.reservation. cannotEnsureMinLength`                                    |ERROR_RECOVERABLE|Returned if the reservation has some minimal length requirement but it cannot be satisfied due to full capacity.|
+|`error.reservation. sport.notFound`                                           |ERROR_RECOVERABLE|Returned if selected sport does not exist.|
+|`error.reservation. sport.activityNotSet`                                     |ERROR_FATAL      |Returned if selected sport does not have activity correctly set. This is misconfiguration of the sport that needs to be corrected by administrator.|
+|`error.reservation. create.disabled`                                          |ERROR_FATAL      |Returned if creation of reservations is disabled for the club.|
+|`error.reservation. length.minValue`                                          |ERROR_RECOVERABLE|Returned if reservation length is less than minimum allowed length.|
+|`error.reservation. length.maxValue`                                          |ERROR_RECOVERABLE|Returned if reservation length is greater than maximum allowed length.|
+|`error.reservation. intoPast.disabled`                                        |ERROR_RECOVERABLE|Returned if customer tries to create reservation with start time that is before current time and reservations into past are disabled by the club.|
+|`error.reservation. intoFuture.exceeded`                                      |ERROR_RECOVERABLE|Returned if customer tries to create reservation with start time too far in future, exceeding maximum allowed future start time defined by the club.|
+|`error.payment. unsupportedType`                                              |ERROR_RECOVERABLE|Returned if provided payment type is not supported. In case of creation and payment in one step.|
 
 + Request (application/json)
 
@@ -5322,50 +5322,50 @@ Fee amount is defined by the club and depends on sport, customer group of the us
 
 <a name="response_messages10"></a>
 #### Response messages
-| Code                                                                      | Type            | Description                                                                                                                  |
-|---------------------------------------------------------------------------|:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
-|`success.reservation.changed`                                              |INFO             |Returned if reservation has been modified successfully.                                      |
-|`error.reservation.save.failed                                             |ERROR_FATAL      |General message returned if reservation couldn't be saved due to unexpected error.|
-|`error.reservation.invalidData`                                            |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.|
-|`error.reservation.edit.canceled`                                          |ERROR_FATAL      |Returned if user tries to edit reservation that has been canceled.|
-|`error.reservation.edit.onBill`                                            |ERROR_FATAL      |Returned if user tries to edit reservation that has been added into the open bill.|
-|`error.reservation.edit.minTimeBefore.exceeded`                            |ERROR_FATAL      |Returned if reservation cannot be edited due to time limit for editation being exceeded. The limit is set as time, usually several hours, before lesson start. Any modifications are disabled if actual time before lesson start is less than the limit.|
-|`error.reservation.edit.customerPersonCount.notEnough`                     |ERROR_RECOVERABLE|Returned only in case of shared reservation if user's part of the reservation has no more places and she/he tries to decrease person count.|
-|`error.reservation.edit.notOwner`                                          |ERROR_FATAL      |Returned if the user trying to edit reservation is not the owner or co-owner.|
-|`error.reservation.startTime.fixed`                                        |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
-|`eerror.reservation.endTime.fixed`                                         |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `endTime` differs from the scheduled end.|
-|`error.reservation.object.notFound`                                        |ERROR_RECOVERABLE|Returned if provided object does not exist.|
-|`error.reservation.instructor.notFound`                                    |ERROR_FATAL      |Returned if provided instructor does not exist.|
-|`error.reservation.personCount.required`                                   |ERROR_RECOVERABLE|Returned if person count was not provided.|
-|`error.reservation.personCount.minValue`                                   |ERROR_RECOVERABLE|Returned if provided person count is less than allowed.|
-|`error.reservation.personCount.maxValue`                                   |ERROR_RECOVERABLE|Returned if provided person count exceeded maximum allowed value.|
-|`error.reservation.pendingReservations.limit.exceeded`                     |ERROR_RECOVERABLE|Returned if sum of all customer's unpaid reservations exceeded maximum allowed count. All places booked by the customer are counted in. For example, if the customer made 2 reservations and each reservation is for 3 persons total count of unpaid reservations is 6.|
-|`error.reservation.parallelReservations.limit.exceeded`                    |ERROR_RECOVERABLE|Returned if sum of all customer's parallel reservations exceeded maximum allowed count. Only reservations that overlap in time are counted in. All places booked by the customer are counted in.|
-|`error.reservation.parallelReservations.limit.exceeded.existingCount`      |ERROR_RECOVERABLE|Same as for `error.reservation.parallelReservations.limit.exceeded`. Moreover, information about actual parallel reservations count is added.|
-|`error.reservation.parallelReservations.limit.cannotCheck`                 |ERROR_FATAL      |Returned if parallel reservations limit cannot be checked due to unexpected reason.|
-|`error.reservation.parallelReservations.sport.limit.exceeded`              |ERROR_RECOVERABLE|Returned if sum of all customer's parallel reservations for given sport exceeded maximum allowed count. Only reservations that overlap in time and are for the same sport are counted in. All places booked by the customer are count in.|
-|`error.reservation.parallelReservations.sport.limit.exceeded.existingCount`|ERROR_RECOVERABLE|Same as for `error.reservation.parallelReservations.sport.limit.exceeded`. Moreover, information about actual parallel reservations count is added.|
-|`error.reservation.parallelReservations.sport.limit.cannotCheck`           |ERROR_FATAL      |Returned if parallel reservations limit for sport cannot be checked due to unexpected reason.|
-|`error.reservation.deposit.insufficient.amount`                            |ERROR_FATAL      |Returned if the customer does not have enough deposit balance to pay for the reservation. The reason can be:|
-|                                                                           |                 |deposit balance is lower than the price of the reservation|
-|                                                                           |                 |part of deposit is blocked as cash advance and the rest amount is lower than the price of the reservation|
-|`error.reservation.deposit.insufficient.amount.cashAdvance`                |ERROR_FATAL      |Same as for `error.reservation.deposit.insufficient.amount`. Moreover, information about cach advance for the reservation is added.|
-|`error.reservation.deposit.wrongType.thisReservation.cashAdvance`          |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay the cash advance for the reservation.|
-|`error.reservation.deposit.wrongType.thisReservation`                      |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay the reservation.|
-|`error.reservation.deposit.wrongType.existingReservation`                  |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay some existing reservation.|
-|`error.reservation.deposit.wrongType.existingReservation.cashAdvance`      |ERROR_FATAL      |Same as for `error.reservation.deposit.wrongType.existingReservation`. Moreover, information about cach advance for existing reservation is added.|
-|`error.reservation.seasonTicket.invalid`                                   |ERROR_FATAL      |Returned if the customer does not have valid season ticket with enough impulses to pay the reservation.|
-|`error.reservation.customerGroup.limited`                                  |ERROR_FATAL      |Returned if customer group of the customer does not allowed him to make the reservation.|
-|`error.reservation.noFreeTimeInterval`                                     |ERROR_RECOVERABLE|Returned if there is no free place for the customer in selected time.|
-|`error.reservation.cannotEnsureMinLength`                                  |ERROR_RECOVERABLE|Returned if the reservation has some minimal length requirement but it cannot be satisfied due to full capacity.|
-|`error.reservation.sport.notFound`                                         |ERROR_RECOVERABLE|Returned if selected sport does not exist.|
-|`error.reservation.sport.activityNotSet`                                   |ERROR_FATAL      |Returned if selected sport does not have activity correctly set. This is misconfiguration of the sport that needs to be corrected by administrator.|
-|`error.reservation.create.disabled`                                        |ERROR_FATAL      |Returned if creation of reservations is disabled for the club.|
-|`error.reservation.length.minValue`                                        |ERROR_RECOVERABLE|Returned if reservation length is less than minimum allowed length.|
-|`error.reservation.length.maxValue`                                        |ERROR_RECOVERABLE|Returned if reservation length is greater than maximum allowed length.|
-|`error.reservation.intoPast.disabled`                                      |ERROR_RECOVERABLE|Returned if customer tries to create reservation with start time that is before current time and reservations into past are disabled by the club.|
-|`error.reservation.intoFuture.exceeded`                                    |ERROR_RECOVERABLE|Returned if customer tries to create reservation with start time too far in future, exceeding maximum allowed future start time defined by the club.|
-|`error.payment.unsupportedType`                                            |ERROR_RECOVERABLE|Returned if provided payment type is not supported. In case of creation and payment in one step.|
+| Code                                                                         | Type            | Description                                                                                                                  |
+|------------------------------------------------------------------------------|:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|`success.reservation. changed`                                                |INFO             |Returned if reservation has been modified successfully.                                      |
+|`error.reservation. save.failed`                                              |ERROR_FATAL      |General message returned if reservation couldn't be saved due to unexpected error.|
+|`error.reservation. invalidData`                                              |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.|
+|`error.reservation. edit.canceled`                                            |ERROR_FATAL      |Returned if user tries to edit reservation that has been canceled.|
+|`error.reservation. edit.onBill`                                              |ERROR_FATAL      |Returned if user tries to edit reservation that has been added into the open bill.|
+|`error.reservation. edit.minTimeBefore. exceeded`                             |ERROR_FATAL      |Returned if reservation cannot be edited due to time limit for editation being exceeded. The limit is set as time, usually several hours, before lesson start. Any modifications are disabled if actual time before lesson start is less than the limit.|
+|`error.reservation. edit.customerPersonCount. notEnough`                      |ERROR_RECOVERABLE|Returned only in case of shared reservation if user's part of the reservation has no more places and she/he tries to decrease person count.|
+|`error.reservation. edit.notOwner`                                            |ERROR_FATAL      |Returned if the user trying to edit reservation is not the owner or co-owner.|
+|`error.reservation. startTime.fixed`                                          |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `startTime` differs from the scheduled start.|
+|`eerror.reservation. endTime.fixed`                                           |ERROR_RECOVERABLE|Returned for reservations of week activities with fixed schedule, if provided `endTime` differs from the scheduled end.|
+|`error.reservation. object.notFound`                                          |ERROR_RECOVERABLE|Returned if provided object does not exist.|
+|`error.reservation. instructor.notFound`                                      |ERROR_FATAL      |Returned if provided instructor does not exist.|
+|`error.reservation. personCount.required`                                     |ERROR_RECOVERABLE|Returned if person count was not provided.|
+|`error.reservation. personCount.minValue`                                     |ERROR_RECOVERABLE|Returned if provided person count is less than allowed.|
+|`error.reservation. personCount.maxValue`                                     |ERROR_RECOVERABLE|Returned if provided person count exceeded maximum allowed value.|
+|`error.reservation. pendingReservations. limit.exceeded`                      |ERROR_RECOVERABLE|Returned if sum of all customer's unpaid reservations exceeded maximum allowed count. All places booked by the customer are counted in. For example, if the customer made 2 reservations and each reservation is for 3 persons total count of unpaid reservations is 6.|
+|`error.reservation. parallelReservations. limit.exceeded`                     |ERROR_RECOVERABLE|Returned if sum of all customer's parallel reservations exceeded maximum allowed count. Only reservations that overlap in time are counted in. All places booked by the customer are counted in.|
+|`error.reservation. parallelReservations. limit.exceeded. existingCount`      |ERROR_RECOVERABLE|Same as for `error.reservation. parallelReservations.limit. exceeded.` Moreover, information about actual parallel reservations count is added.|
+|`error.reservation. parallelReservations. limit.cannotCheck`                  |ERROR_FATAL      |Returned if parallel reservations limit cannot be checked due to unexpected reason.|
+|`error.reservation. parallelReservations. sport.limit.exceeded`               |ERROR_RECOVERABLE|Returned if sum of all customer's parallel reservations for given sport exceeded maximum allowed count. Only reservations that overlap in time and are for the same sport are counted in. All places booked by the customer are count in.|
+|`error.reservation. parallelReservations. sport.limit. exceeded.existingCount`|ERROR_RECOVERABLE|Same as for `error.reservation. parallelReservations.sport. limit.exceeded.` Moreover, information about actual parallel reservations count is added.|
+|`error.reservation. parallelReservations. sport.limit.cannotCheck`            |ERROR_FATAL      |Returned if parallel reservations limit for sport cannot be checked due to unexpected reason.|
+|`error.reservation. deposit.insufficient. amount`                             |ERROR_FATAL      |Returned if the customer does not have enough deposit balance to pay for the reservation. The reason can be:|
+|                                                                              |                 |deposit balance is lower than the price of the reservation|
+|                                                                              |                 |part of deposit is blocked as cash advance and the rest amount is lower than the price of the reservation|
+|`error.reservation. deposit.insufficient. amount.cashAdvance`                 |ERROR_FATAL      |Same as for `error.reservation. deposit.insufficient. amount.` Moreover, information about cach advance for the reservation is added.|
+|`error.reservation. deposit.wrongType. thisReservation. cashAdvance`          |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay the cash advance for the reservation.|
+|`error.reservation. deposit.wrongType. thisReservation`                       |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay the reservation.|
+|`error.reservation. deposit.wrongType. existingReservation`                   |ERROR_FATAL      |Returned if the customer's deposit type cannot be used to pay some existing reservation.|
+|`error.reservation. deposit.wrongType. existingReservation. cashAdvance`      |ERROR_FATAL      |Same as for `error.reservation. deposit.wrongType. existingReservation.` Moreover, information about cach advance for existing reservation is added.|
+|`error.reservation. seasonTicket.invalid`                                     |ERROR_FATAL      |Returned if the customer does not have valid season ticket with enough impulses to pay the reservation.|
+|`error.reservation. customerGroup.limited`                                    |ERROR_FATAL      |Returned if customer group of the customer does not allowed him to make the reservation.|
+|`error.reservation. noFreeTimeInterval`                                       |ERROR_RECOVERABLE|Returned if there is no free place for the customer in selected time.|
+|`error.reservation. cannotEnsureMinLength`                                    |ERROR_RECOVERABLE|Returned if the reservation has some minimal length requirement but it cannot be satisfied due to full capacity.|
+|`error.reservation. sport.notFound`                                           |ERROR_RECOVERABLE|Returned if selected sport does not exist.|
+|`error.reservation. sport.activityNotSet`                                     |ERROR_FATAL      |Returned if selected sport does not have activity correctly set. This is misconfiguration of the sport that needs to be corrected by administrator.|
+|`error.reservation. create.disabled`                                          |ERROR_FATAL      |Returned if creation of reservations is disabled for the club.|
+|`error.reservation. length.minValue`                                          |ERROR_RECOVERABLE|Returned if reservation length is less than minimum allowed length.|
+|`error.reservation. length.maxValue`                                          |ERROR_RECOVERABLE|Returned if reservation length is greater than maximum allowed length.|
+|`error.reservation. intoPast.disabled`                                        |ERROR_RECOVERABLE|Returned if customer tries to create reservation with start time that is before current time and reservations into past are disabled by the club.|
+|`error.reservation. intoFuture.exceeded`                                      |ERROR_RECOVERABLE|Returned if customer tries to create reservation with start time too far in future, exceeding maximum allowed future start time defined by the club.|
+|`error.payment. unsupportedType`                                              |ERROR_RECOVERABLE|Returned if provided payment type is not supported. In case of creation and payment in one step.|
 
 + Request (application/json)
 
@@ -5665,16 +5665,16 @@ There are several restrictions and limits that are checked by the system during 
 Fee amount is defined by the club and depends on sport, customer group of the user, time of the cancellation and other things.
 <a name="response_messages11"></a>
 #### Response messages
-| Code                                              | Type      | Description                                                                                                                  |
-|-------------------------------------------------- |:----------|:-----------------------------------------------|
-|`sucess.reservation.canceled`                      |INFO       |Returned if reservation has been successfully canceled.|
-|`error.reservation.notOwner`                       |ERROR_FATAL|Returned if authenticated user is not the owner of reservation.|
-|`error.reservation.find.failed`                    |ERROR_FATAL|Returned if reservation does not exist.|
-|`error.reservation.cancel.failed`                  |ERROR_FATAL|General message returned if reservation cannot be canceled.|
-|`error.reservation.cancel.already.cancelled`       |ERROR_FATAL|Returned if user tries to cancel reservation that has already been canceled.|
-|`error.reservation.cancel.onBill`                  |ERROR_FATAL|Returned if user tries to cancel reservation that has been added into the open bill.|
-|`error.reservation.cancel.minTimeBefore.exceeded`  |ERROR_FATAL|Returned if reservation cannot be canceled due to time limit for cancellation being exceeded. The limit is set as time, usually several hours, before lesson start. Cancellation is disabled if actual time before lesson start is less than the limit.|
-|`error.reservation.cancel.feeCalculation.failed`   |ERROR_FATAL|Returned if cancellation fee cannot be calculated due to unexpected error.|
+| Code                                               | Type      | Description                                                                                                                  |
+|--------------------------------------------------- |:----------|:-----------------------------------------------|
+|`sucess.reservation.canceled`                       |INFO       |Returned if reservation has been successfully canceled.|
+|`error.reservation.notOwner`                        |ERROR_FATAL|Returned if authenticated user is not the owner of reservation.|
+|`error.reservation.find.failed`                     |ERROR_FATAL|Returned if reservation does not exist.|
+|`error.reservation. cancel.failed`                  |ERROR_FATAL|General message returned if reservation cannot be canceled.|
+|`error.reservation. cancel.already.cancelled`       |ERROR_FATAL|Returned if user tries to cancel reservation that has already been canceled.|
+|`error.reservation. cancel.onBill`                  |ERROR_FATAL|Returned if user tries to cancel reservation that has been added into the open bill.|
+|`error.reservation. cancel.minTimeBefore.exceeded`  |ERROR_FATAL|Returned if reservation cannot be canceled due to time limit for cancellation being exceeded. The limit is set as time, usually several hours, before lesson start. Cancellation is disabled if actual time before lesson start is less than the limit.|
+|`error.reservation. cancel.feeCalculation.failed`   |ERROR_FATAL|Returned if cancellation fee cannot be calculated due to unexpected error.|
 
 + Request (application/json)
 
@@ -5697,18 +5697,18 @@ If payment fails, for example due to low deposit balance, an error message is re
 
 <a name="response_messages12"></a>
 #### Response messages
-| Code                                          |Type             |Description                                                                                                                  |
-|-----------------------------------------------|:----------------|:-----------------------------------------------|
-|`success.paymentForReservation.deposit.success`|INFO             |Returned if reservation has been paid by deposit successfully.|
-|`error.payment.notEnabled`                     |ERROR_FATAL      |Returned if payments are disabled by the club.|
-|`error.payment.deposit.disabled`               |ERROR_FATAL      |Returned if payments by deposit are disabled by the club.|
-|`error.payment.unsupportedType`                |ERROR_RECOVERABLE|Returned if unsupported payment type was provided. Currently supported payment types are: DEPOSIT|
-|`error.payment.notProceed`                     |ERROR_FATAL      |General message returned if payment failed due to unexpected error.|
-|`error.payment.internalError`                  |ERROR_FATAL      |General message returned if payment failed due to unexpected internal error.|
-|`error.payment.invalidData`                    |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.|
-|`error.reservation.notOwner`                   |ERROR_FATAL      |Returned if authenticated user is not the owner of reservation.|
-|`error.reservation.find.failed`                |ERROR_FATAL      |Returned if reservation does not exist.|
-|`error.payment.reservation.alreadyPaid`        |ERROR_FATAL      |Returned if user tries to pay reservation that has already been paid|
+| Code                                           |Type             |Description                                                                                                                  |
+|------------------------------------------------|:----------------|:-----------------------------------------------|
+|`success.paymentForReservation. deposit.success`|INFO             |Returned if reservation has been paid by deposit successfully.|
+|`error.payment.notEnabled`                      |ERROR_FATAL      |Returned if payments are disabled by the club.|
+|`error.payment.deposit.disabled`                |ERROR_FATAL      |Returned if payments by deposit are disabled by the club.|
+|`error.payment.unsupportedType`                 |ERROR_RECOVERABLE|Returned if unsupported payment type was provided. Currently supported payment types are: DEPOSIT|
+|`error.payment.notProceed`                      |ERROR_FATAL      |General message returned if payment failed due to unexpected error.|
+|`error.payment.internalError`                   |ERROR_FATAL      |General message returned if payment failed due to unexpected internal error.|
+|`error.payment.invalidData`                     |ERROR_RECOVERABLE|General message returned if provided data was not valid. More detailed information might be retrieved from `fieldErrors` attribute of the response message.|
+|`error.reservation.notOwner`                    |ERROR_FATAL      |Returned if authenticated user is not the owner of reservation.|
+|`error.reservation.find.failed`                 |ERROR_FATAL      |Returned if reservation does not exist.|
+|`error.payment.reservation. alreadyPaid`        |ERROR_FATAL      |Returned if user tries to pay reservation that has already been paid|
 
 + Request (application/json)
 
