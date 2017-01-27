@@ -1087,110 +1087,52 @@ The service returns collection of all valid season ticket packages of authentica
     + Body
     
             {
-                "message": {
-                    "httpStatus": 200,
-                    "type": "INFO",
-                    "code": null,
-                    "clientMessage": null,
-                    "verboseMessage": null,
-                    "docUri": null
-                },
-                "data": [
+              "message": {
+                "httpStatus": 200,
+                "type": "INFO",
+                "code": null,
+                "clientMessage": null,
+                "verboseMessage": null,
+                "docUri": null
+              },
+              "data": [
+                {
+                  "metaInfo": null,
+                  "name": "20 vstupů Bazén",
+                  "paidDate": "2016-11-21T14:23:48.155+0100",
+                  "expireSoon": false,
+                  "shared": false,
+                  "price": {
+                    "currencyCode": "CZK",
+                    "price": 1600
+                  },
+                  "seasonTickets": [
                     {
-                        "metaInfo": null,
-                        "name": "Squash 10x",
-                        "paidDate": "2015-06-08T11:47:56.818+0200",
-                        "expireSoon": false,
-                        "shared": false,
-                        "price": {
-                            "currencyCode": "CZK",
-                            "price": 1000
-                        },
-                        "seasonTickets": [
-                            {
-                                "metaInfo": {
-                                    "href": "https://reservation.grandrelax.cz/api/1.0/accounts/my/season-tickets/d291c05bc0a8020201e0ab4002e103c0",
-                                    "mediaType": "application/json"
-                                },
-                                "id": "d291c05bc0a8020201e0ab4002e103c0",
-                                "name": "Squash 10x",
-                                "paidDate": "2015-06-08T11:47:56.818+0200",
-                                "validFrom": "2015-06-08T00:00:00.000+0200",
-                                "validTo": "2015-12-07T23:59:59.999+0100",
-                                "impulsesInitial": 10,
-                                "impulsesActual": 10,
-                                "price": {
-                                    "currencyCode": "CZK",
-                                    "price": 1000
-                                },
-                                "impulsesLimit": null,
-                                "impulsesLimitPeriod": null,
-                                "sportNames": [
-                                    "Squash So 8:00-17:00",
-                                    "Squash Ne 8:00-17:00",
-                                    "Squash Po-Pá 11:00-15:00",
-                                    "Squash Po-Pá 15:00-17:00",
-                                    "Squash Po-Pá 17:00-20:00",
-                                    "Squash Po-Pá 7:00-11:00",
-                                    "Squash Po-Pá 20:00-22:00",
-                                    "Squash So 17:00-22:00",
-                                    "Squash Ne 17:00-22:00",
-                                    "Squash Pá 17:00-20:00",
-                                    "Squash Pá 20:00-22:00"
-                                ],
-                                "productNames": null,
-                                "shared": false,
-                                "expireSoon": false
-                            }
-                        ]
-                    },
-                    {
-                        "metaInfo": null,
-                        "name": "Drink 100x",
-                        "paidDate": "2015-06-08T11:47:56.818+0200",
-                        "expireSoon": false,
-                        "shared": false,
-                        "price": {
-                            "currencyCode": "CZK",
-                            "price": 1000
-                        },
-                        "seasonTickets": [
-                            {
-                                "metaInfo": {
-                                    "href": "https://reservation.grandrelax.cz/api/1.0/accounts/my/season-tickets/d291c071c0a802020030cff0d639bcde",
-                                    "mediaType": "application/json"
-                                },
-                                "id": "d291c071c0a802020030cff0d639bcde",
-                                "name": "Drink 100x",
-                                "paidDate": "2015-06-08T11:47:56.818+0200",
-                                "validFrom": "2015-06-08T00:00:00.000+0200",
-                                "validTo": "2017-06-07T23:59:59.999+0200",
-                                "impulsesInitial": 100,
-                                "impulsesActual": 100,
-                                "price": {
-                                    "currencyCode": "CZK",
-                                    "price": 1000
-                                },
-                                "impulsesLimit": null,
-                                "impulsesLimitPeriod": null,
-                                "sportNames": null,
-                                "productNames": [
-                                    "Carnitin CITRON",
-                                    "Carnitin KIWI",
-                                    "Isodrinx CITRON",
-                                    "Carnitin ČERVENÝ POMERANČ",
-                                    "Bonaqua JEMNĚ PERLIVÁ",
-                                    "Coca-Cola",
-                                    "Evian 0,5l",
-                                    "Carnitin ANANAS",
-                                    "Bonaqua NEPERLIVÁ"
-                                ],
-                                "shared": false,
-                                "expireSoon": false
-                            }
-                        ]
+                      "metaInfo": {
+                        "href": "https://api.clubspire.com/api/1.0/accounts/my/season-tickets/870e8f5ec0a80202019399ca42c96205",
+                        "mediaType": "application/json"
+                      },
+                      "id": "870e8f5ec0a80202019399ca42c96205",
+                      "name": "20 vstupů Bazén",
+                      "paidDate": "2016-11-21T14:23:48.155+0100",
+                      "validFrom": "2016-11-21T00:00:00.000+0100",
+                      "validTo": "2017-11-20T23:59:59.999+0100",
+                      "impulsesInitial": 20,
+                      "impulsesActual": 20,
+                      "impulsesLimit": null,
+                      "impulsesLimitPeriod": null,
+                      "sportNames": [
+                        "Bazén So,Ne,Sv. ",
+                        "Bazén Po-Pá 6:00-8:30",
+                        "Bazén Po-Pá 13:00-22:00"
+                      ],
+                      "productNames": null,
+                      "shared": false,
+                      "expireSoon": false
                     }
-                ]
+                  ]
+                }
+              ]
             }
         
 ## My season tickets history [/api/1.0/accounts/my/season-tickets/history]
@@ -1256,12 +1198,12 @@ Returns a detailed information about history of season ticket packages of authen
                   ]
                 }
               ]
-            }
+             }
         
 ## Season ticket detail [/api/1.0/accounts/my/season-tickets/{id}]
 <a name="season_ticket_detail"></a>
 + Parameters 
-    + id (required, string, `d291c071c0a802020030cff0d639bcde`)...Unique identifier of the desired season ticket.
+    + id (required, string, `870e8f5ec0a80202019399ca42c96205`)...Unique identifier of the desired season ticket.
 
 ### Get season ticket detail [GET]
 Returns detailed information about season ticket of given **id**. Authenticated user must be the owner or co-owner of the season ticket. 
@@ -1278,45 +1220,39 @@ Returns detailed information about season ticket of given **id**. Authenticated 
     + Body
 
             {
-                "message": {
-                    "httpStatus": 200,
-                    "type": "INFO",
-                    "code": null,
-                    "clientMessage": null,
-                    "verboseMessage": null,
-                    "docUri": null
-                },
-                "data": [
-                    {
-                        "metaInfo": {
-                            "href": "https://reservation.grandrelax.cz/api/1.0/accounts/my/season-tickets/d291c071c0a802020030cff0d639bcde",
-                            "mediaType": "application/json"
-                        },
-                        "id": "d291c071c0a802020030cff0d639bcde",
-                        "name": "Drink 100x",
-                        "paidDate": "2015-06-08T11:47:56.818+0200",
-                        "validFrom": "2015-06-08T00:00:00.000+0200",
-                        "validTo": "2017-06-07T23:59:59.999+0200",
-                        "impulsesInitial": 100,
-                        "impulsesActual": 100,
-                        "impulsesLimit": null,
-                        "impulsesLimitPeriod": null,
-                        "sportNames": null,
-                        "productNames": [
-                            "Carnitin CITRON",
-                            "Carnitin KIWI",
-                            "Isodrinx CITRON",
-                            "Carnitin ČERVENÝ POMERANČ",
-                            "Bonaqua JEMNĚ PERLIVÁ",
-                            "Coca-Cola",
-                            "Evian 0,5l",
-                            "Carnitin ANANAS",
-                            "Bonaqua NEPERLIVÁ"
-                        ],
-                        "shared": false,
-                        "expireSoon": false
-                    }
-                ]
+              "message": {
+                "httpStatus": 200,
+                "type": "INFO",
+                "code": null,
+                "clientMessage": null,
+                "verboseMessage": null,
+                "docUri": null
+              },
+              "data": [
+                {
+                  "metaInfo": {
+                    "href": "https://api.clubspire.com/api/1.0/accounts/my/season-tickets/870e8f5ec0a80202019399ca42c96205",
+                    "mediaType": "application/json"
+                  },
+                  "id": "870e8f5ec0a80202019399ca42c96205",
+                  "name": "20 vstupů Bazén",
+                  "paidDate": "2016-11-21T14:23:48.155+0100",
+                  "validFrom": "2016-11-21T00:00:00.000+0100",
+                  "validTo": "2017-11-20T23:59:59.999+0100",
+                  "impulsesInitial": 20,
+                  "impulsesActual": 20,
+                  "impulsesLimit": null,
+                  "impulsesLimitPeriod": null,
+                  "sportNames": [
+                    "Bazén So,Ne,Sv. ",
+                    "Bazén Po-Pá 6:00-8:30",
+                    "Bazén Po-Pá 13:00-22:00"
+                  ],
+                  "productNames": null,
+                  "shared": false,
+                  "expireSoon": false
+                }
+              ]
             }
  
 # Group Activities
@@ -5754,231 +5690,223 @@ Returns list of actual reservations of authenticated user. Only reservations tha
     
     + Body
     
-            {
-                "message": {
-                    "httpStatus": 200,
-                    "type": "INFO",
-                    "code": null,
-                    "clientMessage": null,
-                    "verboseMessage": null,
-                    "docUri": null
+                {
+                    "message": {
+                        "httpStatus": 200,
+                        "type": "INFO",
+                        "code": null,
+                        "clientMessage": null,
+                        "verboseMessage": null,
+                        "docUri": null
                 },
                 "data": [
                     {
                         "metaInfo": {
-                            "href": "https://reservation.grandrelax.cz/api/1.0/reservations/264821dbc0a8020200b6fed98409be92",
+                            "href": "https://192.168.0.242:58443/api/1.0/reservations/d2e1abf5c0a8020200481f6bac885304",
                             "mediaType": "application/json"
                         },
-                        "id": "264821dbc0a8020200b6fed98409be92",
+                        "id": "d2e1abf5c0a8020200481f6bac885304",
                         "personCount": 1,
-                        "startTime": "2015-06-28T17:00:00.000+0200",
-                        "endTime": "2015-06-28T17:30:00.000+0200",
+                        "startTime": "2016-12-06T09:00:00.000+0100",
+                        "endTime": "2016-12-06T10:00:00.000+0100",
                         "paidDate": null,
-                        "cancelDate": null,
+                        "canceledDate": null,
                         "price": {
                             "currencyCode": "CZK",
-                            "price": 245
+                            "price": 120
                         },
                         "cancelFee": null,
                         "sport": {
-                            "id": "67cccfa8ac1303f001c69fd9f3e79821",
-                            "name": "Power Plate - Nikol Filipová",
+                            "id": "86e1b73ec0a80067012834230aa071d6",
+                            "name": "Fyzička i po porodu",
                             "instructors": null,
                             "activity": {
                                 "metaInfo": {
-                                    "href": "https://reservation.grandrelax.cz/api/1.0/activities/639a13aeac1303f001f3a370e7775021",
+                                    "href": "https://192.168.0.242:58443/api/1.0/activities/4848f94ec0a8463200cf37c86dcd5d2d",
                                     "mediaType": "application/json"
-                                },
-                                "id": "639a13aeac1303f001f3a370e7775021",
-                                "name": "Power Plate",
-                                "description": "",
+                            },
+                                "id": "4848f94ec0a8463200cf37c86dcd5d2d",
+                                "name": "Posilovací cvičení",
+                                "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Body Styling\n    </div>\n    <div>\n      Funk&#269;n&#237; tr&#233;nink\n    </div>\n    <div>\n      Kruhov&#253; tr&#233;n&#237;nk\n    </div>\n    <div>\n      Pilates Cardio slim\n    </div>\n    <div>\n      Piloxing\n    </div>",
                                 "icon": {
                                     "metaInfo": {
-                                        "href": "https://reservation.grandrelax.cz/media/images/pictograms/b_03_b.png",
+                                        "href": "https://192.168.0.242:58443/media/images/pictograms/a_05_b.png",
                                         "mediaType": "application/json"
-                                    },
-                                    "id": "b_03",
-                                    "nameBlack": "b_03_b.png",
-                                    "nameGrey": "b_03_w.png",
-                                    "nameWhite": "b_03_g.png"
                                 },
+                                    "id": "a_05",
+                                    "nameBlack": "a_05_b.png",
+                                    "nameGrey": "a_05_w.png",
+                                    "nameWhite": "a_05_g.png"
+                            },
                                 "instructors": null,
                                 "timeLineType": "TIME_LINE_WEEK",
-                                "tabIndex": 2
+                                "tabIndex": 0
                             }
                         },
                         "object": {
                             "metaInfo": null,
-                            "id": "67bc37bdac1303f001db3a134a0a7b3f",
-                            "arealId": "da691a487f0001014741b45d76eb07f9",
-                            "arealName": "Power Plate sál",
-                            "name": "Power Plate"
+                            "id": "86f03614c0a8006701724be6a78c372e",
+                            "arealId": "3ea54355c0a8006700d171b20df98fd0",
+                            "arealName": "Zrcadlový sál",
+                            "name": "Aerobní sál - kapacita 15"
                         },
-                        "note": null,
+                        "note": "",
                         "instructor": {
                             "metaInfo": {
-                                "href": "https://reservation.grandrelax.cz/api/1.0/instructors/63a4bf80ac1303f001009cb225295e24",
+                                "href": "https://192.168.0.242:58443/api/1.0/instructors/0b5a186bc0a800670061c498d856d0c0",
                                 "mediaType": "application/json"
                             },
-                            "id": "63a4bf80ac1303f001009cb225295e24",
-                            "firstName": "Nikol",
-                            "lastName": "Filipová",
+                            "id": "0b5a186bc0a800670061c498d856d0c0",
+                            "firstName": "Hanka",
+                            "lastName": "Čermáková",
                             "email": "",
                             "phoneNumber": "",
                             "info": "",
-                            "colorRgbHex": "ff9900",
+                            "colorRgbHex": "00cccc",
                             "photoHref": null,
                             "activities": null
                         },
                         "editAllowed": true,
                         "payAllowed": true,
                         "substitute": false,
-                        "state": "NOT_REALISED"
+                        "createdFromSubstitute": false,
+                        "shared": false,
+                        "state": "UNPAID"
                     },
                     {
                         "metaInfo": {
-                            "href": "https://reservation.grandrelax.cz/api/1.0/reservations/26369c23c0a80202012b710c42eeece9",
+                            "href": "https://192.168.0.242:58443/api/1.0/reservations/d2e17648c0a8020201f28e01485c9c79",
                             "mediaType": "application/json"
                         },
-                        "id": "26369c23c0a80202012b710c42eeece9",
+                        "id": "d2e17648c0a8020201f28e01485c9c79",
                         "personCount": 1,
-                        "startTime": "2015-06-28T17:00:00.000+0200",
-                        "endTime": "2015-06-28T17:30:00.000+0200",
-                        "realizationDate": "2015-06-26T11:04:50.354+0200",
-                        "cancelDate": null,
+                        "startTime": "2016-12-06T10:15:00.000+0100",
+                        "endTime": "2016-12-06T11:00:00.000+0100",
+                        "paidDate": null,
+                        "canceledDate": null,
                         "price": {
                             "currencyCode": "CZK",
-                            "price": 245
+                            "price": 120
                         },
                         "cancelFee": null,
                         "sport": {
-                            "id": "67cccfa8ac1303f001c69fd9f3e79821",
-                            "name": "Power Plate - Nikol Filipová",
+                            "id": "86d77afcc0a800670120749e800b88bd",
+                            "name": "Cvičení s dětmi (1,5-2,5 let)",
                             "instructors": null,
                             "activity": {
                                 "metaInfo": {
-                                    "href": "https://reservation.grandrelax.cz/api/1.0/activities/639a13aeac1303f001f3a370e7775021",
+                                    "href": "https://192.168.0.242:58443/api/1.0/activities/484a69d5c0a846320158f640deeb3bf4",
                                     "mediaType": "application/json"
                                 },
-                                "id": "639a13aeac1303f001f3a370e7775021",
-                                "name": "Power Plate",
-                                "description": "",
+                                "id": "484a69d5c0a846320158f640deeb3bf4",
+                                "name": "Cvičení pro rodiče",
+                                "description": "<div>\n      Seznam &#269;innost&#237;, kter&#233; pat&#345;&#237; do t&#233;to aktivity:\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      Fyzi&#269;ka i po porodu\n    </div>\n    <div>\n      T&#283;hotensk&#233; cvi&#269;en&#237;\n    </div>\n    <div>\n      Pilates po porodu\n    </div>\n    <div>\n      Cvi&#269;en&#237; d&#283;t&#237; s rodi&#269;i\n    </div>",
                                 "icon": {
                                     "metaInfo": {
-                                        "href": "https://reservation.grandrelax.cz/media/images/pictograms/b_03_b.png",
+                                        "href": "https://192.168.0.242:58443/media/images/pictograms/a_37_b.png",
                                         "mediaType": "application/json"
-                                    },
-                                    "id": "b_03",
-                                    "nameBlack": "b_03_b.png",
-                                    "nameGrey": "b_03_w.png",
-                                    "nameWhite": "b_03_g.png"
                                 },
-                                "instructors": null,
-                                "timeLineType": "TIME_LINE_WEEK",
-                                "tabIndex": 2
-                            }
-                        },
-                        "object": {
-                            "metaInfo": null,
-                            "id": "67bc37bdac1303f001db3a134a0a7b3f",
-                            "arealId": "da691a487f0001014741b45d76eb07f9",
-                            "arealName": "Power Plate sál",
-                            "name": "Power Plate"
-                        },
-                        "note": null,
-                        "instructor": {
-                            "metaInfo": {
-                                "href": "https://reservation.grandrelax.cz/api/1.0/instructors/63a4bf80ac1303f001009cb225295e24",
-                                "mediaType": "application/json"
-                            },
-                            "id": "63a4bf80ac1303f001009cb225295e24",
-                            "firstName": "Nikol",
-                            "lastName": "Filipová",
-                            "email": "",
-                            "phoneNumber": "",
-                            "info": "",
-                            "colorRgbHex": "ff9900",
-                            "photoHref": null,
-                            "activities": null
-                        },
-                        "editAllowed": false,
-                        "payAllowed": false,
-                        "substitute": false,
-                        "states": "REALISED"
+                                    "id": "a_37",
+                                    "nameBlack": "a_37_b.png",
+                                    "nameGrey": "a_37_w.png",
+                                    "nameWhite": "a_37_g.png"
+                                },
+                            "instructors": null,
+                            "timeLineType": "TIME_LINE_WEEK",
+                            "tabIndex": 0
+                        }
                     },
-                    {
-                        "metaInfo": {
-                            "href": "https://reservation.grandrelax.cz/api/1.0/reservations/1a29b593c0a8020200bb84d63c88b96c",
-                            "mediaType": "application/json"
-                        },
-                        "id": "1a29b593c0a8020200bb84d63c88b96c",
-                        "personCount": 1,
-                        "startTime": "2015-06-28T18:00:00.000+0200",
-                        "endTime": "2015-06-28T18:30:00.000+0200",
-                        "realizationDate": null,
-                        "cancelDate": "2015-06-26T11:04:57.625+0200",
-                        "price": {
-                            "currencyCode": "CZK",
-                            "price": 245
-                        },
-                        "cancelFee": null,
-                        "sport": {
-                            "id": "67cccfa8ac1303f001c69fd9f3e79821",
-                            "name": "Power Plate - Nikol Filipová",
-                            "instructors": null,
-                            "activity": {
-                                "metaInfo": {
-                                    "href": "https://reservation.grandrelax.cz/api/1.0/activities/639a13aeac1303f001f3a370e7775021",
-                                    "mediaType": "application/json"
-                                },
-                                "id": "639a13aeac1303f001f3a370e7775021",
-                                "name": "Power Plate",
-                                "description": "",
-                                "icon": {
-                                    "metaInfo": {
-                                        "href": "https://reservation.grandrelax.cz/media/images/pictograms/b_03_b.png",
-                                        "mediaType": "application/json"
-                                    },
-                                    "id": "b_03",
-                                    "nameBlack": "b_03_b.png",
-                                    "nameGrey": "b_03_w.png",
-                                    "nameWhite": "b_03_g.png"
-                                },
-                                "instructors": null,
-                                "timeLineType": "TIME_LINE_WEEK",
-                                "tabIndex": 2
-                            }
-                        },
                         "object": {
                             "metaInfo": null,
-                            "id": "67bc37bdac1303f001db3a134a0a7b3f",
-                            "arealId": "da691a487f0001014741b45d76eb07f9",
-                            "arealName": "Power Plate sál",
-                            "name": "Power Plate"
+                            "id": "3ea6c482c0a8006700abd854d2a6d91e",
+                            "arealId": "3ea54355c0a8006700d171b20df98fd0",
+                            "arealName": "Zrcadlový sál",
+                            "name": "Cvičení - Kapacita 12"
                         },
-                        "note": "note from REST",
+                        "note": "",
                         "instructor": {
                             "metaInfo": {
-                                "href": "https://reservation.grandrelax.cz/api/1.0/instructors/63a4bf80ac1303f001009cb225295e24",
+                                "href": "https://192.168.0.242:58443/api/1.0/instructors/0b5de117c0a80067001873a38ef98ff0",
                                 "mediaType": "application/json"
                             },
-                            "id": "63a4bf80ac1303f001009cb225295e24",
-                            "firstName": "Nikol",
-                            "lastName": "Filipová",
+                            "id": "0b5de117c0a80067001873a38ef98ff0",
+                            "firstName": "Magda",
+                            "lastName": "Stavinohová",
                             "email": "",
                             "phoneNumber": "",
                             "info": "",
-                            "colorRgbHex": "ff9900",
+                            "colorRgbHex": "66ffff",
                             "photoHref": null,
                             "activities": null
                         },
-                        "editAllowed": false,
-                        "payAllowed": false,
+                        "editAllowed": true,
+                        "payAllowed": true,
                         "substitute": false,
-                        "states": "CANCELED"
-                    }
-                ]
-            }     
+                        "createdFromSubstitute": false,
+                        "shared": false,
+                        "state": "UNPAID"
+                        },
+                        {
+                        "metaInfo": {
+                            "href": "https://192.168.0.242:58443/api/1.0/reservations/b0481482c0a802020015a7e539be5129",
+                            "mediaType": "application/json"
+                        },
+                        "id": "b0481482c0a802020015a7e539be5129",
+                        "personCount": 1,
+                        "startTime": "2016-12-07T08:30:00.000+0100",
+                        "endTime": "2016-12-07T09:30:00.000+0100",
+                        "paidDate": null,
+                        "canceledDate": null,
+                        "price": {
+                            "currencyCode": "CZK",
+                            "price": 100
+                        },
+                        "cancelFee": null,
+                        "sport": {
+                            "id": "14a49140c0a83332018cd1cd71609926",
+                            "name": "Power jóga easy 60 min",
+                            "instructors": null,
+                            "activity": {
+                                "metaInfo": {
+                                    "href": "https://192.168.0.242:58443/api/1.0/activities/0b610421c0a8006700191397ed7d3ac4",
+                                    "mediaType": "application/json"
+                                },
+                                "id": "0b610421c0a8006700191397ed7d3ac4",
+                                "name": "Jóga",
+                                "description": "",
+                                "icon": {
+                                    "metaInfo": {
+                                        "href": "https://192.168.0.242:58443/media/images/pictograms/a_04_b.png",
+                                        "mediaType": "application/json"
+                                    },
+                                    "id": "a_04",
+                                    "nameBlack": "a_04_b.png",
+                                    "nameGrey": "a_04_w.png",
+                                    "nameWhite": "a_04_g.png"
+                                },
+                                "instructors": null,
+                                "timeLineType": "TIME_LINE_WEEK",
+                                "tabIndex": 0
+                                }
+                            },
+                        "object": {
+                            "metaInfo": null,
+                            "id": "51a5e734c0a846320070e4ce95d6c52d",
+                            "arealId": "3ea54355c0a8006700d171b20df98fd0",
+                            "arealName": "Zrcadlový sál",
+                            "name": "Aerobní sál - kapacita 10"
+                        },
+                        "note": "",
+                        "instructor": null,
+                        "editAllowed": true,
+                        "payAllowed": true,
+                        "substitute": false,
+                        "createdFromSubstitute": false,
+                        "shared": false,
+                        "state": "UNPAID"
+                        }
+                    ]
+                }  
         
 ## My actual unrealized reservations [/api/1.0/reservations/my/actual/unrealized]
 <a name="my_actual_unrealized_reservations"></a>
