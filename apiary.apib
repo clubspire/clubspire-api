@@ -1836,27 +1836,7 @@ Returns a detailed information about instructor of given **id**.
                     }
                 ]
             }
-
-## Instructor photo [/api/1.0/instructors/{id}/photo{?width,height}]
-
-+ Parameters 
-    + id (required, string, `63a194abac1303f0012bd8989a131fa2`)...Unique identifier of the instructor whose photo should be returned.
-    + width (optional, int, `150`)...Desired photo width in pixels. Clubspire resizes the picture proportionally, by keeping the aspect ratio.
-    + height (optional, int, `300`)...Desired photo height in pixels. Clubspire resizes the picture proportionally, by keeping the aspect ratio.
-
-### Get photo of instructor [GET]
-
-Returns photo of instructor of given **id**. Real image data is returned, usually in jpeg format. Additional request attributes can be used to retrieve the image with specific width and height.
-
-Default (phantom) picture is returned in case the instructor has no photo set.
-
-+ Request (application/json)
-    + Headers
-    
-            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
             
-+ Response 200 (image/png)
-
 #Group Schedules
 <a name="schedules"></a>
 Schedules (or timetables) are the main source of data neccessary for creating 
