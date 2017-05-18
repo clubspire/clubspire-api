@@ -1250,7 +1250,8 @@ Returns detailed information about season ticket of given **id**. Authenticated 
                   ],
                   "productNames": null,
                   "shared": false,
-                  "expireSoon": false
+                  "expireSoon": false,
+                  "historyItems": []
                 }
               ]
             }
@@ -1271,6 +1272,7 @@ For more information on services follow the subsections:
 + [All activities](#all_activities)
 + [Day activities](#day_activities)
 + [Week activities](#week_activities)
++ [Favourite activities](#favourite_activities)
 + [Activity detail](#activity_detail)
 
 ## All activities [/api/1.0/activities]
@@ -1586,6 +1588,88 @@ Example of week activities: pilates, yoga, spinning, TRX etc.
                     }
                   ]
                 }
+                
+## Favourite activities [/api/1.0/activities/favourite]
+<a name="favourite_activities"></a>
+### Get favourite activities [GET]
+Returns a list of customer`s favourite activites primarily order 
+by a frequency how often the activity is used when reservation is made and
+secondary by last change of record.
+
+A record of your favorite activity will be created every time you 
+create a reservation for that activity. Also, when reservation for the activity 
+is canceled, the activity's popularity will be reduced, or if the reservation 
+for the activity is canceled frequenty, the activity can be completely removed 
+from the list.
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+            
++ Response 200 (application/json)
+
+    + Attributes (object) 
+        + `-` (array[Activity]) - List of favourite activities. Each activity has only base attributes initialized, i.e. no associated entities are loaded. For detailed information (including all associated entities like instructors etc.) use [GET activities/{id}](#activity_detail) service.    
+
+    + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": [
+                    {
+                        "metaInfo": {
+                            "href": "https://reservation.grandrelax.cz/api/1.0/activities/6398c8a2ac1303f0006d7ba72188198f",
+                            "mediaType": "application/json"
+                        },
+                        "id": "6398c8a2ac1303f0006d7ba72188198f",
+                        "name": "Squash",
+                        "description": "",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "https://reservation.grandrelax.cz/media/images/pictograms/c_01_b.png",
+                                "mediaType": "application/json"
+                            },
+                            "id": "c_01",
+                            "nameBlack": "c_01_b.png",
+                            "nameGrey": "c_01_w.png",
+                            "nameWhite": "c_01_g.png"
+                        },
+                        "instructors": null,
+                        "timeLineType": "TIME_LINE_DAY",
+                        "tabIndex": 0
+                    },
+                    {
+                        "metaInfo": {
+                            "href": "https://reservation.grandrelax.cz/api/1.0/activities/639b1d5cac1303f00011cd38b40e36c0",
+                            "mediaType": "application/json"
+                        },
+                        "id": "639b1d5cac1303f00011cd38b40e36c0",
+                        "name": "Flexibar",
+                        "description": "",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "https://reservation.grandrelax.cz/media/images/pictograms/a_36_b.png",
+                                "mediaType": "application/json"
+                            },
+                            "id": "a_36",
+                            "nameBlack": "a_36_b.png",
+                            "nameGrey": "a_36_w.png",
+                            "nameWhite": "a_36_g.png"
+                        },
+                        "instructors": null,
+                        "timeLineType": "TIME_LINE_WEEK",
+                        "tabIndex": 1
+                    }
+                ]
+            }                
             
 ## Activity detail [/api/1.0/activities/{id}]
 <a name="activity_detail"></a>
@@ -1836,6 +1920,27 @@ Returns a detailed information about instructor of given **id**.
                     }
                 ]
             }
+            
+## Instructor photo [/api/1.0/instructors/{id}/photo{?width,height}]
+
++ Parameters 
+    + id (required, string, `63a194abac1303f0012bd8989a131fa2`)...Unique identifier of the instructor whose photo should be returned.
+    + width (optional, int, `150`)...Desired photo width in pixels. Clubspire resizes the picture proportionally, by keeping the aspect ratio.
+    + height (optional, int, `300`)...Desired photo height in pixels. Clubspire resizes the picture proportionally, by keeping the aspect ratio.
+
+### Get photo of instructor [GET]
+
+Returns photo of instructor of given **id**. Real image data is returned, usually in jpeg format. Additional request attributes can be used to retrieve the image with specific width and height.
+
+Default (phantom) picture is returned in case the instructor has no photo set.
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+            
+            
++ Response 200 (image) 
             
 #Group Schedules
 <a name="schedules"></a>
