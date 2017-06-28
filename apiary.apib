@@ -6247,18 +6247,13 @@ Returns [paginated list](#responsePaginated) of actual reservations of authentic
 <a name="my_actual_unrealized_reservations"></a>
 ### Get my actual unrealized reservations [GET]
 
-Returns [paginated list](#responsePaginated) of actual reservations of authenticated user which are not in state CANCELED. Only reservations that start in current day or in future will be returned. 
+Returns list of actual reservations of authenticated user which are not in state CANCELED. Only reservations that start in current day or in future will be returned. 
 
 + Request (application/json)
 
     + Headers
     
             Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
-            
-    + Attributes (object)
-       + limit (optional, number) - If a limit count is given, no more than that many results will be returned (but possibly less, if there is less results). Default value of `Integer.MAX_VALUE` will be used when limit is omitted.
-       + offset (optional, number) - Offset says to skip that many re
-
 
 + Response 200 (application/json)
 
@@ -6486,12 +6481,8 @@ Returns [paginated list](#responsePaginated) of actual reservations of authentic
                         "shared": false,
                         "state": "UNPAID"
                         }
-                    ],
-                  "offset": 100,
-                  "limit": 5,
-                  "previousPageHref": null
-                  "nextPageHref": "https://reservation.grandrelax.cz/api/1.0/reservations/my/actual/unrealized?offset=10&limit=10"
-              }
+                    ]
+                }
         
 + Response 201 (application/json)
 
