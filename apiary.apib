@@ -6761,7 +6761,7 @@ For more information on services follow the subsections:
 + [Send reset password email](#send_reset_password_email)
 + [Get reset password form](#get_reset_password_form)
 + [Reset password](#reset_password)
-+ [Activate account](#activate_account)
++ [Account activation](#account_activation)
 + [Create user](#create_user)
 + [My profile](#my_profile)
 + [All users](#all_users)
@@ -6876,6 +6876,33 @@ When the user send request with a new password, method will update it.
 |--------------------------------------------------- |:----------|:-----------------------------------------------|
 |`success.passwordEdit`                              |INFO       |Returned if password has been successfully updated.|
 |`error.updatePassword`                              |ERROR_FATAL|Returned if there is some error.|
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+## Account activation [/api/1.0/users/activation/{aToken}]
+<a name="account_activation"></a>
+
++ Parameters 
+    + aToken (required, string, `n33XmjV27UzSDD3CGvjONQkjXYxmijC6`)...The token that was assigned to the user after a registration request was sent. It is a part of the activation link. After link clicking the token is removed from user.
+  
+### Activate account [POST]
+
+To complete registration of user, it is necessary to click on an activation link which is emailed to user after his registration request.
+Method activates account which correspond with token included in the link.
+
+#### Response messages
+| Code                                               | Type      | Description                                                                                                                  |
+|--------------------------------------------------- |:----------|:-----------------------------------------------|
+|`succes.activation.account.login`                   |INFO       |Returned if account has been successfully activated.|
+|`error.activation.account.invalidData`              |ERROR_FATAL|Returned if user with activation token does not exist.|
+|`warning.activation.accountActivated`               |ERROR_FATAL|Returned if account has been already activated. |
+|`error.activation.failed`                           |ERROR_FATAL|Returned if there was communicating error with CS server.|
 
 + Request (application/json)
 
