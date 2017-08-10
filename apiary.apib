@@ -6770,24 +6770,24 @@ For more information on services follow the subsections:
 ## Synchronization with external systems
 REST API provides services that can be used by external systems to synchronize data about CLUBSPIRE users. A special access role must be assigned to client application to be allowed to call these services. Currently it is only possible to retrieve users whose data has been changed since provided timestamp. For more information see [All users](#all_users) service. 
 
-## Sent reset password email [/api/1.0/users/resetPassword/sendEmail{?email}]
+## Send reset password email [/api/1.0/users/resetPassword/sendEmail{?email}]
 <a name="send_reset_password_email"></a> 
 
 + Parameters 
     + email (required, string, `clubspire@clubspire.cz`)...Email of user whose password was forgotten.
   
-### Sent reset password emai [POST]
+### Send reset password email [POST]
 
-If user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be same 
-identical with email address filled in during registration otherwise exception will be thrown.
+If the user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be
+identical with the email address filled in during the registration, otherwise an exception will be thrown.
 
-Method send email with link containing address to changing password.
+Method sends email with the link containing address for the password change.
 
 #### Response messages
 | Code                                               | Type      | Description                                                                                                                  |
 |--------------------------------------------------- |:----------|:-----------------------------------------------|
-|`success.resetPassword`                             |INFO       |Returned if emal has been successfully sent.|
-|`error.resetPassword.userNotFound`                  |ERROR_FATAL|Returned if user with emal does not exist.|
+|`success.resetPassword`                             |INFO       |Returned if email has been successfully sent.|
+|`error.resetPassword.userNotFound`                  |ERROR_FATAL|Returned if the user with email does not exist.|
 |`error.resetPassword.emailCouldNotBeSen`            |ERROR_FATAL|Returned if email could not be sent.|
 |`error.server.connection`                           |ERROR_FATAL|Returned if there was communicating error with CS server.|
 
@@ -6803,12 +6803,13 @@ Method send email with link containing address to changing password.
 <a name="get_reset_password_form"></a> 
 
 + Parameters 
-    + resetPasswordToken (required, string, `n33XmjV27UzSDD3CGvjONQkjXYxmijC6`)...The token that was assigned to the user after a password change request was sent. It is a part of the link containing an address to changing the password. After link clicking the token is removed from user.
+    + resetPasswordToken (required, string, `n33XmjV27UzSDD3CGvjONQkjXYxmijC6`)...The token that was assigned to the user, after a password change request was sent. It is a part of the link containing the address to change the password. After clicking the link, the token is removed from user.
   
-### Ger reset password form [GET]
+### Get reset password form [GET]
 
-If user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be same 
-identical with email address filled in during registration otherwise exception will be thrown. The link contains token, by with a server is able to map the request to concrete user. 
+If user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be 
+identical with an email address filled in during registration, otherwise exception will be thrown. The link contains token, by which the server 
+is able to map the request to the certain user. 
 
 Method returns details of that user.
 
@@ -6866,16 +6867,16 @@ Method returns details of that user.
 ### Reset password [POST]
 
 If user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be 
-identical with email address filled in during registration otherwise exception will be thrown.
-The link contains token, by with a server is able to map the request to concrete user. 
+identical with an email address filled in during registration, otherwise exception will be thrown.
+The link contains token, by which a server is able to map the request to the certain user. 
 
 When the user send request with a new password, method will update it.
 
 #### Response messages
 | Code                                               | Type      | Description                                                                                                                  |
 |--------------------------------------------------- |:----------|:-----------------------------------------------|
-|`success.passwordEdit`                              |INFO       |Returned if password has been successfully updated.|
-|`error.updatePassword`                              |ERROR_FATAL|Returned if there is some error.|
+|`success.passwordEdit`                              |INFO       |Returned if the password has been successfully updated.|
+|`error.updatePassword`                              |ERROR_FATAL|Returned if there is an error.|
 
 + Request (application/json)
 
@@ -6893,16 +6894,16 @@ When the user send request with a new password, method will update it.
   
 ### Activate account [POST]
 
-To complete registration of user, it is necessary to click on an activation link which is emailed to user after his registration request.
-Method activates account which correspond with token included in the link.
+To complete the registration of user, it is necessary to click on an activation link, which is emailed to the user after his registration request.
+Method activates account, which correspond with the token included in the link.
 
 #### Response messages
 | Code                                               | Type      | Description                                                                                                                  |
 |--------------------------------------------------- |:----------|:-----------------------------------------------|
-|`succes.activation.account.login`                   |INFO       |Returned if account has been successfully activated.|
-|`error.activation.account.invalidData`              |ERROR_FATAL|Returned if user with activation token does not exist.|
-|`warning.activation.accountActivated`               |ERROR_FATAL|Returned if account has been already activated. |
-|`error.activation.failed`                           |ERROR_FATAL|Returned if there was communicating error with CS server.|
+|`succes.activation.account.login`                   |INFO       |Returned if the account has been successfully activated.|
+|`error.activation.account.invalidData`              |ERROR_FATAL|Returned if the user with activation token does not exist.|
+|`warning.activation.accountActivated`               |ERROR_FATAL|Returned if the account has been already activated. |
+|`error.activation.failed`                           |ERROR_FATAL|Returned if there was a communicating error with CS server.|
 
 + Request (application/json)
 
