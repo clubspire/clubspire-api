@@ -6758,6 +6758,10 @@ Returns [paginated list](#responsePaginated) of historic reservations of authent
 In this documentation, the term **user** stands for a customer of the club. Customer is a person who is registered in the club by providing some personal information. By registration customer gets access to her/his account, deposit, season tickets, reservations and more. 
 
 For more information on services follow the subsections: 
++ [Send reset password email](#send_reset_password_email)
++ [Get reset password form](#get_reset_password_form)
++ [Reset password](#reset_password)
++ [Activate account](#activate_account)
 + [Create user](#create_user)
 + [My profile](#my_profile)
 + [All users](#all_users)
@@ -6766,6 +6770,120 @@ For more information on services follow the subsections:
 ## Synchronization with external systems
 REST API provides services that can be used by external systems to synchronize data about CLUBSPIRE users. A special access role must be assigned to client application to be allowed to call these services. Currently it is only possible to retrieve users whose data has been changed since provided timestamp. For more information see [All users](#all_users) service. 
 
+## Sent reset password email [/api/1.0/users/resetPassword/sendEmail{?email}]
+<a name="send_reset_password_email"></a> 
+
++ Parameters 
+    + email (required, string, `clubspire@clubspire.cz`)...Email of user whose password was forgotten.
+  
+### Sent reset password emai [POST]
+
+If user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be same 
+identical with email address filled in during registration otherwise exception will be thrown.
+
+Method send email with link containing address to changing password.
+
+#### Response messages
+| Code                                               | Type      | Description                                                                                                                  |
+|--------------------------------------------------- |:----------|:-----------------------------------------------|
+|`success.resetPassword`                             |INFO       |Returned if emal has been successfully sent.|
+|`error.resetPassword.userNotFound`                  |ERROR_FATAL|Returned if user with emal does not exist.|
+|`error.resetPassword.emailCouldNotBeSen`            |ERROR_FATAL|Returned if email could not be sent.|
+|`error.server.connection`                           |ERROR_FATAL|Returned if there was communicating error with CS server.|
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+## Get reset password form [/api/1.0/users/resetPassword/{rpToken}]
+<a name="get_reset_password_form"></a> 
+
++ Parameters 
+    + rpToken (required, string, `n33XmjV27UzSDD3CGvjONQkjXYxmijC6`)...The token that was assigned to the user after a password change request was sent. It is a part of the link containing an address to changing the password. After link clicking the token is removed from user.
+  
+### Ger reset password form [GET]
+
+If user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be same 
+identical with email address filled in during registration otherwise exception will be thrown. The link contains token, by with a server is able to map the request to concrete user. 
+
+Method returns details of that user.
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+    + Attributes (UserProfile)
+    
+    + Body
+
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": [
+                    {
+                        "metaInfo": null,
+                        "name": "",
+                        "surname": "Jurcikova",
+                        "phoneCode": "+420",
+                        "phone": "",
+                        "email": "ivet.jurcikova@gmail.com",
+                        "streetName": "",
+                        "houseNumber": null,
+                        "city": "",
+                        "zipCode": "",
+                        "country": "CZ",
+                        "woman": null,
+                        "note": "",
+                        "birthDate": null,
+                        "termsAccepted": false,
+                        "login": "jurcikova",
+                        "password": null,
+                        "passwordAgain": null
+                    }
+                ]
+            }
+
+## Reset password [/api/1.0/users/resetPassword/{login}]
+<a name="reset_password"></a> 
+
++ Parameters 
+    + login (required, string, `clubspireapi`)...Login of user whose password should be changed.
+  
+### Reset password [POST]
+
+If user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be same 
+identical with email address filled in during registration otherwise exception will be thrown.
+The link contains token, by with a server is able to map the request to concrete user. 
+
+When the user send request with a new password, method will update it.
+
+#### Response messages
+| Code                                               | Type      | Description                                                                                                                  |
+|--------------------------------------------------- |:----------|:-----------------------------------------------|
+|`success.passwordEdit`                              |INFO       |Returned if password has been successfully updated.|
+|`error.updatePassword`                              |ERROR_FATAL|Returned if there is some error.|
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
 
 ## User [/api/1.0/users]
 <a name="create_user"></a> 
