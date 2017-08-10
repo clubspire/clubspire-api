@@ -6799,11 +6799,11 @@ Method send email with link containing address to changing password.
 
 + Response 200 (application/json)
 
-## Get reset password form [/api/1.0/users/resetPassword/{rpToken}]
+## Get reset password form [/api/1.0/users/resetPassword/{resetPasswordToken}]
 <a name="get_reset_password_form"></a> 
 
 + Parameters 
-    + rpToken (required, string, `n33XmjV27UzSDD3CGvjONQkjXYxmijC6`)...The token that was assigned to the user after a password change request was sent. It is a part of the link containing an address to changing the password. After link clicking the token is removed from user.
+    + resetPasswordToken (required, string, `n33XmjV27UzSDD3CGvjONQkjXYxmijC6`)...The token that was assigned to the user after a password change request was sent. It is a part of the link containing an address to changing the password. After link clicking the token is removed from user.
   
 ### Ger reset password form [GET]
 
@@ -6885,11 +6885,11 @@ When the user send request with a new password, method will update it.
 
 + Response 200 (application/json)
 
-## Account activation [/api/1.0/users/activation/{aToken}]
+## Account activation [/api/1.0/users/activation/{activationToken}]
 <a name="account_activation"></a>
 
 + Parameters 
-    + aToken (required, string, `n33XmjV27UzSDD3CGvjONQkjXYxmijC6`)...The token that was assigned to the user after a registration request was sent. It is a part of the activation link. After link clicking the token is removed from user.
+    + activationToken (required, string, `n33XmjV27UzSDD3CGvjONQkjXYxmijC6`)...The token that was assigned to the user after a registration request was sent. It is a part of the activation link. After link clicking the token is removed from user.
   
 ### Activate account [POST]
 
