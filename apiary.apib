@@ -6766,6 +6766,8 @@ For more information on services follow the subsections:
 + [My profile](#my_profile)
 + [All users](#all_users)
 + [All users count](#all_users_count)
++ [Add push key](#add_push_key)
++ [Remove push key](#cancel_push_key)
 
 ## Synchronization with external systems
 REST API provides services that can be used by external systems to synchronize data about CLUBSPIRE users. A special access role must be assigned to client application to be allowed to call these services. Currently it is only possible to retrieve users whose data has been changed since provided timestamp. For more information see [All users](#all_users) service. 
@@ -7330,7 +7332,53 @@ Returns personal information of authenticated user which included security infor
                         "lastModifiedDate": "2016-11-30T19:51:21.940+0100"
                     }
                 ]
-            }   
+            } 
+            
+## Add push key [/api/1.0/users/pushKey/{key}/new]
+<a name="add_push_key"></a> 
+
++ Parameters 
+    + key (required, string, `545743r541sd2541rger5`)...A key granded by Google Cloud Connection Server.
+  
+### Add push key [POST]
+
+
+#### Response messages
+| Code                                               | Type      | Description                                                                                                                  |
+|--------------------------------------------------- |:----------|:-----------------------------------------------|
+|`succes.pushKey.setting`                            |INFO       |Returned if the key has been assigned to a logged user successfully.|
+|`error.pushKey.setting.failed`                      |ERROR_FATAL|Returned if there is an error.|
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+## Remove push key [/api/1.0/users/pushKey/{key}/cancel]
+<a name="cancel_push_key"></a> 
+
++ Parameters 
+    + key (required, string, `545743r541sd2541rger5`)...A key granded by Google Cloud Connection Server.
+  
+### Remove push key [PUT]
+
+
+#### Response messages
+| Code                                               | Type      | Description                                                                                                                  |
+|--------------------------------------------------- |:----------|:-----------------------------------------------|
+|`succes.pushKey.remove`                             |INFO       |Returned if the key has been removed successfully.|
+|`error.pushKey.remove.failed`                       |ERROR_FATAL|Returned if there is an error.|
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
 
 ## Data Structures
 
