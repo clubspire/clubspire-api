@@ -15,6 +15,7 @@ For more information on authentication and services follow the subsections:
 + [Schedules](#schedules)
 + [Reservations](#reservations)
 + [Users](#users)
++ [Settings](#settings)
 
 ## Group Security
 <a name="security"></a>
@@ -7380,7 +7381,69 @@ Returns personal information of authenticated user which included security infor
 
 + Response 200 (application/json)
 
+# Group Settings
+<a name="settings"></a>
+
+The WebClient settings is important to ensure compatibility with connected devices.
+
+
+For more information on services follow the subsections: 
++ [Get Web Client settings](#get_webclient_settings)
+
+## Get Web Client settings [/api/1.0/settings]
+<a name="get_webclient_settings"></a> 
+
+### Get Web Client settings [GET]
+
+Method returns all necessary settings to ensure compatibility with the connected devices.
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+    + Attributes (Settings)
+    
+    + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": [
+                    {
+                        "metaInfo": null,
+                        "webclientPovoleniRegistrace": true,
+                        "webclientObligatoryNameEnabled": false,
+                        "webclientObligatoryStreetEnabled": false,
+                        "webclientObligatoryNoEnabled": false,
+                        "webclientObligatoryCityEnabled": false,
+                        "webclientObligatoryZipEnabled": false,
+                        "webclientObligatoryPhoneEnabled": false,
+                        "webclientObligatoryBirthDayEnabled": false
+                    }
+                ]
+            }
+
 ## Data Structures
+
+### Settings (object)
++ webclientPovoleniRegistrace (boolean)
++ webclientObligatoryNameEnabled (boolean)
++ webclientObligatoryStreetEnabled (boolean)
++ webclientObligatoryNoEnabled (boolean)
++ webclientObligatoryCityEnabled (boolean)
++ webclientObligatoryZipEnabled (boolean)
++ webclientObligatoryPhoneEnabled (boolean)
++ webclientObligatoryBirthDayEnabled (boolean)
 
 ### User credentials authorization (object)
 + `grant_type` (required, string) - Value MUST be set to "password".
