@@ -4179,7 +4179,7 @@ During creation of subsitute, customer is asked to provide (along with other req
 
 + acceptance - how long, in minutest, before lesson start is customer willing to accept free places. If, for instance, acceptance is set to 30 minutes before lesson start and free place appears 15 minutes before lesson then substitute requirement is not met. Therefore, substitute is skipped during processing of waiting list.
 + action the system should perform when free places appear and acceptance requirement is met - one of two previously discussed options.
-+ notification type - how to notify customer about free places or creation of valid reservation: `E-mail`, `SMS` or `both`.
++ notification type - how to notify customer about free places or creation of valid reservation: `E-mail`, `SMS` or `push notification` or `all`.
 
 Customers can create, edit and cancel their substitute reservations. Current version of CLUBSPIRE REST API (1.0 & 1.1) supports only creation of substitute reservations.
 
@@ -4201,7 +4201,7 @@ Returns list of two elements:
 
 This is the service that should be called first before calling [Create reservation](#create_reservation) service. Reservation data returned by [Get new reservation form](#get_new_reservation_form_1.0) service can safely be passed to [Create reservation](#create_reservation) service.
 
-Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to refresh reservation settings by calling [POST /api/1.0/reservations/refresh](#refresh_reservation_form_1.0) each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes` or `smsNotificationBeforeMinutes`.
+Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to refresh reservation settings by calling [POST /api/1.0/reservations/refresh](#refresh_reservation_form_1.0) each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes`,`smsNotificationBeforeMinutes` or `pushNotificationBeforeMinutes`.
 
 If invalid data is provided error message is returned to the caller. For complete list of error codes and their meanings see [Response messages](#response_messages3).
 
@@ -4328,7 +4328,8 @@ If invalid data is provided error message is returned to the caller. For complet
                         "createReservationFromSubstituteEnabled": false,
                         "justNotifySubstituteEnabled": false,
                         "substituteEmailNotificationEnabled": false,
-                        "substituteSmsNotifcationEnabled": false
+                        "substituteSmsNotifcationEnabled": false,
+                        "substitutePushNotifcationEnabled": false
                     },
                     {
                         "metaInfo": null,
@@ -4358,6 +4359,7 @@ If invalid data is provided error message is returned to the caller. For complet
                         "canceledWithoutFee": false,
                         "emailNotificationBeforeMinutes": null,
                         "smsNotificationBeforeMinutes": null,
+                        "pushNotificationBeforeMinutes": null,
                         "state": "NEW",
                         "paymentType": null,
                         "substitute": false,
@@ -4366,6 +4368,7 @@ If invalid data is provided error message is returned to the caller. For complet
                         "substituteAcceptanceMinutesBefore": 0,
                         "substituteEmailNotification": false,
                         "substituteSmsNotification": false,
+                        "substitutePushNotification": false,
                         "temporalReservation": false,
                         "temporalReservationValidTo": null
                     }
@@ -4390,7 +4393,7 @@ Returns two elements:
 
 This is the service that should be called first before calling [Create reservation](#create_reservation) service. Reservation data returned by [Get new reservation form](#get_new_reservation_form_1.1) service can safely be passed to [Create reservation](#create_reservation) service.
 
-Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to refresh reservation settings by calling [POST /api/1.0/reservations/refresh](#refresh_reservation_form_1.0) each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes` or `smsNotificationBeforeMinutes`.
+Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to refresh reservation settings by calling [POST /api/1.0/reservations/refresh](#refresh_reservation_form_1.0) each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes`, `smsNotificationBeforeMinutes` or `pushNotificationBeforeMinutes`.
 
 If invalid data is provided error message is returned to the caller. For complete list of error codes and their meanings see [Response messages](#response_messages4).
 
@@ -4520,7 +4523,8 @@ If invalid data is provided error message is returned to the caller. For complet
                     "createReservationFromSubstituteEnabled": false,
                     "justNotifySubstituteEnabled": false,
                     "substituteEmailNotificationEnabled": false,
-                    "substituteSmsNotifcationEnabled": false
+                    "substituteSmsNotificationEnabled": false,
+                    "substitutePushNotificationEnabled": false
                   },
                   "reservation": {
                     "metaInfo": null,
@@ -4550,6 +4554,7 @@ If invalid data is provided error message is returned to the caller. For complet
                     "canceledWithoutFee": false,
                     "emailNotificationBeforeMinutes": null,
                     "smsNotificationBeforeMinutes": null,
+                    "pushNotificationBeforeMinutes": null,
                     "state": "NEW",
                     "paymentType": null,
                     "substitute": false,
@@ -4558,6 +4563,7 @@ If invalid data is provided error message is returned to the caller. For complet
                     "substituteAcceptanceMinutesBefore": 0,
                     "substituteEmailNotification": false,
                     "substituteSmsNotification": false,
+                    "substitutePushNotification": false,
                     "temporary": false,
                     "temporaryValidTo": null
                   }
@@ -4576,7 +4582,7 @@ Returns list of two elements:
 
 Reservation data returned by this service can safely be passed to [Create reservation](#create_reservation) service in case of new reservation or [Edit reservation](#edit_reservation) service in case of reservation editation.
 
-Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to call this service each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes` or `smsNotificationBeforeMinutes`.
+Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to call this service each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes`, `smsNotificationBeforeMinutes` or `pushNotificationBeforeMinutes`.
 
 If invalid data is provided error message is returned to the caller. For complete list of error codes and their meanings see [Response messages](#response_messages5).
 <a name="response_messages5"></a>
@@ -4622,7 +4628,8 @@ If invalid data is provided error message is returned to the caller. For complet
                 "personCount": 8,
                 "note": null,
                 "emailNotificationBeforeMinutes": null,
-                "smsNotificationBeforeMinutes": null
+                "smsNotificationBeforeMinutes": null,
+                "pushNotificationBeforeMinutes": null
             }
 
 + Response 200 (application/json)
@@ -4733,7 +4740,8 @@ If invalid data is provided error message is returned to the caller. For complet
                         "createReservationFromSubstituteEnabled": false,
                         "justNotifySubstituteEnabled": false,
                         "substituteEmailNotificationEnabled": false,
-                        "substituteSmsNotifcationEnabled": false
+                        "substituteSmsNotifcationEnabled": false,
+                        "substitutePushNotifcationEnabled": false
                     },
                     {
                         "metaInfo": null,
@@ -4763,6 +4771,7 @@ If invalid data is provided error message is returned to the caller. For complet
                         "canceledWithoutFee": false,
                         "emailNotificationBeforeMinutes": 60,
                         "smsNotificationBeforeMinutes": 30,
+                        "pushNotificationBeforeMinutes": 30,
                         "state": "NEW",
                         "paymentType": null,
                         "substitute": false,
@@ -4771,6 +4780,7 @@ If invalid data is provided error message is returned to the caller. For complet
                         "substituteAcceptanceMinutesBefore": 0,
                         "substituteEmailNotification": false,
                         "substituteSmsNotification": false,
+                        "substitutePushNotification": false,
                         "temporalReservation": false,
                         "temporalReservationValidTo": null
                     }
@@ -4788,7 +4798,7 @@ Returns two elements:
 
 Reservation data returned by this service can safely be passed to [Create reservation](#create_reservation) service in case of new reservation or [Edit reservation](#edit_reservation) service in case of reservation editation.
 
-Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to call this service each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes` or `smsNotificationBeforeMinutes`.
+Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to call this service each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes`, `smsNotificationBeforeMinutes` or `pushNotificationBeforeMinutes`.
 
 If invalid data is provided error message is returned to the caller. For complete list of error codes and their meanings see [Response messages](#response_messages6).
 <a name="response_messages6"></a>
@@ -4834,7 +4844,8 @@ If invalid data is provided error message is returned to the caller. For complet
                 "personCount": 8,
                 "note": null,
                 "emailNotificationBeforeMinutes": null,
-                "smsNotificationBeforeMinutes": null
+                "smsNotificationBeforeMinutes": null,
+                "pushNotificationBeforeMinutes": null
             }
             
 + Response 200 (application/json)
@@ -4948,7 +4959,8 @@ If invalid data is provided error message is returned to the caller. For complet
                     "createReservationFromSubstituteEnabled": false,
                     "justNotifySubstituteEnabled": false,
                     "substituteEmailNotificationEnabled": false,
-                    "substituteSmsNotifcationEnabled": false
+                    "substituteSmsNotifcationEnabled": false,
+                    "substitutePushNotifcationEnabled": false
                   },
                   "reservation": {
                     "metaInfo": null,
@@ -4978,6 +4990,7 @@ If invalid data is provided error message is returned to the caller. For complet
                     "canceledWithoutFee": false,
                     "emailNotificationBeforeMinutes": null,
                     "smsNotificationBeforeMinutes": null,
+                    "pushNotificationBeforeMinutes": null,
                     "state": "NEW",
                     "paymentType": null,
                     "substitute": false,
@@ -4986,6 +4999,7 @@ If invalid data is provided error message is returned to the caller. For complet
                     "substituteAcceptanceMinutesBefore": 0,
                     "substituteEmailNotification": false,
                     "substituteSmsNotification": false,
+                    "substitutePushNotification": false,
                     "temporary": false,
                     "temporaryValidTo": null
                   }
@@ -5001,7 +5015,7 @@ Creates new reservation of selected sport. Authenticated user becomes an owner o
 
 There are number of restrictions and limits that are checked by the system during reservation creation. Reservation can be successfully created only if valid data is provided and all limits are met. Otherwise reservation creation is declined and error message is returned to the caller. For complete list of error codes and their meanings see [Response messages](#response_messages7). 
 
-Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to refresh reservation settings by calling [POST /api/1.0/reservations/refresh](#refresh_reservation_form_1.0) or [POST /api/1.1/reservations/refresh](#refresh_reservation_form_1.1) each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes` or `smsNotificationBeforeMinutes`. 
+Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to refresh reservation settings by calling [POST /api/1.0/reservations/refresh](#refresh_reservation_form_1.0) or [POST /api/1.1/reservations/refresh](#refresh_reservation_form_1.1) each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes`, `smsNotificationBeforeMinutes` or `pushNotificationBeforeMinutes`. 
 
 Recommended way to create new reservation is to follow these steps:
 + call [GET /api/1.0/reservations/new?objectId={objectId}&sportId={sportId}&tabIndex={tabIndex}&startTime={startTime}](#get_new_reservation_form_1.0) or , 
@@ -5074,14 +5088,16 @@ Recommended way to create new reservation is to follow these steps:
                 "endTime": "2016-12-07T19:30:00.000+0200",
                 "note": "note",
                 "emailNotificationBeforeMinutes": null,
-                "smsNotificationBeforeMinutes": null,           
+                "smsNotificationBeforeMinutes": null,  
+                "pushNotificationBeforeMinutes": null,          
                 "paymentType":null,
                 "substitute":false,
                 "substituteForAnyObjectOfAreal":false,
                 "createReservationFromSubstitute":false,
                 "substituteAcceptanceMinutesBefore":0,
                 "substituteEmailNotification":false,
-                "substituteSMSNotification":false
+                "substituteSMSNotification":false,
+                "substitutePushNotification":false
             }
             
             
@@ -5132,6 +5148,7 @@ Recommended way to create new reservation is to follow these steps:
                       "canceledWithoutFee": false,
                       "emailNotificationBeforeMinutes": null,
                       "smsNotificationBeforeMinutes": null,
+                      "pushNotificationBeforeMinutes": null,
                       "state": "UNPAID",
                       "paymentType": null,
                       "substitute": false,
@@ -5140,6 +5157,7 @@ Recommended way to create new reservation is to follow these steps:
                       "substituteAcceptanceMinutesBefore": 0,
                       "substituteEmailNotification": false,
                       "substituteSmsNotification": false,
+                      "substitutePushNotification": false,
                       "temporary": false,
                       "temporaryValidTo": null
                     }
@@ -5280,7 +5298,8 @@ If some error occurs during retreiving reservation data error message is returne
                             "createReservationFromSubstituteEnabled": false,
                             "justNotifySubstituteEnabled": false,
                             "substituteEmailNotificationEnabled": false,
-                            "substituteSmsNotifcationEnabled": false
+                            "substituteSmsNotifcationEnabled": false,
+                            "substitutePushNotifcationEnabled": false
                         },
                         {
                             "metaInfo": {
@@ -5313,6 +5332,7 @@ If some error occurs during retreiving reservation data error message is returne
                             "canceledWithoutFee": false,
                             "emailNotificationBeforeMinutes": 120,
                             "smsNotificationBeforeMinutes": 60,
+                            "pushNotificationBeforeMinutes": 60,
                             "state": "UNPAID",
                             "paymentType": null,
                             "substitute": false,
@@ -5321,6 +5341,7 @@ If some error occurs during retreiving reservation data error message is returne
                             "substituteAcceptanceMinutesBefore": 0,
                             "substituteEmailNotification": false,
                             "substituteSmsNotification": false,
+                            "substitutePushNotification": false,
                             "temporalReservation": false,
                             "temporalReservationValidTo": null
                         }
@@ -5334,7 +5355,7 @@ Edits and saves existing reservation. Authenticated user must be the owner of th
 
 There are number of restrictions and limits that are checked by the system during editation. Reservation can be successfully edited only if valid data is provided, all limits are met and reservation state is `UNPAID`. Otherwise reservation editation is declined and error message is returned to the caller. For complete list of error codes and their meanings see [Response messages](#response_messages10). 
 
-Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to refresh reservation settings by calling [POST /api/1.0/reservations/refresh](#refresh_reservation_form_1.0) or [POST /api/1.1/reservations/refresh](#refresh_reservation_form_1.1) each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes` or `smsNotificationBeforeMinutes`. 
+Restrictions, limits and settings are so complex that even small change, for example increasing person count for the reservation, performed by customer can modify them greatly. Therefore, the best and safest approach is to refresh reservation settings by calling [POST /api/1.0/reservations/refresh](#refresh_reservation_form_1.0) or [POST /api/1.1/reservations/refresh](#refresh_reservation_form_1.1) each time the customer enters some input. There is no need to refresh reservation settings if the customer changes: `note`, `emailNotificationBeforeMinutes`, `smsNotificationBeforeMinutes` or `pushNotificationBeforeMinutes`. 
 
 Recommended way to edit reservation is to follow these steps:
 + call [GET /api/1.0/reservations/{reservationId}](#reservation_detail_1.0) or [GET /api/1.1/reservations/{reservationId}](#reservation_detail_1.1), which returns limits, restrictions and other settings along with detailed information about the reservation of given id
@@ -5417,7 +5438,8 @@ Fee amount is defined by the club and depends on sport, customer group of the us
                 "startTime": "2015-07-25T09:00:00.000+0200",
                 "endTime": "2015-07-25T09:50:00.000+0200",
                 "emailNotificationBeforeMinutes": null,
-                "smsNotificationBeforeMinutes": null
+                "smsNotificationBeforeMinutes": null,
+                "pushNotificationBeforeMinutes": null
             }
   
 + Response 200 (application/json)
@@ -5467,6 +5489,7 @@ Fee amount is defined by the club and depends on sport, customer group of the us
                           "canceledWithoutFee": false,
                           "emailNotificationBeforeMinutes": 60,
                           "smsNotificationBeforeMinutes": 30,
+                          "pushNotificationBeforeMinutes": 30,
                           "state": "UNPAID",
                           "paymentType": null,
                           "substitute": false,
@@ -5475,6 +5498,7 @@ Fee amount is defined by the club and depends on sport, customer group of the us
                           "substituteAcceptanceMinutesBefore": 0,
                           "substituteEmailNotification": false,
                           "substituteSmsNotification": false,
+                          "substitutePushNotification": false,
                           "temporalReservation": false,
                           "temporalReservationValidTo": null
                       }
@@ -5621,7 +5645,8 @@ If some error occurs during retreiving reservation data error message is returne
                     "createReservationFromSubstituteEnabled": false,
                     "justNotifySubstituteEnabled": false,
                     "substituteEmailNotificationEnabled": false,
-                    "substituteSmsNotifcationEnabled": false
+                    "substituteSmsNotifcationEnabled": false,
+                    "substitutePushNotifcationEnabled": false
                   },
                   "reservation": {
                     "metaInfo": {
@@ -5654,6 +5679,7 @@ If some error occurs during retreiving reservation data error message is returne
                     "canceledWithoutFee": false,
                     "emailNotificationBeforeMinutes": null,
                     "smsNotificationBeforeMinutes": null,
+                    "psuhNotificationBeforeMinutes": null,
                     "state": "UNPAID",
                     "paymentType": null,
                     "substitute": false,
@@ -5662,6 +5688,7 @@ If some error occurs during retreiving reservation data error message is returne
                     "substituteAcceptanceMinutesBefore": 0,
                     "substituteEmailNotification": false,
                     "substituteSmsNotification": false,
+                    "substitutePushNotification": false,
                     "temporary": false,
                     "temporaryValidTo": null
                   }
@@ -7581,6 +7608,7 @@ Method returns all necessary settings to ensure compatibility with the connected
 + note (string, required) - Additional information from the customer. 
 + emailNotificationBeforeMinutes (number, required) - How long, in minutes, before reservation start should the system send customer an e-mail about reservation. `Null` can be used in case the customer doesn't wish to be notified.
 + smsNotificationBeforeMinutes (number, required) - How long, in minutes, before reservation start should the system send customer a SMS about reservation. `Null` can be used in case the customer doesn't wish to be notified. 
++ pushNotificationBeforeMinutes (number, required) - How long, in minutes, before reservation start should the system send customer a push notification about reservation. `Null` can be used in case the customer doesn't wish to be notified. 
 
 ### EditReservation (object)
 + id (string, required) - Id of the reservation that should be saved.
@@ -7595,6 +7623,7 @@ Method returns all necessary settings to ensure compatibility with the connected
 + note (string, required) - Additional information from the customer. 
 + emailNotificationBeforeMinutes (number, required) - How long, in minutes, before reservation start should the system send customer an e-mail about reservation. `Null` can be used in case the customer doesn't wish to be notified.
 + smsNotificationBeforeMinutes (number, required) - How long, in minutes, before reservation start should the system send customer a SMS about reservation. `Null` can be used in case the customer doesn't wish to be notified. 
++ pushNotificationBeforeMinutes (number, required) - How long, in minutes, before reservation start should the system send customer a push notification about reservation. `Null` can be used in case the customer doesn't wish to be notified. 
 
 ### Object (object)
 + id (string) - Unique identifier of the object (place, room) where sports are performed.
@@ -7628,6 +7657,7 @@ Method returns all necessary settings to ensure compatibility with the connected
 + justNotifySubstituteEnabled (boolean) - Whether the option to just notify customer of substitute about free place is enabled or not. For more information see [Substitutes](#subtitutes) section. `true` if notifications about free place for substitute are enabled, `false` otherwise.
 + substituteEmailNotificationEnabled (boolean) - Whether email notification for substitutes are enabled or not. `true` if email notification about free place for substitute is enabled, `false` otherwise.
 + substituteSmsNotificationEnabled (boolean) - Whether SMS notification for substitutes are enabled or not. `true` if SMS notification about free place for substitute is enabled, `false` otherwise.
++ substitutePushNotificationEnabled (boolean) - Whether push notifications for substitutes are enabled or not. `true` if push notification about free place for substitute is enabled, `false` otherwise.
 
 ### CreateReservation (object)
 + instructorId (string, required) - Id of selected instructor for the reservation.
@@ -7639,6 +7669,7 @@ Method returns all necessary settings to ensure compatibility with the connected
 + note (string, optional) - Additional information from the customer
 + emailNotificationBeforeMinutes (number, optional) - How long, in minutes, before reservation start should the system send customer an e-mail about reservation. `Null` can be used in case the customer doesn't wish to be notified.
 + smsNotificationBeforeMinutes (number, optional) - How long, in minutes, before reservation start should the system send customer a SMS about reservation. `Null` can be used in case the customer doesn't wish to be notified.
++ pushNotificationBeforeMinutes (number, optional) - How long, in minutes, before reservation start should the system send customer a push notification about reservation. `Null` can be used in case the customer doesn't wish to be notified.
 + paymentType (enum[string]) - How should the reservation be paid. The reservation is created and paid by given method in one step. If omitted the reservation is just created without any payment.
     + members
         + DEPOSIT - the reservation is created and paid by customer's deposit
@@ -7647,7 +7678,8 @@ Method returns all necessary settings to ensure compatibility with the connected
 + createReservationFromSubstitute (boolean, optional) - Specifies the action that should be performed when free places appear for waiting customer. `True` if the system should automatically create a valid reservation for waiting customer, `false` otherwise.
 + substituteAcceptanceMinutesBefore (number, optional) - How long, in minutest, before lesson start is customer willing to accept free places
 + substituteEmailNotification (boolean, optional) - Whether system should send customer an email notification when free places appear. `True` for enable email notification about free places, `false` otherwise.
-+ substituteSMSNotification (boolean, optional) - Whether system should send customer SMS notification when free places appear. `True` for enable email notification about free places, `false` otherwise.
++ substituteSMSNotification (boolean, optional) - Whether system should send customer SMS notification when free places appear. `True` for enable SMS notification about free places, `false` otherwise.
++ substitutePushNotification (boolean, optional) - Whether system should send customer push notification when free places appear. `True` for enable push notification about free places, `false` otherwise.
 
 ### Reservation (object)
 + id (string) - Id of the reservation. Always `null` for new reservation.
@@ -7670,6 +7702,7 @@ Method returns all necessary settings to ensure compatibility with the connected
 + canceledWithoutFee (boolean) - Whether the reservation has been canceled without any fee. Always `false`for new reservation.
 + emailNotificationBeforeMinutes (number) - How long, in minutes, before lesson start will the notification email be sent to the customer. Always `null` for new reservation which means not to sent notification.
 + smsNotificationBeforeMinutes (number) - How long, in minutes, before lesson start will the notification SMS be sent to the customer. Always `null` for new reservation which means not to sent notification.
++ pushNotificationBeforeMinutes (number) - How long, in minutes, before lesson start will the push notification be sent to the customer. Always `null` for new reservation which means not to sent notification.
 + state (enum[string]) - Current state of the reservation. Always NEW for new reservation.
     + members
         + NEW - the reservation has not been created yet
@@ -7682,6 +7715,7 @@ Method returns all necessary settings to ensure compatibility with the connected
 + createReservationFromSubstitute (boolean) - Specifies the action that should be performed when free places appear for waiting customer. `True` if the system should automatically create a valid reservation for waiting customer, `false` otherwise
 + substituteAcceptanceMinutesBefore (number) - How long, in minutest, before lesson start is customer willing to accept free places. Always 0 for new reservation
 + substituteSMSNotification (boolean) - Whether system should send customer SMS notification when free places appear. `True` for enable SMS notification about free places, `false` otherwise.
++ substitutePushNotification (boolean) - Whether system should send customer push notification when free places appear. `True` for enable push notification about free places, `false` otherwise.
 + temporary (boolean) - Whether the reservation is temporary. Temporary reservation is valid only for short time, typically for 30 minutes. If the reservation is not paid within the limit it is automatically removed. `True` if the reservation is temporary, `false` otherwise. Always `false` for new reservation.
 + temporaryValidTo (string) - Date and time till which the temporary reservation is valid. After this time it is automatically removed. Always `null` for new reservation. See [JSON date serialization](#serialization) for detailed information about date formats.
 
