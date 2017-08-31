@@ -4325,6 +4325,7 @@ If invalid data is provided error message is returned to the caller. For complet
                         "reservationShared": false,
                         "emailNotificationEnabled": true,
                         "smsNotificationEnabled": false,
+                        "pushNotificationEnabled": false,
                         "createReservationFromSubstituteEnabled": false,
                         "justNotifySubstituteEnabled": false,
                         "substituteEmailNotificationEnabled": false,
@@ -4520,6 +4521,7 @@ If invalid data is provided error message is returned to the caller. For complet
                     "reservationShared": false,
                     "emailNotificationEnabled": true,
                     "smsNotificationEnabled": false,
+                    "pushNotificationEnabled": false,
                     "createReservationFromSubstituteEnabled": false,
                     "justNotifySubstituteEnabled": false,
                     "substituteEmailNotificationEnabled": false,
@@ -4737,6 +4739,7 @@ If invalid data is provided error message is returned to the caller. For complet
                         "reservationShared": false,
                         "emailNotificationEnabled": true,
                         "smsNotificationEnabled": false,
+                        "pushNotificationEnabled": false,
                         "createReservationFromSubstituteEnabled": false,
                         "justNotifySubstituteEnabled": false,
                         "substituteEmailNotificationEnabled": false,
@@ -4956,6 +4959,7 @@ If invalid data is provided error message is returned to the caller. For complet
                     "reservationShared": false,
                     "emailNotificationEnabled": true,
                     "smsNotificationEnabled": false,
+                    "pushNotificationEnabled": false,
                     "createReservationFromSubstituteEnabled": false,
                     "justNotifySubstituteEnabled": false,
                     "substituteEmailNotificationEnabled": false,
@@ -5295,6 +5299,7 @@ If some error occurs during retreiving reservation data error message is returne
                             "reservationShared": false,
                             "emailNotificationEnabled": true,
                             "smsNotificationEnabled": false,
+                            "pushNotificationEnabled": false,
                             "createReservationFromSubstituteEnabled": false,
                             "justNotifySubstituteEnabled": false,
                             "substituteEmailNotificationEnabled": false,
@@ -5642,6 +5647,7 @@ If some error occurs during retreiving reservation data error message is returne
                     "reservationShared": false,
                     "emailNotificationEnabled": true,
                     "smsNotificationEnabled": false,
+                    "pushNotificationEnabled": false,
                     "createReservationFromSubstituteEnabled": false,
                     "justNotifySubstituteEnabled": false,
                     "substituteEmailNotificationEnabled": false,
@@ -7653,6 +7659,7 @@ Method returns all necessary settings to ensure compatibility with the connected
 + reservationShared (boolean) - Whether the reservation is shared by more customers or not. `true` if reservation is shared, `false` otherwise.
 + emailNotificationEnabled (boolean) - Whether email notifications are enabled by the club. `true` if email notifications are enabled, `false` otherwise. 
 + smsNotificationEnabled (boolean) - Whether SMS notifications are enabled by the club. `true` if SMS notifications are enabled, `false` otherwise.
++ pushNotificationEnabled (boolean) - Whether push notifications are enabled by the club. `true` if push notifications are enabled, `false` otherwise.
 + createReservationFromSubstituteEnabled (boolean) - Whether the option to automatically create reservation from substitute is enabled or not. For more information see [Substitutes](#subtitutes) section. `true` if automatic reservation creation from substitute is enabled, `false` otherwise.
 + justNotifySubstituteEnabled (boolean) - Whether the option to just notify customer of substitute about free place is enabled or not. For more information see [Substitutes](#subtitutes) section. `true` if notifications about free place for substitute are enabled, `false` otherwise.
 + substituteEmailNotificationEnabled (boolean) - Whether email notification for substitutes are enabled or not. `true` if email notification about free place for substitute is enabled, `false` otherwise.
