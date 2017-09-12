@@ -15,6 +15,7 @@ For more information on authentication and services follow the subsections:
 + [Schedules](#schedules)
 + [Reservations](#reservations)
 + [Users](#users)
++ [FCM notifications](#fcm_notifications)
 + [Settings](#settings)
 
 ## Group Security
@@ -6800,8 +6801,6 @@ For more information on services follow the subsections:
 + [My profile](#my_profile)
 + [All users](#all_users)
 + [All users count](#all_users_count)
-+ [Add push key](#add_push_key)
-+ [Remove push key](#cancel_push_key)
 
 ## Synchronization with external systems
 REST API provides services that can be used by external systems to synchronize data about CLUBSPIRE users. A special access role must be assigned to client application to be allowed to call these services. Currently it is only possible to retrieve users whose data has been changed since provided timestamp. For more information see [All users](#all_users) service. 
@@ -7466,7 +7465,311 @@ Method returns all necessary settings to ensure compatibility with the connected
                 ]
             }
 
+# Group FCM notifications
+<a name="fcm_notifications"></a>
+For more information on services follow the subsections: 
++ [Add push key](#add_push_key)
++ [Remove push key](#cancel_push_key)
++ [Get all undeleted push keys by customer](#all_messages)
++ [Edit fcm message](#edit_fcm_message)
++ [Get details of fcm message](#get_fcm_message)
+            
+## Add push key [/api/1.0/push/{key}/new]
+<a name="add_push_key"></a> 
+
++ Parameters 
+    + key (required, string, `545743r541sd2541rger5`)...A key granded by FCM Server.
+  
+### Add push key [POST]
+
+
+#### Response messages
+| Code                                               | Type      | Description                                                                                                                  |
+|--------------------------------------------------- |:----------|:-----------------------------------------------|
+|`succes.pushKey.setting`                            |INFO       |Returned if the key has been assigned to a logged user successfully.|
+|`error.pushKey.setting.failed`                      |ERROR_FATAL|Returned if there is an error.|
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+## Remove push key [/api/1.0/push/{key}/cancel]
+<a name="cancel_push_key"></a> 
+
++ Parameters 
+    + key (required, string, `545743r541sd2541rger5`)...A key granded by FCM Server.
+  
+### Remove push key [PUT]
+
+
+#### Response messages
+| Code                                               | Type      | Description                                                                                                                  |
+|--------------------------------------------------- |:----------|:-----------------------------------------------|
+|`succes.pushKey.remove`                             |INFO       |Returned if the key has been removed successfully.|
+|`error.pushKey.remove.failed`                       |ERROR_FATAL|Returned if there is an error.|
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+## Get undeleted push messages by customer [/api/1.0/push{?limit,offset}]
+<a name="all_messages"></a> 
+
++ Parameters 
+    + limit (optional, int,   `50`)...If a limit count is given, no more than that many results will be returned (but possibly less, if there is less results). Default value of 10 will be used when limit is omitted.
+    + offset (optional, int, `10` )...Offset says to skip that many results before beginning to return results. Default value of 0 will be used when offset is omitted.
+
+  
+### Get undeleted push messages by customer [GET]
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+    + Attributes (Object)
+        + `-` (array[FcmMessage]) - List of all push messages that were or will be published. 
+        + offset (number) - Current offset that was used to create paginated response.
+        + limit (number) - Current limit that was used to create paginated response.
+        + previousPageHref (string) -  URL for getting previous page of results. Can be `null` if this response represents the first page of results.
+        + nextPageHref (string) - URL for getting next page of results. Can be `null` if this response represents the last page of results.
+        
+    + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": [
+                    {
+                        "metaInfo": null,
+                        "multicastId": "8249580327717596543",
+                        "messagesIds": [
+                            null,
+                            "0:1505218249879682%68b2603d68b2603d"
+                        ],
+                        "date": "2017-09-12T14:10:50.337+0200",
+                        "title": "Title",
+                        "body": "Message",
+                        "read": true,
+                        "removed": false
+                    },
+                    {
+                        "metaInfo": null,
+                        "multicastId": "6801386180869270010",
+                        "messagesIds": [
+                            null,
+                            "0:1505216243758270%68b2603d68b2603d"
+                        ],
+                        "date": "2017-09-12T13:37:24.196+0200",
+                        "title": "LALALALA",
+                        "body": "Push notifikace prejde",
+                        "read": true,
+                        "removed": false
+                    },
+                    {
+                        "metaInfo": null,
+                        "multicastId": "7242867357529700316",
+                        "messagesIds": [
+                            "0:1505215909861208%68b2603d68b2603d"
+                        ],
+                        "date": "2017-09-12T13:31:50.276+0200",
+                        "title": "Aktualita jak drak",
+                        "body": "Aktualita",
+                        "read": true,
+                        "removed": false
+                    },
+                    {
+                        "metaInfo": null,
+                        "multicastId": "7556943026530237019",
+                        "messagesIds": [
+                            "0:1505213691300298%68b2603d68b2603d"
+                        ],
+                        "date": "2017-09-12T12:54:51.681+0200",
+                        "title": "Lekce Pilates - Olga v čase 12.9.2017 byla zrušena",
+                        "body": "Kliknutím zobrazíte detail rezervace.",
+                        "read": true,
+                        "removed": false
+                    },
+                    {
+                        "metaInfo": null,
+                        "multicastId": "6107300191235059014",
+                        "messagesIds": [
+                            "0:1505213339839050%68b2603d68b2603d"
+                        ],
+                        "date": "2017-09-12T12:49:00.236+0200",
+                        "title": "Vaše rezervace Rolletic 14:49:00",
+                        "body": "Kliknutím zobrazíte detail rezervace Rolletic - 20 min.",
+                        "read": true,
+                        "removed": false
+                    },
+                    {
+                        "metaInfo": null,
+                        "multicastId": "7562364451756252994",
+                        "messagesIds": [
+                            "0:1505213196539125%68b2603d68b2603d"
+                        ],
+                        "date": "2017-09-12T12:46:36.917+0200",
+                        "title": "Pre vsetkych",
+                        "body": "Pre vsetkych",
+                        "read": true,
+                        "removed": false
+                    },
+                    {
+                        "metaInfo": null,
+                        "multicastId": "4938612030381482178",
+                        "messagesIds": [
+                            "0:1505213056758879%68b2603d68b2603d"
+                        ],
+                        "date": "2017-09-12T12:44:17.147+0200",
+                        "title": "Push notifikace group",
+                        "body": "Push notifikace group",
+                        "read": true,
+                        "removed": false
+                    },
+                    {
+                        "metaInfo": null,
+                        "multicastId": "6009120860632755286",
+                        "messagesIds": [
+                            "0:1505212946577164%68b2603d68b2603d"
+                        ],
+                        "date": "2017-09-12T12:42:26.959+0200",
+                        "title": "Push notifikace",
+                        "body": "Push notifikace",
+                        "read": true,
+                        "removed": false
+                    }
+                ],
+                "offset": 0,
+                "limit": 10,
+                "previousPageHref": null,
+                "nextPageHref": null
+            }
+            
+## Update FCM message [/api/1.0/push/update]
+<a name="edit_fcm_message"></a>
+
+### Edit FCM message [PUT]
+Edits and saves existing fcm message.  
+The changes will be propagated into all messages with the same multicastId and recipient. 
+
+#### Response messages
+| Code                                                                         | Type            | Description                                                                                                                  |
+|------------------------------------------------------------------------------|:----------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|`success.reservation. changed`                                                |INFO             |Returned if fcm message has been modified successfully.                                      |
+|`error.reservation. save.failed`                                              |ERROR_FATAL      |General message returned if fcm message couldn't be saved due to unexpected error.|
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+            
+    + Body
+
+            {
+                "multicastId": "6009120860632755286",
+                "messagesIds": [
+                    "0:1505212946577164%68b2603d68b2603d"
+                ],
+                "date": "2017-09-12T12:42:26.959+0200",
+                "title": "Push notifikace",
+                "body": "Push notifikace",
+                "read": true,
+                "removed": false
+            }
+  
++ Response 200 (application/json)
+
+    + Body 
+    
+            {
+            "message": {
+                "httpStatus": 200,
+                "type": "INFO",
+                "code": "success.pushMesage.changed",
+                "clientMessage": "success.pushMesage.changed",
+                "verboseMessage": null,
+                "docUri": null
+                },
+            "data": null
+            }
+            
+## Get FCM message details [/api/1.0/push/unicast/{messageId}]
+<a name="get_fcm_message"></a>
+
++ Parameters
+  + messageId (required, string, `1a29b593c0a8020200bb84d63c88b96c`)...String specifying a unique ID for each successfully processed message.
+
+### Get FCM message details [GET]
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + data (array[FcmMessage])
+        
+    + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+            },
+                "data": [
+                    {
+                        "metaInfo": null,
+                        "multicastId": "4969303225333374504",
+                        "messagesIds": [
+                        "0:1505218373781260%68b2603d68b2603d",
+                        null
+                        ],
+                        "date": "2017-09-12T14:12:54.244+0200",
+                        "title": "555",
+                        "body": "",
+                        "read": true,
+                        "removed": false
+                    }
+                ]
+            }
+
+
+
+
 ## Data Structures
+
+### FcmMessage (object)
++ multicastId (string) - Unique ID (number) identifying the multicast message.
++ messagesIds (array[string]) - String specifying a unique ID for each successfully processed message.
++ date (string) - Date and time when the message was sent. Never `null`. See [JSON date serialization](#serialization) for detailed information about date formats.
++ title (string) - The notification's title. 
++ body (string) - The notification's body text. 
++ read (boolean) - `true` if user has read the message, `false` otherwise
++ removed (boolean) - `true` if user has deleted the message, `false` otherwise
+
 
 ### Settings (object)
 + webclientPovoleniRegistrace (boolean)
