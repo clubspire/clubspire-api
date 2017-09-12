@@ -7520,14 +7520,9 @@ For more information on services follow the subsections:
 
 + Response 200 (application/json)
 
-## Get undeleted push messages by customer [/api/1.0/push{?limit,offset}]
+## Get undeleted push messages by customer [/api/1.0/push]
 <a name="all_messages"></a> 
 
-+ Parameters 
-    + limit (optional, int,   `50`)...If a limit count is given, no more than that many results will be returned (but possibly less, if there is less results). Default value of 10 will be used when limit is omitted.
-    + offset (optional, int, `10` )...Offset says to skip that many results before beginning to return results. Default value of 0 will be used when offset is omitted.
-
-  
 ### Get undeleted push messages by customer [GET]
 
 + Request (application/json)
@@ -7537,13 +7532,8 @@ For more information on services follow the subsections:
 
 + Response 200 (application/json)
 
-    + Attributes (Object)
-        + `-` (array[FcmMessage]) - List of all push messages that were or will be published. 
-        + offset (number) - Current offset that was used to create paginated response.
-        + limit (number) - Current limit that was used to create paginated response.
-        + previousPageHref (string) -  URL for getting previous page of results. Can be `null` if this response represents the first page of results.
-        + nextPageHref (string) - URL for getting next page of results. Can be `null` if this response represents the last page of results.
-        
+    + Attributes (FcmMessage)
+
     + Body
     
             {
@@ -7654,11 +7644,7 @@ For more information on services follow the subsections:
                         "read": true,
                         "removed": false
                     }
-                ],
-                "offset": 0,
-                "limit": 10,
-                "previousPageHref": null,
-                "nextPageHref": null
+                ]
             }
             
 ## Update FCM message [/api/1.0/push/update]
