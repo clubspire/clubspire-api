@@ -7468,19 +7468,19 @@ Method returns all necessary settings to ensure compatibility with the connected
 # Group FCM notifications
 <a name="fcm_notifications"></a>
 For more information on services follow the subsections: 
-+ [Add push key](#add_push_key)
-+ [Remove push key](#cancel_push_key)
-+ [Get all undeleted push keys by customer](#all_messages)
++ [Add FCM key](#add_push_key)
++ [Remove FCM key](#cancel_push_key)
++ [Get all undeleted push messages by customer](#all_messages)
 + [Edit fcm message](#edit_fcm_message)
 + [Get details of fcm message](#get_fcm_message)
             
-## Add push key [/api/1.0/push/{key}/new]
+## Add FCM key [/api/1.0/push/{key}/new]
 <a name="add_push_key"></a> 
 
 + Parameters 
     + key (required, string, `545743r541sd2541rger5`)...A key granded by FCM Server.
   
-### Add push key [POST]
+### Add FCM key [POST]
 
 
 #### Response messages
@@ -7497,13 +7497,13 @@ For more information on services follow the subsections:
 
 + Response 200 (application/json)
 
-## Remove push key [/api/1.0/push/{key}/cancel]
+## Remove FCM key [/api/1.0/push/{key}/cancel]
 <a name="cancel_push_key"></a> 
 
 + Parameters 
     + key (required, string, `545743r541sd2541rger5`)...A key granded by FCM Server.
   
-### Remove push key [PUT]
+### Remove FCM key [PUT]
 
 
 #### Response messages
