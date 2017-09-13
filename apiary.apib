@@ -7651,8 +7651,11 @@ For more information on services follow the subsections:
                 ]
             }
             
-## Update FCM message [/api/1.0/push/update]
+## Update FCM message [/api/1.0/push/update/{multicastId}]
 <a name="edit_fcm_message"></a>
+
++ Parameters
+  + multicastId (required, string, `1a29b593c0a8020200bb84d63c88b96c`)...Unique ID (number) identifying the multicast message.
 
 ### Edit FCM message [PUT]
 Edits and saves existing fcm message.  
@@ -7673,7 +7676,6 @@ The changes will be propagated into all messages of the logged user with the spe
     + Body
 
             {
-                "multicastId": "6009120860632755286",
                 "date": "2017-09-12T12:42:26.959+0200",
                 "title": "Push notifikace",
                 "body": "Push notifikace",
