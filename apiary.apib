@@ -7520,8 +7520,12 @@ For more information on services follow the subsections:
 
 + Response 200 (application/json)
 
-## Get undeleted push messages by customer [/api/1.0/push]
+## Get undeleted push messages by customer [/api/1.0/push{?limit,offset}]
 <a name="all_messages"></a> 
+
++ Parameters 
+    + limit (optional, int,   `50`)...If a limit count is given, no more than that many results will be returned (but possibly less, if there is less results). Default value of 10 will be used when limit is omitted.
+    + offset (optional, int, `10` )...Offset says to skip that many results before beginning to return results. Default value of 0 will be used when offset is omitted.
 
 ### Get undeleted push messages by customer [GET]
 
@@ -7652,7 +7656,7 @@ For more information on services follow the subsections:
 
 ### Edit FCM message [PUT]
 Edits and saves existing fcm message.  
-The changes will be propagated into all messages with the same multicastId and recipient. 
+The changes will be propagated into all messages of the logged user with the specified multicastId.
 
 #### Response messages
 | Code                                                                         | Type            | Description                                                                                                                  |
@@ -7670,9 +7674,6 @@ The changes will be propagated into all messages with the same multicastId and r
 
             {
                 "multicastId": "6009120860632755286",
-                "messagesIds": [
-                    "0:1505212946577164%68b2603d68b2603d"
-                ],
                 "date": "2017-09-12T12:42:26.959+0200",
                 "title": "Push notifikace",
                 "body": "Push notifikace",
@@ -7696,11 +7697,11 @@ The changes will be propagated into all messages with the same multicastId and r
             "data": null
             }
             
-## Get FCM message details [/api/1.0/push/unicast/{messageId}]
+## Get FCM message details [/api/1.0/push/{multicastId}]
 <a name="get_fcm_message"></a>
 
 + Parameters
-  + messageId (required, string, `1a29b593c0a8020200bb84d63c88b96c`)...String specifying a unique ID for each successfully processed message.
+  + multicastId (required, string, `1a29b593c0a8020200bb84d63c88b96c`)...Unique ID (number) identifying the multicast message.
 
 ### Get FCM message details [GET]
 + Request (application/json)
