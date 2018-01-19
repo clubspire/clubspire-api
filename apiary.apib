@@ -17,6 +17,7 @@ For more information on authentication and services follow the subsections:
 + [Users](#users)
 + [FCM notifications](#fcm_notifications)
 + [Settings](#settings)
++ [Tabs](#tabs)
 
 ## Group Security
 <a name="security"></a>
@@ -7272,6 +7273,9 @@ If invalid data is provided error message is returned to the caller. For complet
                             {
                                 "id": "67cccfa8ac1303f001c69fd9f3e79821",
                                 "name": "Power Plate - Nikol Filipová",
+                                "minLengthMinutes": 30,
+                                "maxLengthMinutes": 30,
+                                "lengthIncrementMinutes": null,
                                 "instructors": [
                                     {
                                         "metaInfo": {
@@ -7468,6 +7472,9 @@ If invalid data is provided error message is returned to the caller. For complet
                       {
                         "id": "f27e8234c0a83332534017e05b879988",
                         "name": "Tvarování postavy",
+                        "minLengthMinutes": 60,
+                        "maxLengthMinutes": 60,
+                        "lengthIncrementMinutes": null,
                         "instructors": [
                           {
                             "metaInfo": {
@@ -10658,6 +10665,17 @@ Method returns all necessary settings to ensure compatibility with the connected
                         "webclientObligatoryZipEnabled": false,
                         "webclientObligatoryPhoneEnabled": false,
                         "webclientObligatoryBirthDayEnabled": false
+                        "substituteReservationCreateAndNotify": true,
+                        "substituteReservationNotify": true,
+                        "ePaymentsEnabled": false,
+                        "reservationCanBePaidWithDepositEnabled": false,
+                        "reservationCanBePaidWithCreditCardEnabled": false,
+                        "seasonTicketCanBePaidWithCreditCardEnabled": false,
+                        "seasonTicketCanBePaidWithDepositEnabled": false,
+                        "membershipCanBePaidWithCreditCardEnabled": false,
+                        "membershipCanBePaidWithDepositEnabled": false,
+                        "pushNotificationsAllowed": true,
+                        "epaymentsEnabled": false
                     }
                 ]
             }
@@ -10725,6 +10743,7 @@ For more information on services follow the subsections:
     + offset (optional, int, `10` )...Offset says to skip that many results before beginning to return results. Default value of 0 will be used when offset is omitted.
 
 ### Get undeleted push messages by customer [GET]
+Gets all undeleted push messages by customer. Maximum age of returned messages is configurable in CLUBSPIRE. Default maximum age is 30 days.
 
 + Request (application/json)
     + Headers
@@ -10851,8 +10870,132 @@ The changes will be propagated into all messages of the logged user with the spe
                 ]
             }
 
+# Group Tabs
+<a name="tabs"></a>
+For more information on services follow the subsections: 
++ [Get day tabs](#get_day_tabs)
++ [Get week tabs](#get_week_tabs)
 
+## Get day tabs [/api/1.0/tabs/day]
+<a name="get_day_tabs"></a>
+  
+### Get day tabs [GET]
 
++ Request (application/json)
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+    + Attributes (TabObjectData)
+
+    + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": [
+                    {
+                        "metaInfo": null,
+                        "index": 1,
+                        "name": "Solárium",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "http://192.168.0.148:18080/media/images/pictograms/d_11_b.png",
+                                "mediaType": "application/json"
+                            },
+                            "id": "d_11",
+                            "nameBlack": "d_11_b.png",
+                            "nameGrey": "d_11_w.png",
+                            "nameWhite": "d_11_g.png"
+                        },
+                        "shortName": "Solárium"
+                    },
+                    {
+                        "metaInfo": null,
+                        "index": 2,
+                        "name": "Masáže",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "http://192.168.0.148:18080/media/images/pictograms/d_10_b.png",
+                                "mediaType": "application/json"
+                            },
+                            "id": "d_10",
+                            "nameBlack": "d_10_b.png",
+                            "nameGrey": "d_10_w.png",
+                            "nameWhite": "d_10_g.png"
+                        },
+                        "shortName": "Masáže"
+                    },
+                    {
+                        "metaInfo": null,
+                        "index": 3,
+                        "name": "Golfový trenažér",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "http://192.168.0.148:18080/media/images/pictograms/c_03_b.png",
+                                "mediaType": "application/json"
+                            },
+                            "id": "c_03",
+                            "nameBlack": "c_03_b.png",
+                            "nameGrey": "c_03_w.png",
+                            "nameWhite": "c_03_g.png"
+                        },
+                        "shortName": "Golfový trenažér"
+                    }
+                ]
+            }
+
+## Get week tabs [/api/1.0/tabs/week]
+<a name="get_week_tabs"></a>
+
+### Get week tabs [GET]
++ Request (application/json)
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+
++ Response 200 (application/json)
+
+    + Attributes (TabObjectData)
+
+    + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": [
+                    {
+                        "metaInfo": null,
+                        "index": 0,
+                        "name": "Skupinové lekcie",
+                        "icon": {
+                            "metaInfo": {
+                                "href": "http://192.168.0.148:18080/media/images/pictograms/a_01_b.png",
+                                "mediaType": "application/json"
+                            },
+                        "id": "a_01",
+                        "nameBlack": "a_01_b.png",
+                        "nameGrey": "a_01_w.png",
+                        "nameWhite": "a_01_g.png"
+                        },
+                        "shortName": "Lekcie"
+                    }
+                ]
+            }
 
 ## Data Structures
 
@@ -10913,6 +11056,17 @@ The changes will be propagated into all messages of the logged user with the spe
 + webclientObligatoryZipEnabled (boolean)
 + webclientObligatoryPhoneEnabled (boolean)
 + webclientObligatoryBirthDayEnabled (boolean)
++ substituteReservationCreateAndNotify (boolean)
++ substituteReservationNotify (boolean)
++ ePaymentsEnabled (boolean)
++ reservationCanBePaidWithDepositEnabled (boolean)
++ reservationCanBePaidWithCreditCardEnabled (boolean)
++ seasonTicketCanBePaidWithCreditCardEnabled (boolean)
++ seasonTicketCanBePaidWithDepositEnabled (boolean)
++ membershipCanBePaidWithCreditCardEnabled (boolean)
++ membershipCanBePaidWithDepositEnabled (boolean)
++ pushNotificationsAllowed (boolean)
++ epaymentsEnabled (boolean)
 
 ### User credentials authorization (object)
 + `grant_type` (required, string) - Value MUST be set to "password".
@@ -11165,6 +11319,9 @@ The changes will be propagated into all messages of the logged user with the spe
 ### Sport (object)
 + id (string) - Unique identifier of the sport.
 + name (string) - Name of the sport.
++ lengthIncrementMinutes (number) - Increment, in minutes, that can be used to extend the reservation. Total length of the reservation, in minutes, must be divisible by the increment without a reminder. Can be `null` if reservation can be extended by any increment.
++ minLengthMinutes (number) - Minimal length of the reservation in minutes.
++ maxLengthMinutes (number) - Maximal length of the reservation in minutes.
 + activity (Activity) - Activity assigned to the sport.
 + instructors (array[Instructor], optional) - List of all instructors who teach the sport.
 
@@ -11323,6 +11480,12 @@ The changes will be propagated into all messages of the logged user with the spe
 + name (string) - Name of the object.
 + capacity (number) - Total capacity of object where the scheduled sports are performed.
 + hours (array[Hour]) - List of all hour slots of the object schedule. Hour represents a time slot with length of 60 minutes. Depending on settings of the enclosing Tab it can be divided into smaller time slots - `HourDetails`.
+
+### TabObjectData (object)
++ index (number) - Index of tab.
++ name (string) - Name of tab.
++ icon (Icon) - Icon of tab.
++ shortName (string) - Short name of tab.
 
 ### Hour (object)
 + divided (boolean) - `True` if the hour is divided into smaller time slots, with length less than 60 minutes, `false` otherwise.
