@@ -11519,6 +11519,15 @@ For more information on services follow the subsections:
 + substitute (boolean) - `True` if all places for the time slot are booked and customers can only create reservations as substitute (in waiting list), `false` otherwise.
 + newReservationUrl (string) - URL that can be directly used in GET request to obtain reservation settings along with new reservation data properly initilized for scheduled sport. For more information about recommended way of creating new reservation see [Create new reservation section](#create_reservation) section.
 
+### Voucher (object)
++ voucherId (string) - Unique identificator of the voucher.
++ value (number) - Total value of the voucher.
++ validFrom (string) - Date and time since which the voucher is applicable.
++ validUntil (string) - Date and time until which the voucher is applicable.
++ person (string) - Name that will be diplayed on the voucher.
++ note (string) - A note to be append to the voucher.
++ register (boolean) - If true, the value of the `voucher` will billed to the currently authenticated user and substracted from their deposit.
+
 ### Response (object)
 + message (Message) - Message with detailed information included by the CLUBSPIRE system. Never `null`.
 + data (array[DataItem]) - List of result data that has been requested by the client. Can be `null` or empty.
@@ -12896,3 +12905,36 @@ This section is for testing of Clubspire mobile application, especially of use c
           },
           "data": null
         }
+        
+# Group Vouchers
+<a name="vouchers"></a>
+For more information on services follow the subsections: 
++ [Create new voucher](#create_voucher)
+
+## Create new voucher [/api/1.1/voucher]
+<a name="create_voucher"></a>
+  
+### Create voucher [POST]
+A
++ Request (application/json)
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+    + Attributes (Voucher)
+    
+    + Body
+    
+            {
+                "voucherId": "001",
+                "value": "10",
+                "validFrom": "2018-08-28T13:35:00.000+0100",
+                "validUntil": "2018-08-29T13:35:00.000+0100",
+                "note": "Created via Rest",
+                "register": true
+            }
+
++ Response 200 (application/json)
+
+    + Attributes
+
+    + Body
