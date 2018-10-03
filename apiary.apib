@@ -12915,7 +12915,7 @@ For more information on services follow the subsections:
 <a name="create_voucher"></a>
   
 ### Create voucher [POST]
-A
+
 + Request (application/json)
     + Headers
     
@@ -12930,11 +12930,26 @@ A
                 "validFrom": "2018-08-28T13:35:00.000+0100",
                 "validUntil": "2018-08-29T13:35:00.000+0100",
                 "note": "Created via Rest",
-                "register": true
+                "register": false
             }
 
 + Response 200 (application/json)
 
-    + Attributes
-
     + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": [
+                    {
+                        "metaInfo": null,
+                        "response": null
+                    }
+                ]
+            }
