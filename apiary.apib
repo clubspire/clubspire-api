@@ -10181,6 +10181,7 @@ Client application must be authenticated to call this service.
     + Body 
     
             {
+                "registrationNumber": 1234,
                 "name": "Ondra",
                 "surname" : "Novak",
                 "birthDate" : "1987-24-04",
@@ -10217,6 +10218,7 @@ Client application must be authenticated to call this service.
                 "data": [
                     {
                         "metaInfo": null,
+                        "registrationNumber": 1234
                         "name": "Ondra",
                         "surname": "Novak",
                         "phoneCode": "+27",
@@ -10659,6 +10661,7 @@ Method returns all necessary settings to ensure compatibility with the connected
                     {
                         "metaInfo": null,
                         "webclientPovoleniRegistrace": true,
+                        "webclientObligatoryRegistrationNumber: false,
                         "webclientObligatoryNameEnabled": false,
                         "webclientObligatoryStreetEnabled": false,
                         "webclientObligatoryNoEnabled": false,
@@ -10676,7 +10679,8 @@ Method returns all necessary settings to ensure compatibility with the connected
                         "membershipCanBePaidWithCreditCardEnabled": false,
                         "membershipCanBePaidWithDepositEnabled": false,
                         "pushNotificationsAllowed": true,
-                        "epaymentsEnabled": false
+                        "epaymentsEnabled": false,
+                        "checkRegistrationNumber": false
                     }
                 ]
             }
@@ -11050,6 +11054,7 @@ For more information on services follow the subsections:
 
 ### Settings (object)
 + webclientPovoleniRegistrace (boolean)
++ webclientObligatoryRegistrationNumberEnabled (boolean)
 + webclientObligatoryNameEnabled (boolean)
 + webclientObligatoryStreetEnabled (boolean)
 + webclientObligatoryNoEnabled (boolean)
@@ -11068,6 +11073,7 @@ For more information on services follow the subsections:
 + membershipCanBePaidWithDepositEnabled (boolean)
 + pushNotificationsAllowed (boolean)
 + epaymentsEnabled (boolean)
++ checkRegistrationNumber (boolean)
 
 ### User credentials authorization (object)
 + `grant_type` (required, string) - Value MUST be set to "password".
@@ -12932,6 +12938,44 @@ For more information on services follow the subsections:
                 "note": "Created via Rest",
                 "register": false
             }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": null,
+                    "clientMessage": null,
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": [
+                    {
+                        "metaInfo": null,
+                        "response": null
+                    }
+                ]
+            }
+            
+# Group Version
+<a name="version"></a>
+For more information on services follow the subsections: 
++ [Check version is at least some](#check_version)
+
+## Create new voucher [/api/1.1/version/{version}]
+<a name="check_version"></a>
+  
+### Create voucher [POST]
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+    + Attributes (Voucher)
+    
 
 + Response 200 (application/json)
 
