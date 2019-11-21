@@ -11027,7 +11027,7 @@ For more information on services follow the subsections:
 
 ### Payment (object)
 + amount (string, required)) - Amount of the payment.
-+ lang (enum[string]) - Parameter defines language of the payment gate.
++ lang (enum[string]) - Parameter defines language of the payment gateway.
   + members
     + CS
     + EN
@@ -11043,8 +11043,8 @@ For more information on services follow the subsections:
     + IT
     + ES
 ### PaymentResponse (object)
-+ orderNumber (string)
-+ url (string)
++ orderNumber (string) - Order number for check status of payment.
++ url (string) - Pay gateway URL
 ### FcmMessage (object)
 + multicastId (string) - Unique ID (number) identifying the multicast message.
 + messagesIds (array[string]) - String specifying a unique ID for each successfully processed message.
