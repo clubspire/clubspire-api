@@ -896,14 +896,14 @@ Returns paymentEntity with a url of the GoPay payment gate.
             
     + Body
 
-            {   "type":"EPAYMENT", 
+            { 
                 "amount":"500", 
-                "url":null
+                "lang":"CS"
             }
             
 + Response 200 (application/json)
 
-    + Attributes (Payment)  
+    + Attributes (PaymentResponse)  
 
     + Body
  
@@ -919,10 +919,8 @@ Returns paymentEntity with a url of the GoPay payment gate.
                 "data": [
                     {
                         "metaInfo": null,
-                        "type": null,
-                        "currencyIso": 203,
-                        "amount": "500",
-                        "url": "https://gw.sandbox.gopay.com/gw/v3/b6a198760df8c7c916700a090964a7cf"
+                        "orderNumber": "3091463609",
+                        "url": "https://gw.sandbox.gopay.com/gw/v3/d7c86688060a506b010dfeede8aea6a8"
                     }
                 ]
             }
@@ -1527,7 +1525,7 @@ Returns paymentEntity with a url of the GoPay payment gate.
             
 + Response 200 (application/json)
 
-    + Attributes (Payment)  
+    + Attributes (PaymentResponse)  
 
     + Body
  
@@ -1543,10 +1541,8 @@ Returns paymentEntity with a url of the GoPay payment gate.
                 "data": [
                     {
                         "metaInfo": null,
-                        "type": null,
-                        "currencyIso": 203,
-                        "amount": "3990",
-                        "url": "https://gw.sandbox.gopay.com/gw/v3/b6a198760df8c7c916700a090964a7cf"
+                        "orderNumber": "3091463609",
+                        "url": "https://gw.sandbox.gopay.com/gw/v3/d7c86688060a506b010dfeede8aea6a8"
                     }
                 ]
             }
@@ -1599,7 +1595,7 @@ If payment fails, for example due to low deposit balance, an error message is re
             
 + Response 200 (application/json)
 
-## Pay membership repayment by deposit [/api/1.0/customer-groups/repayment/{membershipId}/epayment/pay]
+## Pay membership repayment by epayment [/api/1.0/customer-groups/repayment/{membershipId}/epayment/pay]
 <a name="pay_membership_repayment_by_epayment"></a>
 + Parameters
   + membershipId (required, string, `1a29b593c0a8020200bb84d63c88b96c`)...Id of the membership.
@@ -1631,7 +1627,7 @@ Returns paymentEntity with a url of the GoPay payment gate.
             
 + Response 200 (application/json)
 
-    + Attributes (Payment)  
+    + Attributes (PaymentResponse)  
 
     + Body
  
@@ -1647,10 +1643,8 @@ Returns paymentEntity with a url of the GoPay payment gate.
                 "data": [
                     {
                         "metaInfo": null,
-                        "type": null,
-                        "currencyIso": 203,
-                        "amount": "3990",
-                        "url": "https://gw.sandbox.gopay.com/gw/v3/b6a198760df8c7c916700a090964a7cf"
+                        "orderNumber": "3091463609",
+                        "url": "https://gw.sandbox.gopay.com/gw/v3/d7c86688060a506b010dfeede8aea6a8"
                     }
                 ]
             }
@@ -4204,7 +4198,7 @@ Returns paymentEntity with a url of the GoPay payment gate.
             
 + Response 200 (application/json)
 
-    + Attributes (Payment)  
+    + Attributes (PaymentResponse)  
 
     + Body
  
@@ -4220,10 +4214,8 @@ Returns paymentEntity with a url of the GoPay payment gate.
                 "data": [
                     {
                         "metaInfo": null,
-                        "type": null,
-                        "currencyIso": 203,
-                        "amount": "3250",
-                        "url": "https://gw.sandbox.gopay.com/gw/v3/b6a198760df8c7c916700a090964a7cf"
+                        "orderNumber": "3091463609",
+                        "url": "https://gw.sandbox.gopay.com/gw/v3/d7c86688060a506b010dfeede8aea6a8"
                     }
                 ]
             }
@@ -11034,14 +11026,25 @@ For more information on services follow the subsections:
 + price (Price) - Price of the membership with the selected type
 
 ### Payment (object)
-+ type (enum[string], required) - Type of payment.
-  + members
-    + DEPOSIT
-    + EPAYMENT 
-+ currencyIso (number)) 
 + amount (string, required)) - Amount of the payment.
-+ url (string) - Url of a GoPay payment gate.
-
++ lang (enum[string]) - Parameter defines language of the payment gate.
+  + members
+    + CS
+    + EN
+    + SK
+    + DE
+    + RU
+    + PL
+    + HU
+    + FR
+    + RO
+    + BG
+    + HR
+    + IT
+    + ES
+### PaymentResponse (object)
++ orderNumber (string)
++ url (string)
 ### FcmMessage (object)
 + multicastId (string) - Unique ID (number) identifying the multicast message.
 + messagesIds (array[string]) - String specifying a unique ID for each successfully processed message.
