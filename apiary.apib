@@ -10036,7 +10036,7 @@ REST API provides services that can be used by external systems to synchronize d
 <a name="send_reset_password_email"></a> 
 
 + Parameters 
-    + email (required, string, `clubspire@clubspire.cz`)...Email of user whose password was forgotten.
+    + email (required, string, `clubspire@clubspire.cz`)...Email or login of user whose password was forgotten.
   
 ### Send reset password email [POST]
 
@@ -10128,11 +10128,7 @@ Method returns details of that user.
   
 ### Reset password [POST]
 
-If user forgot his password it is necessary to send him an email with a new one. Corresponding email address has to be 
-identical with an email address filled in during registration, otherwise exception will be thrown.
-The link contains token, by which a server is able to map the request to the certain user. 
-
-When the user send request with a new password, method will update it.
+Sets the user a new password.
 
 #### Response messages
 | Code                                               | Type      | Description                                                                                                                  |
@@ -10145,8 +10141,31 @@ When the user send request with a new password, method will update it.
     + Headers
     
             Authorization: Bearer r8t9y5d8-1234-3214-12ab-a1t2re325s5w
+    
+    + Attributes (ResetPassword)
+    
+    + Body
+        
+            {
+                "password1" : "aLl1sG0.d",
+                "password2" : "aLl1sG0.d"
+            }
 
 + Response 200 (application/json)
+
+    + Body
+    
+            {
+                "message": {
+                    "httpStatus": 200,
+                    "type": "INFO",
+                    "code": "success.passwordEdit",
+                    "clientMessage": "Aktualizace hesla proběhla úspěšně.",
+                    "verboseMessage": null,
+                    "docUri": null
+                },
+                "data": null
+            }
 
 ## Account activation [/api/1.0/users/activation/{activationToken}]
 <a name="account_activation"></a>
@@ -11207,6 +11226,9 @@ For more information on services follow the subsections:
 + password (string, required) - Password for the user in plaintext. Must not be null or empty.
 + passwordAgain (string, required) - Password for the user in plaintext again. Must be the same as `password`.
 
+### ResetPassword (object)
++ password1 (string, required) - New password in plaintext.
++ password2 (string, required) - New password in plaintext again.
 
 ### MyReservation (object)
 + id (string) - Id of the reservation.
